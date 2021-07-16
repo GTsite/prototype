@@ -1,0 +1,32 @@
+//
+// Stretchy Clip
+// -----------------------------------------------------------------------------
+
+@mixin stretchy-clip($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top == null {
+    // if top is not passed, or empty do this
+    $top: 0;
+  }
+
+  @if $right == null {
+    // if top is not passed, or empty do this
+    $right: 0;
+  }
+
+  @if $right == null {
+    // if right is not passed, or empty do this
+    $right: 0;
+  }
+
+  @if $left == null {
+    // if top is not passed, or empty do this
+    $left: 0;
+  }
+
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $right;
+  left: $left;
+  overflow: hidden;
+}

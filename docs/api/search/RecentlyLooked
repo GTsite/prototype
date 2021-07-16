@@ -1,0 +1,28 @@
+{
+"RecentPages": [
+{
+"ItemLink": "#link1",
+"ItemId": "uid-01",
+"Title": "The Top Lookouts",
+"RemoveLabel": "Remove",
+"Paragraph": "<p>Lorem ipsum dolor sit, <span>Alps</span> adip iscing elit, sed do eiusmod <em>Alps</em> incid idunt ut labore amet</p>",
+"Image": "/images/search-result-tiles/photo-1.jpg"
+},
+{
+"ItemLink": "#link2",
+"ItemId": "uid-02",
+"Title": "Join our Valley Hikes",
+"RemoveLabel": "Remove",
+"Paragraph": "<p>Lorem ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+"Image": "/images/photos/recently-looked-2.jpg"
+},
+{
+"ItemLink": "#link3",
+"ItemId": "uid-03",
+"Title": "Room with a view",
+"RemoveLabel": "Remove",
+"Paragraph": "<p>Lorem ipsum dolor sit, <span>Alps</span> adip iscing elit, sed do eiusmod <em>Alps</em> incid idunt ut labore amet</p>",
+"Image": "/images/photos/recently-looked-3.jpg"
+}
+]  
+}

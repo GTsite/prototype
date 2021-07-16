@@ -1,0 +1,46 @@
+// .hidden-accessible
+// Hides content visually, but leaves it available to assistive technologies.
+// Compatible for modern browsers that supporting the use of both the
+// :before and : after pseudo-elements.
+
+@mixin hidden-accessible {
+  margin: -0.1rem;
+  padding: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  overflow: hidden;
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
+  position: absolute;
+}
+
+@mixin undo-hidden-accessible {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  position: relative;
+}
+
+// Special for dropdowns
+
+@mixin hidden-accessible-dropdown {
+  position: absolute;
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
+}
+
+@mixin undo-hidden-accessible-dropdown {
+  position: absolute;
+  clip: auto;
+}
+
+@mixin hidden {
+  position: absolute;
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
+}
+
+@mixin undo-hidden {
+  position: absolute;
+  clip: auto;
+}

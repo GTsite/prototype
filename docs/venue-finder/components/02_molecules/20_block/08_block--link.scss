@@ -1,0 +1,92 @@
+// -----------------------------------------------------------------------------
+// BLOCK LINK VARIANT
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &block--link {
+    .#{$gtc-namespace}block__layer {
+      color: $block--link--overlay--color;
+      padding: em(7) em(28);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .#{$gtc-namespace}block__container {
+      min-height: em(53);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .#{$gtc-namespace}block__layer-title {
+      // smartphone and up
+      // ----------------------------------
+      font-size: em($block--link--title--font-size--xs);
+      line-height: em($block--link--title--line-height--xs, $block--link--title--font-size--xs);
+      font-family: $block--link--title--font-family;
+      font-weight: bold;
+      margin-right: em(20, $block--link--title--font-size--xs);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($block--link--title--font-size--md);
+        line-height: em($block--link--title--line-height--md, $block--link--title--font-size--md);
+        font-family: $font-family--brand;
+        margin-right: em(20, $block--link--title--font-size--md);
+        font-weight: normal;
+      }
+    }
+
+    &.#{$gtc-namespace}block--square,
+    &.#{$gtc-namespace}block--hero {
+      .#{$gtc-namespace}block__cta-btn {
+        // tablet and down
+        // ----------------------------------
+        @include media-breakpoint-down(sm) {
+          padding-top: em(12);
+          padding-bottom: em(12);
+
+          .#{$gtc-namespace}btn__label {
+            font-size: em($block--link--font-size--xs);
+            line-height: em($block--link--line-height--xs, $block--link--font-size--xs);
+          }
+        }
+      }
+    }
+
+    &.#{$gtc-namespace}block--fullwidth {
+      .#{$gtc-namespace}block__layer {
+        padding-top: em(45);
+        padding-bottom: em(45);
+
+        // laptop & desktop and up
+        // ----------------------------------
+        @include media-breakpoint-up(md) {
+          padding-top: em(60);
+          padding-bottom: em(60);
+        }
+      }
+
+      .#{$gtc-namespace}block__container {
+        @include make-container;
+        @include make-container-max-width;
+        display: flex;
+        justify-content: center;
+      }
+
+      .#{$gtc-namespace}block__cta-btn {
+        // tablet and down
+        // ----------------------------------
+        @include media-breakpoint-down(sm) {
+          padding-top: em(17);
+          padding-right: em(35);
+          padding-bottom: em(17);
+          padding-left: em(35);
+        }
+      }
+    }
+  }
+}

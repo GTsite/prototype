@@ -1,0 +1,60 @@
+// show and hide grid
+// --------------------------------
+
+.#{$gtc-namespace} {
+  &grid-overlay {
+    z-index: 10000000;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    padding: 0 !important; // sass-lint:disable-line no-important
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    width: #{map-get($container-max-widths, lg)};
+    max-width: #{map-get($container-max-widths, lg)};
+
+    @include media-breakpoint-up(sm) {
+      @include make-container;
+      width: #{map-get($container-max-widths, lg)};
+      max-width: #{map-get($container-max-widths, lg)};
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-container;
+      width: #{map-get($container-max-widths, md)};
+      max-width: #{map-get($container-max-widths, md)};
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-container;
+      width: #{map-get($container-max-widths, lg)};
+      max-width: #{map-get($container-max-widths, lg)};
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--active {
+      display: block;
+    }
+
+    &__btn {
+      z-index: 10000005;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      padding: rem(5) rem(10);
+      font-size: rem(10);
+      line-height: rem(15);
+      color: $color-mine-shaft;
+      text-decoration: none;
+      background-color: transparent;
+      border: rem(1) solid $color-mine-shaft;
+    }
+  }
+}

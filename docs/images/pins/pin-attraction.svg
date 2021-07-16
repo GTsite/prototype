@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33.274" height="45.061" viewBox="0 0 33.274 45.061">
+  <g id="Map_marker_Unselected" data-name="Map marker Unselected" transform="translate(1 1)">
+    <ellipse id="Ellipse_63" data-name="Ellipse 63" cx="8.5" cy="2.5" rx="8.5" ry="2.5" transform="translate(7.137 39.061)" opacity="0.25"/>
+    <path id="Pin" d="M15.637,0A15.381,15.381,0,0,0,0,15.1a14.8,14.8,0,0,0,2.018,7.468l1.625,2.273L15.637,41.561,27.855,24.569l1.233-1.732a14.5,14.5,0,0,0,2.186-7.684A15.391,15.391,0,0,0,15.637,0Z" fill="#009fe3" stroke="#fff" stroke-width="2"/>
+    <path id="Tracé_722" data-name="Tracé 722" d="M7.5,0A7.5,7.5,0,1,1,0,7.5,7.5,7.5,0,0,1,7.5,0Z" transform="translate(8.137 6.403)" fill="#fff"/>
+  </g>
+</svg>

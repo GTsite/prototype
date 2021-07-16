@@ -1,0 +1,52 @@
+//
+// Special Offer Page
+// ----------------------------------------------------
+
+.#{$gtc-namespace}special-offer-detail {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__text {
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      @include make-col-span(7);
+      order: 1;
+      padding: em(20) em(80) em(20) em(60);
+    }
+  }
+
+  .#{$gtc-namespace}block-booking {
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      @include make-col-span(5);
+      order: 2;
+      margin-bottom: 0;
+      padding: em(80);
+    }
+  }
+
+  &__static {
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      @include make-col-span(7);
+      order: 3;
+    }
+  }
+
+  &__social {
+    .#{$gtc-namespace}title {
+      margin-bottom: em(25);
+    }
+
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      @include make-col-span(5);
+      order: 4;
+      padding: em(80);
+    }
+  }
+}

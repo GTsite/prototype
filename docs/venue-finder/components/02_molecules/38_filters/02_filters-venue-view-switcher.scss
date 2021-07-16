@@ -1,0 +1,115 @@
+﻿// -----------------------------------
+// Venue Finder View Switcher and Notification row.
+// -----------------------------------
+.#{$gtc-namespace}venue-finder-view-switcher {
+  margin-bottom: 1.6rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 2.4rem;
+    margin-top: 6.4rem;
+  }
+
+  .#{$gtc-namespace} {
+    &lst {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+
+      &__itm {
+        &:not(.gtc-venue-finder-view-switcher__res-count) {
+          @media print {
+            display: none;
+          }
+        }
+
+        &.#{$gtc-namespace}venue-finder-view-switcher__res-count {
+          flex-basis: 100%;
+          margin-bottom: 2.6rem;
+
+          @include media-breakpoint-up(md) {
+            flex: 1 1 auto;
+            margin-bottom: 0;
+          }
+
+          .#{$gtc-namespace}venue-finder-view-switcher__label {
+            font-family: var(--font-family-primary);
+            font-size: var(--font-size-medium-text-3);
+            line-height: 1.3333;
+
+            @include media-breakpoint-up(md) {
+              font-size: var(--font-size-heading-4);
+              line-height: 2;
+            }
+          }
+        }
+
+        .#{$gtc-namespace}btn {
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+          max-width: var(--button-width-sm);
+        }
+
+        &--active .#{$gtc-namespace}btn {
+          background-color: var(--color-custom-white);
+          color: var(--color-primary-blue);
+          transform: scale(1.05);
+          box-shadow: 0 0 0.3rem var(--color-custom-black-semi-darker);
+        }
+      }
+
+      &__toggle-button--left,
+      &__toggle-button--right {
+        background-color: var(--color-primary-blue);
+        flex-basis: calc(50% - 0.8rem);
+        max-width: var(--button-width-sm);
+
+        @include media-breakpoint-up(md) {
+          flex-basis: auto;
+          width: 12rem;
+        }
+
+        .has-hover &:not(.gtc-lst__itm--active) .#{$gtc-namespace}btn:hover {
+          background-color: var(--color-primary-blue);
+          color: var(--color-custom-white);
+        }
+      }
+
+      &__toggle-button--left {
+        border-top-left-radius: 999rem;
+        border-bottom-left-radius: 999rem;
+        margin-left: 0.8rem;
+
+        @include media-breakpoint-up(md) {
+          margin-left: 0;
+        }
+      }
+
+      &__toggle-button--right {
+        border-top-right-radius: 999rem;
+        border-bottom-right-radius: 999rem;
+        margin-right: 0.8rem;
+
+        @include media-breakpoint-up(md) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  // -----------------------------------
+  // Filter Switch
+  // -----------------------------------
+  &__fltr-switch {
+    flex-basis: 100%;
+    margin-bottom: 3.9rem;
+    padding: 0 0.8rem;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,1201 @@
+@import '../../../../_scss/utils/variables/variables';
+
+$bootstrap-sass-asset-helper: (twbs-font-path('') != unquote('twbs-font-path("")')) !default;
+// sass-lint:disable space-before-colon
+
+// GTC-Namespace
+// -----------------------------------------------------------------------------
+$gtc-namespace: 'gtc-';
+
+//---------------------------
+// Namespace prefix for js usage.
+//--------------------------
+$js-namespace-prefix: 'js-';
+
+// -----------------------------------------------------------------------------
+// Paths
+// -----------------------------------------------------------------------------
+$img-path: '../images';
+$svg-path: '../images/svgs';
+$font-path--lato: '../fonts/lato';
+
+// -----------------------------------------------------------------------------
+// Color palette
+// -----------------------------------------------------------------------------
+
+// Debuging color's
+$color-curious: #1f97d4; // RGB 31/151/212
+$color-wisteria: #8c6cab; // RGB 140/108/171
+$color-mountains-majesty: #957bbe; // RGB 149/123/190
+$color-mountains-majesty: #957bbe; // RGB 149/123/190
+$color-pattens: #daeeff; // RGB 218/238/255
+$color-dairy-cream: #fae3c4; // RGB 250/227/196
+$color-pastel: #ffccde; // RGB 255/204/222
+
+$color-debug1: rgba($color-curious, 0.3);
+$color-debug2: rgba($color-mountains-majesty, 0.4);
+$color-debug3: rgba($color-pattens, 0.6);
+$color-debug4: rgba($color-dairy-cream, 0.6);
+$color-debug5: rgba($color-pastel, 0.6);
+
+// Geneva Brand Colors
+$color-lochmara: #0080c8; // RGB 0/128/200
+$color-shakespeare: #5ea9d4; // RGB 94/169//212
+$color-picton-blue: #5ac5f1; // RGB 90/197/241
+$color-sky-blue: #5ea9d4 !default; // RGB 94/169/212
+$color-visited-anchor: #552564 !default; // RGB 85/37/100
+
+// Grayscale
+$color-coal: #000000; // RGB 0/0/0
+$color-shark: #1a1c1d; // RGB 26/28/29
+$colordark-shade: #26262e; // RGB 38/38/46
+$color-outer-space: #333637; // RGB 51/54/55
+$color-mine-shaft: #373737; // RGB 55/55/55
+$color-mine-shaft-dark: #37302e; // RGB 55/48/46
+$color-tuna: #3a3a3b; // RGB 58/58/59
+$color-tuatara: #3c3c3b; // RGB 60/60/59
+$color-ship: #3f3a44; // RGB 63/58/68
+$color-graphite: #414141; // RGB 65/65/65
+$color-white-graphite: #4c4750; // RGB 76/71/80
+$color-scorpion: #585858; // RGB 88/88/88
+$color-mid: #5e6064; // RGB 94/96/100
+$color-jumbo: #808184; // RGB 128/129/132
+$color-oslo: #848b90; // RGB 132/139/144
+$color-silver-chalice: #9d9d9d; // RGB 157/157/157
+$color-middle-chalice: #bbbbbb; // RGB 187/187/187
+$color-silver-white: #c5c3c3; // RGB 197/195/195
+$color-alto: #d9d9d9; // RGB 217/217/217
+$color-pale: #e0e0e0; // RGB 224/224/224
+$color-porcelain: #ebeced; // RGB 235/236/237
+$color-darker-gallery: #ebebeb;
+$color-dark-gallery: #eeeeee; // RGB 238/238/238
+$color-gallery: #efefef; // RGB 239/239/239
+$color-concrete: #f3f3f3; // RGB 243/243/243
+$color-alabaster: #fafafa; // RGB 250/250/250
+$color-snow: #ffffff; // RGB 255/255/255
+$color-dove: #666;
+$color-tapestry: #a84d96;
+$color-dove: #6a6a6a;
+
+// Brand colors
+$color-brand--facebook: #3b5998;
+$color-brand--twitter: #55acee;
+$color-brand--xing: #cfdc00;
+$color-brand--linkedin: #0077b5;
+$color-brand--youtube: #cd201f;
+$color-brand--whatsapp: #43d854;
+
+// Misc
+$color-transparent: rgba(0, 0, 0, 0);
+$state-success-bg: #dff0d8 !default;
+$color-error: #dd1c1c !default;
+$color-info-border: #a9bfc9;
+$color-radiance: #007bff;
+
+// -----------------------------------
+// Stuff
+// -----------------------------------
+$gtc-box-shadow: 0 0.5rem 1rem rgba($color-coal, 0.15) !default;
+$gtc-box-shadow1: 0 0.5rem 1rem rgba($color-coal, 0.05) !default;
+$gtc-box-shadow2: 0 0 0.3rem var(--color-custom-black-semi-darker) !default;
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+$icon-font-path: '../fonts/bootstrap/' !default;
+//** File name for all font files.
+$icon-font-name: 'glyphicons-halflings-regular' !default;
+//** Element ID within SVG icon file.
+$icon-font-svg-id: 'glyphicons_halflingsregular' !default;
+
+// -----------------------------------------------------------------------------
+// Fonts palette / Typographie
+// -----------------------------------------------------------------------------
+$font-family--brand: $font-family-secondary;
+$font-family--brand--regular: $font-family--brand;
+$font-family--brand--italic: $font-family-secondary;
+$font-family--brand--light: $font-family-secondary;
+$font-family--brand--light-italic: $font-family-secondary;
+$font-family--brand--bold: $font-family-primary;
+
+// -----------------------------------------------------------------------------
+// Base / Body / Scaffolding
+// -----------------------------------------------------------------------------
+$root--font-size: 16 !default;
+
+$base--font-family: $font-family--brand;
+$base--font-size: 20 !default;
+$base--line-height-percentage: 135%;
+
+$base--font-size--xs: 29 !default;
+$base--font-size--sm: 29 !default;
+$base--font-size--md: 20 !default;
+$base--font-size--lg: 20 !default;
+
+$base--line-height--xs: 37;
+$base--line-height-percentage--xs: 127.5862068965517%;
+$base--line-height--md: 27;
+$base--line-height-percentage--md: 135%; // 27
+
+$base--color: $color-jumbo;
+$base--bg-color: $color-concrete;
+$font-size-multiplicator-75-percent: 0.75;
+
+$form--font-size--xs: 32 !default;
+$form--font-size--md: 20 !default;
+
+// -----------------------------------------------------------------------------
+// Spacer
+// -----------------------------------------------------------------------------
+$spacer-x--xs: 38;
+$spacer-x--md: 28;
+
+// -----------------------------------------------------------------------------
+// Z - I N D E X - Master List
+// -----------------------------------------------------------------------------
+$zindex-loading--spin: 2001;
+$zindex-loading--overlay: 2000;
+
+$zindex-nav-main: 1101;
+$zindex-header-main: 1100;
+$zindex-another-fantasy-value-header-p1: $zindex-header-main + 1;
+
+$zindex-slider__arrows: 110;
+$zindex-stage__arrows: 1100;
+
+// -----------------------------------------------------------------------------
+// T R A N S I T I O N S
+// -----------------------------------------------------------------------------
+$transition-settings--hover: 0.3s ease-in-out 0s !default;
+$transition-settings--open-node: 0.2s ease-in-out 0s !default;
+$transition-settings--tab-pane: 0.4s ease-in-out 0s !default;
+
+// -----------------------------------------------------------------------------
+// L O A D I N G
+// -----------------------------------------------------------------------------
+// overlay
+$loading__overlay--bg-color: rgba($color-mine-shaft, 0.7);
+$loading__overlay--bg-color-bright: rgba($color-snow, 0.7);
+$loading__overlay--bg-color-bright-2: rgba($color-dark-gallery, 0.7);
+// spin
+$loading__spin--width: 50;
+$loading__spin--height: 50;
+$loading__spin--border-width: 7;
+$loading__spin--border-color: rgba($color-snow, 0.4);
+$loading__spin--border-color-bright: rgba(0, 0, 0, 0.2);
+$loading__spin--border-top-color: $color-snow;
+$loading__spin--border-top-color-bright: $color-scorpion;
+
+$loading__spin--duration: 1s;
+
+// -----------------------------------------------------------------------------
+// Buttons
+// -----------------------------------------------------------------------------
+// base
+$btn-base--color: $color-scorpion;
+$btn-base--active--color: $color-scorpion;
+$btn-base--color-p20: #000;
+// $color-scorpion;
+$btn-base--active--color-p20: #333;
+// $color-scorpion;
+$btn-base--bg-color: transparent;
+
+// Default Text-Button
+$btn--font-family: $font-family--brand--regular;
+
+// Default Button
+// smartphone
+$btn--padding-y--xs: 10; // 22;
+$btn--padding-y--xs-reduced: 3.33; // 22;
+$btn--padding-x--xs: 20; // 55;
+$btn--padding-x--xs-reduced: 6.66; // 55;
+$btn--font-size--xs: $base--font-size--xs; // 29
+$btn--font-size--xs-reduced: $base--font-size--xs * 0.75; // 21,75
+$btn--line-height--xs: 32;
+$btn--line-height--xs-reduced: $btn--line-height--xs * 0.75; //24
+$btn__icon--width--xs: $btn--line-height--xs;
+
+// desktop
+$btn--padding-y--md: 10;
+$btn--padding-y--md-reduced: 3.33;
+$btn--padding-x--md: 30;
+$btn--padding-x--md-reduced: 10;
+$btn--font-size--md: $base--font-size--md; // 20
+$btn--font-size--md-reduced: $base--font-size--md * 0.9; // 18
+$btn--line-height--md: $base--line-height--md; // 27
+$btn--line-height--md-reduced: $base--line-height--md * 0.9; // 24.3
+$btn__icon--width--md: $btn--line-height--md;
+
+// Button Medium
+$btn--medium--padding-y--xs: 23;
+
+// Button Ghost
+$btn--ghost--color: $color-snow;
+$btn--ghost--bg-color: $color-transparent;
+$btn--ghost--active--color: $color-snow;
+$btn--ghost--active--bg-color: $color-transparent;
+
+// Button Juna
+$btn--juna--color: $color-snow;
+$btn--juna--bg-color: $color-lochmara;
+$btn--juna--bg-color-p20: $color-lochmara;
+$btn--juna--active--color: $color-snow;
+$btn--juna--active--bg-color: lighten($color-lochmara, 5%);
+$btn--juna--active--bg-color-p20: $btn--juna--active--bg-color;
+
+// Button Maya
+$btn--maya--color: $color-snow;
+$btn--maya--bg-color: $color-shakespeare;
+$btn--maya--bg-color-p20: $color-shakespeare;
+$btn--maya--active--color: $color-snow;
+$btn--maya--active--bg-color: $color-shakespeare;
+$btn--maya--active--bg-color-p20: $btn--maya--active--bg-color;
+
+// Button leia
+$btn--leia--color: $color-lochmara;
+$btn--leia--color-p20: $color-lochmara;
+$btn--leia--bg-color: $color-snow;
+$btn--leia--active--color: $color-lochmara;
+$btn--leia--active--bg-color: $color-snow;
+$btn--leia--active--bg-color-p20: $btn--leia--active--bg-color;
+$btn--leia--text-shadow-color: $color-coal;
+
+// Button Kara
+$btn--kara--color: $color-snow;
+$btn--kara--bg-color: $color-ship;
+$btn--kara--bg-color-p20: $color-ship;
+$btn--kara--active--color: $color-snow;
+$btn--kara--active--bg-color: $color-ship;
+$btn--kara--active--bg-color-p20: $btn--kara--active--bg-color;
+$input-group__icon--kara--color: $color-ship;
+$input-group__icon--kara--active--color: $color-snow;
+
+// Button Nyla
+$btn--nyla--color: $color-scorpion;
+$btn--nyla--bg-color: $color-transparent;
+$btn--nyla--border-color: $color-jumbo;
+$btn--nyla--border-color-p20: $color-jumbo;
+$btn--nyla--active--color: $color-snow;
+$btn--nyla--active--bg-color: $color-scorpion;
+$btn--nyla--active--bg-color-p20: $btn--nyla--active--bg-color;
+$btn--nyla--active--border-color: $color-jumbo;
+
+// Button Gaia
+$btn--gaia--color: $color-snow;
+$btn--gaia--bg-color: $color-transparent;
+$btn--gaia--border-color: $color-snow;
+$btn--gaia--active--color: $color-snow;
+$btn--gaia--active--bg-color: $color-transparent;
+$btn--gaia--active--border-color: $color-snow;
+
+// Button Lena
+$btn--lena--color: $color-jumbo;
+$btn--lena--active--color: $color-mid;
+$btn--lena--bg-color: $color-transparent;
+
+// Button Mia
+$btn--mia--color: $color-lochmara;
+$btn--mia--bg-color: $color-transparent;
+$btn--mia--border-color: $color-lochmara;
+$btn--mia--border-color-p20: $color-lochmara;
+$btn--mia--active--color: $color-snow;
+$btn--mia--active--bg-color: lighten($color-lochmara, 5%);
+$btn--mia--active--bg-color-p20: $btn--mia--active--bg-color;
+$btn--mia--hover--border-color: $btn--mia--active--bg-color;
+$btn--mia--active--border-color: $btn--mia--active--bg-color;
+$btn--mia--focus--border-color: $color-scorpion;
+
+// -----------------------------------------------------------------------------
+// Links
+// -----------------------------------------------------------------------------
+$link-default--color: $base--color !default;
+$link-default--decoration: none !default;
+$link-default--hover--color: $color-lochmara !default;
+$link-default--hover--decoration: none !default;
+
+// Link Richtext
+$link-richtext--color: $base--color !default;
+$link-richtext--underline-color: $base--color !default;
+$link-richtext--hover--underline-color: $base--color !default;
+
+// -----------------------------------------------------------------------------
+// Richtext
+// -----------------------------------------------------------------------------
+$rte--font-size--xs: $base--font-size--xs;
+$rte--line-height--xs: $base--line-height-percentage--xs;
+
+$rte--font-size--md: $base--font-size--md; // 20
+$rte--line-height--md: $base--line-height-percentage--md;
+
+$rte--bright--color: $color-snow;
+$rte--dark--color: $color-ship;
+
+// Intro
+$rte__intro--font-family: $font-family--brand--bold;
+
+// Subheading
+$rte__subheading--color: $color-lochmara;
+
+// Variant Block details
+$rte--block-details--line-height--xs: 32;
+$rte--block-details--color: $color-scorpion;
+$rte--block-details__link--color: $color-lochmara;
+$rte--block-details__link--underline-color: $color-transparent;
+$rte--block-details__link--hover--underline-color: $color-lochmara;
+
+// -----------------------------------------------------------------------------
+// Headings
+// -----------------------------------------------------------------------------
+// general
+$heading--font-family: $font-family--brand--bold;
+$heading--color: $color-scorpion;
+$heading--text-transform: uppercase;
+
+$heading__subline--font-family: $font-family--brand;
+
+$heading--bright--color: $color-snow;
+$heading--light--font-family: $font-family--brand;
+
+// Heading-main
+// -------------------
+// smartphone
+$heading--main__line--font-size--xs: 48;
+$heading--main__line--line-height--xs: 58;
+
+// desktop
+$heading--main__line--font-size--md: 35;
+$heading--main__line--line-height--md: 43;
+
+// Heading-regular
+// -------------------
+// smartphone
+$heading--regular__line--font-size--xs: 29;
+$heading--regular__line--line-height--xs: 32;
+$heading--regular__subline--font-size--xs: 29;
+$heading--regular__subline--line-height--xs: 32;
+
+// desktop
+$heading--regular__line--font-size--md: 35;
+$heading--regular__line--line-height--md: 43;
+$heading--regular__subline--font-size--md: 20;
+$heading--regular__subline--line-height--md: 27;
+
+// Heading-default
+// -------------------
+// smartphone
+$heading--default__line--font-size--xs: 29;
+$heading--default__line--line-height--xs: 32;
+$heading--default__subline--font-size--xs: 29;
+$heading--default__subline--line-height--xs: 32;
+
+// desktop
+$heading--default__line--font-size--md: 20;
+$heading--default__line--line-height--md: 27;
+$heading--default__subline--font-size--md: 20;
+$heading--default__subline--line-height--md: 27;
+
+// Heading-light
+// -------------------
+// desktop
+$heading--light__line--font-size--md: 20;
+$heading--light__line--line-height--md: 30;
+
+// -----------------------------------------------------------------------------
+// Title
+// -----------------------------------------------------------------------------
+$title--font-family: $font-family--brand--regular;
+$title--color: $color-scorpion;
+$title--bright--color: $color-snow;
+$title--bold--font-family: $font-family--brand--bold;
+
+// smartphone
+$title--font-size--xs: 29;
+$title--line-height--xs: 36;
+
+// desktop
+$title--font-size--md: 20;
+$title--line-height--md: 27;
+
+// -----------------------------------------------------------------------------
+// Shorttext
+// -----------------------------------------------------------------------------
+// general
+$shorttext--color: $color-jumbo;
+$shorttext--bright--color: $color-snow;
+
+// smartphone
+$shorttext--font-size--xs: 29;
+$shorttext--line-height--xs: 36;
+
+// desktop
+$shorttext--font-size--md: 20;
+$shorttext--line-height--md: 27;
+
+// -----------------------------------------------------------------------------
+// Input
+// -----------------------------------------------------------------------------
+// Base Version
+// general
+$input--font-family: $font-family--brand;
+$input--bg-color: $color-transparent;
+
+// smartphone
+$input--padding-y--xs: 22;
+$input--padding-x--xs: 55;
+$input--font-size--xs: $base--font-size--xs; // 29
+$input--line-height--xs: $base--line-height--xs; // 37
+
+// desktop
+$input--padding-y--md: 10;
+$input--padding-x--md: 30;
+$input--font-size--md: $base--font-size--md; // 20
+$input--line-height--md: $base--line-height--md; // 27
+
+// Button leia
+$input--leia--color: $color-lochmara;
+$input--leia--bg-color: $color-snow;
+$input--leia--active--color: $color-lochmara;
+$input--leia--active--bg-color: $color-snow;
+
+$input-group__icon--leia--color: $color-lochmara;
+$input-group__icon--leia--active--color: $color-lochmara;
+
+// Button Maya
+$input--maya--color: $color-snow;
+$input--maya--bg-color: $color-lochmara;
+$input--maya--active--color: $color-snow;
+$input--maya--active--bg-color: $color-lochmara;
+
+$input-group__icon--maya--color: $color-snow;
+$input-group__icon--maya--active--color: $color-snow;
+
+// Button Nyla
+$input--nyla--color: $color-scorpion;
+$input--nyla--bg-color: $color-transparent;
+$input--nyla--active--color: $color-scorpion;
+$input--nyla--active--bg-color: $color-transparent;
+
+$input-group__icon--nyla--color: $color-scorpion;
+$input-group__icon--nyla--active--color: $color-transparent;
+
+// -----------------------------------------------------------------------------
+// Selectbox
+// -----------------------------------------------------------------------------
+// Base Version
+// general
+$selectbox__select--font-family: $font-family--brand;
+$selectbox__select--bg-color: $color-transparent;
+
+// smartphone
+$selectbox__select--padding-y--xs: 22;
+$selectbox__select--padding-x--xs: 55;
+$selectbox__select--font-size--xs: $base--font-size--xs; // 29
+$selectbox__select--line-height--xs: $base--line-height--xs; // 37
+
+// desktop
+$selectbox__select--padding-y--md: 10;
+$selectbox__select--padding-x--md: 30;
+$selectbox__select--font-size--md: $base--font-size--md; // 20
+$selectbox__select--line-height--md: $base--line-height--md;
+
+// Button leia
+$selectbox__select--leia--color: $color-lochmara;
+$selectbox__select--leia--bg-color: $color-snow;
+$selectbox__select--leia--active--color: $color-lochmara;
+$selectbox__select--leia--active--bg-color: $color-snow;
+
+// Button Maya
+$selectbox__select--maya--color: $color-snow;
+$selectbox__select--maya--option--color: $color-lochmara;
+$selectbox__select--maya--bg-color: $color-lochmara;
+$selectbox__select--maya--active--color: $color-snow;
+$selectbox__select--maya--active--bg-color: $color-lochmara;
+
+// -----------------------------------------------------------------------------
+// Business Bar
+// -----------------------------------------------------------------------------
+$business-bar--bg-color: $color-ship;
+$business-bar__link--border-color: rgba($color-snow, 0.15);
+$business-bar__linklabel--color: $color-snow;
+$business-bar__icon--color: $color-snow;
+
+// -----------------------------------------------------------------------------
+// Header Main
+// -----------------------------------------------------------------------------
+$header-main--active--bgcolor: $color-shakespeare;
+
+$header-main--default--height--xs: 167;
+$header-main--default--height--md: 385;
+
+$header-main--hero--height--xs: 167;
+$header-main--hero--height--md: 705;
+
+$header-main__contact-btn--font-family: $font-family--brand--bold;
+
+// -----------------------------------------------------------------------------
+// Stage
+// -----------------------------------------------------------------------------
+$stage--default--height--xs: $header-main--default--height--xs;
+$stage--default--height--md: $header-main--default--height--md;
+
+$stage--hero--height--xs: 973;
+$stage--hero--height--md: $header-main--hero--height--md;
+
+// -----------------------------------------------------------------------------
+// Navigation Main
+// -----------------------------------------------------------------------------
+// general
+$navigation-main--bg-color: $color-alabaster;
+$navigation-main__main--gradient-shadow-color: rgba($color-scorpion, 0.5);
+
+$navigation-main__link--active--color: $color-lochmara;
+
+$navigation-main__sub--bg-color: $color-ship;
+$navigation-main__sublink--color: $color-snow;
+$navigation-main__sublink--active--color: $color-lochmara;
+$navigation-main__sublink--border-color: $color-snow;
+$navigation-main__sublink--featured--bg-color: rgba($color-coal, 0.5);
+
+$navigation-main__closer-icon--fill: $color-snow;
+$navigation-main__closer-icon--active--fill: rgba($color-snow, 0.5);
+
+// smartphone
+$navigation-main__link--font-size--xs: 29;
+$navigation-main__link--color--xs: $color-ship;
+$navigation-main__link--border-color--xs: $navigation-main__link--color--xs;
+
+$navigation-main__sublink--font-size--xs: 29;
+
+// desktop
+$navigation-main--gradient-from-color--md: $color-alabaster;
+$navigation-main--gradient-to-color--md: $color-gallery;
+$navigation-main__link--font-size--md: 20;
+$navigation-main__link--color--md: $color-scorpion;
+$navigation-main__link--border-color--md: rgba($navigation-main__link--color--md, 0.15);
+
+$navigation-main__sublink--font-size--md: 20;
+
+// -----------------------------------------------------------------------------
+// Language Switch
+// -----------------------------------------------------------------------------
+$lang-switch__link--font-family: $font-family--brand--bold;
+$lang-switch__link--color: $color-snow;
+$lang-switch__link--bg-color: $color-transparent;
+
+// -----------------------------------------------------------------------------
+// Header Quicksearch
+// -----------------------------------------------------------------------------
+$header-quicksearch--bg-color: rgba($color-shark, 0.2);
+$header-quicksearch__form-elem--font-family: $font-family--brand--light;
+
+// -----------------------------------------------------------------------------
+// Sections
+// -----------------------------------------------------------------------------
+// smartphone
+$section--padding-y--xs: 75;
+$section--padding-y-reduced--xs: 45;
+
+// desktop
+$section--padding-y--md: 62;
+$section--padding-y-reduced--md: 30;
+
+// -----------------------------------------------------------------------------
+// Blocks
+// -----------------------------------------------------------------------------
+// blocks in general
+// -------------------------------------
+$block__wrapper--bg-color: $color-snow;
+
+$block__image--bg-color: $color-shakespeare;
+
+$block--light-grey--bg: $color-alto;
+$block--grey--bg: $color-jumbo;
+$block--dark-grey--bg: $color-tuna;
+$block--purple--bg: $color-mountains-majesty;
+$block--blue--bg: $color-picton-blue;
+
+$block__layer--dark--bg-color: rgba($color-coal, 0.6);
+$block__layer--bright--bg-color: $color-snow;
+$block__layer--subtle-dark--bg-color: rgba($color-coal, 0.2);
+$block__layer--medium-dark--bg-color: rgba($color-coal, 0.4);
+
+$block__title--font-family: $font-family--brand--bold;
+$block__title--color: $color-scorpion;
+
+$block__shorttext--font-family: $font-family--brand--light;
+$block__shorttext--color: $color-tuna;
+
+$block__detail--bg-color: $color-snow;
+$block__detail-closer--color: $color-scorpion;
+$block__detail-closer--active--color: rgba($color-scorpion, 0.5);
+
+$block__overlay--padding: 18;
+
+$block-detail__pass--bg-color: $color-lochmara;
+$block-detail__pass--color: $color-snow;
+$block-detail__pass--border-color: $color-snow;
+$block-detail__pass--shadow-color: $color-snow;
+
+$block-detail__included-discount--font-family: $font-family--brand--bold;
+
+$block-detail__included-discount-text--font-size--xs: $base--font-size--xs;
+$block-detail__included-discount-text--line-height--xs: $base--line-height--xs;
+
+$block-detail__included-discount-text--font-size--md: 17;
+$block-detail__included-discount-text--line-height--md: 17;
+
+$block-detail__included-discount-title--font-size--xs: 25;
+$block-detail__included-discount-title--line-height--xs: 25;
+
+$block-detail__included-discount-title--font-size--md: 17;
+$block-detail__included-discount-title--line-height--md: 20;
+
+// smartphone
+$block--spacer-bottom--xs: 53;
+$block__block--padding-x--xs: $spacer-x--xs;
+
+$block--mini--spacer-bottom--xs: 30;
+$block--mini__block--padding-y--xs: 30;
+$block--mini__block--padding-x--xs: 30;
+
+// desktop
+$block--spacer-bottom--md: 30;
+$block__block--padding-x--md: $spacer-x--md;
+$block__shorttext--font-size--md: 18;
+$block__shorttext--line-height--md: 25;
+
+$block--mini__block--padding-y--md: 20;
+$block--mini__block--padding-x--md: 20;
+
+// block--topic
+// define variables differt to general block styles
+// -------------------------------------
+$block--topic__heading--color: $color-snow;
+
+$block--topic__title--font-family: $font-family--brand--regular;
+$block--topic__title--color: $color-snow;
+$block--topic__shorttext--color: $color-snow;
+
+$block--topic__title--font-size--xs: 30;
+$block--topic__title--line-height--xs: 33;
+
+$block--topic__title--font-size--md: 25;
+$block--topic__title--line-height--md: 27;
+
+// block--linklist
+// define variables differt to general block styles
+// -------------------------------------
+$block--linklist--font-size--xs: $base--font-size--xs; // 29
+$block--linklist--line-height--xs: $base--line-height--xs; // 37
+
+$block--linklist--font-size--md: $base--font-size--md; // 20
+$block--linklist--line-height--md: $base--line-height--md; // 27
+
+$block--linklist--headline-color: $color-snow;
+$block--linklist--headline-border-color: rgba($color-snow, 0.5);
+
+// block--special-offer
+// define variables differt to general block styles
+// -------------------------------------
+$block--special-offer--title--font-size--xs: $base--font-size--xs; // 29
+$block--special-offer--title--line-height--xs: 29;
+
+$block--special-offer--title--font-size--md: 25;
+$block--special-offer--title--line-height--md: $base--line-height--md; // 27
+
+$block--special-offer--title--color: $color-snow;
+$block--special-offer--title--font-family: $font-family--brand--regular;
+
+$block--special-offer--offer--bg-color: $color-lochmara;
+
+$block--special-offer--price--color: $color-snow;
+
+$block--special-offer--date--color: $color-snow;
+
+$block--special-offer--date--font-size--xs: $base--font-size--xs; // 29
+$block--special-offer--date--line-height--xs: $base--line-height--xs; // 37
+
+$block--special-offer--date--font-size--md: 16;
+$block--special-offer--date--line-height--md: 20;
+
+$block--special-offer--price--text--font-size: 18;
+$block--special-offer--price--text--line-height: 22;
+
+$block--special-offer--price--value--font-size--xs: $base--font-size--xs; // 29
+$block--special-offer--price--value--line-height--xs: 29;
+
+$block--special-offer--price--value--font-size--md: 25;
+$block--special-offer--price--value--line-height--md: $base--line-height--md; // 27
+
+$block--special-offer--btn--font-size--xs: $base--font-size--xs; // 29
+$block--special-offer--btn--line-height--xs: $base--line-height--xs; // 37
+
+$block--special-offer--btn--font-size--md: $base--font-size--md; // 20
+$block--special-offer--btn--line-height--md: $base--line-height--md; // 27
+
+$block--special-offer--gradient-bg-start: rgba($color-coal, 0);
+$block--special-offer--gradient-bg-end: rgba($color-coal, 0.3);
+
+// block--info
+// define variables differt to general block styles
+// -------------------------------------
+$block--info__block-title--color: $color-snow;
+
+$block--info--picton-blue-bg: $color-picton-blue;
+
+$block--info__block-title--font-size--xs: 30;
+$block--info__block-title--line-height--xs: 33;
+
+$block--info__block-title--font-size--md: 25;
+$block--info__block-title--line-height--md: 27;
+
+$block--info__block-icon--color: $color-snow;
+
+// block--text
+// define variables differt to general block styles
+// -------------------------------------
+$block--text__title--color: $color-lochmara;
+
+$block--text__title--font-size--xs: $base--font-size--xs; // 29
+$block--text__title--line-height--xs: 29;
+
+$block--text__title--font-size--md: 25;
+$block--text__title--line-height--md: $base--line-height--md; // 27
+
+$block--text__text--font-family: $font-family--brand--light;
+$block--text__text--color: $color-tuna;
+
+$block--text__text--font-size--xs: $base--font-size--xs;
+$block--text__text--line-height--xs: $base--line-height--xs;
+
+$block--text__text--font-size--md: 18;
+$block--text__text--line-height--md: 22;
+
+$block--text__outline--color: $color-snow;
+
+// block--richtext
+// define variables differt to general block styles
+// -------------------------------------
+$block--richtext__title--color: $color-tuna;
+
+$block--richtext__title--font-size--xs: $base--font-size--xs; // 29
+$block--richtext__title--line-height--xs: 29;
+
+$block--richtext__title--font-size--md: 25;
+$block--richtext__title--line-height--md: $base--line-height--md; // 27
+
+$block--richtext__text--color: $color-tuna;
+
+$block--richtext__text--font-size--xs: $base--font-size--xs;
+$block--richtext__text--line-height--xs: $base--line-height--xs;
+
+$block--richtext__text--font-size--md: 18;
+$block--richtext__text--line-height--md: 22;
+
+// block--attraction
+// define variables differt to general block styles
+// -------------------------------------
+$block--attraction__block--bg-color: rgba($color-snow, 0.8);
+
+// block--event
+// define variables differt to general block styles
+// -------------------------------------
+$block--event__block-title--font-size--xs: 30;
+$block--event__block-title--line-height--xs: 33;
+
+$block--event__block-title--font-size--md: 18;
+$block--event__block-title--line-height--md: 18;
+
+$block--event__block-title--color: $color-tuna;
+
+$block--event__block-date--color: $color-lochmara;
+
+$block--event__block-date--font-size--xs: 26;
+$block--event__block-date--line-height--xs: 29;
+
+$block--event__block-date--font-size--md: 17;
+$block--event__block-date--line-height--md: 24;
+
+$block--event__block-category--color: $color-tuna;
+$block--event__block-category--font-family: $font-family--brand--light;
+
+$block--event__block-category--font-size--md: 18;
+$block--event__block-category--line-height--md: 25;
+
+// block--link
+// define variables differt to general block styles
+// -------------------------------------
+$block--link--overlay--color: $color-snow;
+$block--link--overlay--bg-color: rgba($color-coal, 0.6);
+$block--link--title--font-family: $font-family--brand--bold;
+
+$block--link--font-size--xs: 24;
+$block--link--line-height--xs: 27;
+
+$block--link--title--font-size--xs: 29;
+$block--link--title--line-height--xs: 32;
+
+$block--link--title--font-size--md: 25;
+$block--link--title--line-height--md: $base--line-height--md; // 27
+
+// block--booking
+// define variables differt to general block styles
+// -------------------------------------
+$block--booking__block--bg-color: $color-lochmara;
+$block--booking__detail-title-color: $color-snow;
+
+$block--booking__currency--font-size--xs: 50;
+$block--booking__currency--font-size--md: 50;
+$block--booking__currency--font-family: $font-family--brand--bold;
+
+$block--booking__detail-title-text--font-family: $font-family--brand--bold;
+$block--booking__detail-title-text--font-size--xs: $base--font-size--xs;
+$block--booking__detail-title-text--font-size--md: $base--font-size--md;
+
+$block--booking__price--color: $color-snow;
+
+$block--booking__time--font-size--xs: $base--font-size--xs;
+$block--booking__time--font-size--md: $base--font-size--md;
+
+$block--booking__text--font-size--xs: 40;
+$block--booking__text--font-size--md: 40;
+
+$block--booking__detail-title-text--font-size--xs: $base--font-size--xs;
+$block--booking__detail-title-text--font-size--md: $base--font-size--md;
+
+// block--restaurant
+// define variables differt to general block styles
+// -------------------------------------
+$block--restaurant__title--color: $color-snow;
+
+$block--restaurant__title--font-size--xs: $base--font-size--xs; // 29
+$block--restaurant__title--line-height--xs: 34;
+
+$block--restaurant__title--font-size--md: 25;
+$block--restaurant__title--line-height--md: 27;
+
+$block--restaurant__icon--color: $color-snow;
+
+$block--restaurant__shorttext--color: $color-snow;
+
+$block--restaurant__shorttext--font-family: $font-family--brand--regular;
+$block--restaurant__shorttext--font-size--md: $base--font-size--md; // 20
+$block--restaurant__shorttext--line-height--md: $base--line-height--md; // 27
+
+// -------------------------------------
+// block--venue
+// define non standard variables
+// -------------------------------------
+$block--venue__block--bg-color: $color-snow;
+$block--venue__title-color: $color-lochmara;
+
+// card--geneva-pass
+// -------------------------------------
+// $card--geneva-pass__block--padding-x             : 70;
+$card--geneva-pass__block--bg-color: $color-porcelain;
+
+// block--video
+// define variables differt to general block styles
+// -------------------------------------
+// general
+$block--video__title--color: $color-snow;
+$block--video__icon--color: $color-snow;
+$block--video__subtitle--color: $color-snow;
+
+// square
+$block--video__title--font-family: $font-family--brand--bold;
+
+$block--video__title--font-size--xs: 30;
+$block--video__title--line-height--xs: 33;
+
+$block--video__title--font-size--md: 25;
+$block--video__title--line-height--md: 27;
+
+// block--hotel
+// define variables differt to general block styles
+// -------------------------------------
+$block--hotel__title--color: $color-snow;
+$block--hotel__stars--color: $color-snow;
+
+$block--hotel__title--font-size--xs: $base--font-size--xs; // 29
+$block--hotel__title--line-height--xs: 34;
+
+$block--hotel__title--font-size--md: 25;
+$block--hotel__title--line-height--md: 27;
+
+$block--hotel__btn--font-size--xs: $base--font-size--xs; // 29
+$block--hotel__btn--line-height--xs: $base--line-height--xs; // 37;
+
+$block--hotel__btn--font-size--md: $base--font-size--md; // 20
+$block--hotel__btn--line-height--md: $base--line-height--md; // 27
+$block--hotel__btn--active--bg-color: $color-lochmara;
+
+$block--hotel__stars-sub--color: $color-snow;
+
+// block--geneva-pass
+// define variables differt to general block styles
+// -------------------------------------
+$block--geneva-pass__bg--color: $color-porcelain;
+$block--geneva-pass__price--color: $color-lochmara;
+$block--geneva-pass__price--font-family: $font-family--brand--bold;
+$block--geneva-pass__icon--color: $color-lochmara;
+
+// block--mini
+// define variables differt to general block styles
+// -------------------------------------
+// general
+$block--mini__title--font-family: $font-family--brand;
+$block--mini__title--color: $color-snow;
+
+// smartphone
+$block--mini__title--font-size--xs: 24;
+$block--mini__title--line-height--xs: 29;
+
+// desktop
+$block--mini__title--font-size--md: 20;
+$block--mini__title--line-height--md: 23;
+
+// -----------------------------------------------------------------------------
+// Block-Details
+// -----------------------------------------------------------------------------
+// blocks in general
+// -------------------------------------
+$block-detail--inner-spacer-x--md: 40;
+
+$block-detail__wrapper--bg-color: $color-snow;
+
+$block-detail__heading__line--color: $color-scorpion;
+$block-detail__heading__subline--color: $color-oslo;
+
+// Special Offers
+// -------------------------------------
+$block-detail--special-offers-time--color: $color-lochmara;
+$block-detail--special-offers-checkmark-list--color: $color-outer-space;
+$block-detail--special-offers-title--color: $color-outer-space;
+
+$block-detail--special-offers-checkmark-list-title--color: $color-outer-space;
+$block-detail--special-offers-checkmark-list--title--font-family: $font-family--brand--bold;
+
+$block-detail--special-offers-subline--font-family: $font-family--brand--bold;
+
+$block-detail--special-offers-title--font-size--xs: $base--font-size--xs;
+$block-detail--special-offers-title--line-height--xs: $base--line-height--xs;
+
+$block-detail--special-offers-title--font-size--md: 50;
+$block-detail--special-offers-title--line-height--md: 50;
+
+$block-detail--special-offers-checkmark-list--title--font-size--xs: $base--font-size--xs;
+$block-detail--special-offers-checkmark-list--title--line-height--xs: $base--line-height--xs;
+
+$block-detail--special-offers-checkmark-list--title--font-size--md: $base--font-size--md;
+$block-detail--special-offers-checkmark-list--title--line-height--md: $base--line-height--md;
+
+$block-detail--special-offers--close-icon--color: $color-snow;
+
+$block-detail--special-offers__dropdown-label--font-size--xs: $base--font-size--xs;
+$block-detail--special-offers__dropdown-label--font-size--md: 16;
+
+// -----------------------------------------------------------------------------
+// Pass
+// -----------------------------------------------------------------------------
+$pass__variant--color: $color-jumbo;
+$pass__image--margin-bottom: 7;
+$pass__details--margin-bottom: 7;
+$pass__details--font-size: $base--font-size;
+$pass__details--line-height: $base--line-height-percentage;
+$pass__price--font-family: $font-family--brand--bold;
+$pass__price--color: $color-lochmara;
+
+// -----------------------------------------------------------------------------
+// Social Share
+// -----------------------------------------------------------------------------
+$social-share__btn-icon--fill: $color-oslo;
+
+// -----------------------------------------------------------------------------
+// Restaurant Specs
+// -----------------------------------------------------------------------------
+// general
+$restaurant-specs__icon--color: $color-outer-space;
+$restaurant-specs__label--color: $color-outer-space;
+$restaurant-specs__rating--color: $color-lochmara;
+
+// smartphone
+$restaurant-specs__label--font-size--xs: $base--font-size--xs; // 29
+$restaurant-specs__label--line-height--xs: $base--line-height--xs; // 37
+
+// laptop & desktop
+$restaurant-specs__label--font-size--md: $base--font-size--md; // 29
+$restaurant-specs__label--line-height--md: $base--line-height--md; // 37
+
+// -----------------------------------------------------------------------------
+// Restaurant Chef
+// -----------------------------------------------------------------------------
+$restaurant-chef__title--color: $color-lochmara;
+
+// -----------------------------------------------------------------------------
+// Rooms
+// -----------------------------------------------------------------------------
+// general
+$rooms__head--bg-color: $color-gallery;
+
+$rooms__title--font-family: $font-family--brand--bold;
+$rooms__title--color: $color-scorpion; // $color-outer-space;
+
+$rooms__gallery-btn--color: $color-scorpion;
+$rooms__gallery-btn--hover--color: $color-outer-space;
+
+// smartphone
+$rooms__title--font-size--xs: $base--font-size--xs; // 29
+$rooms__title--line-height--xs: $base--line-height--xs; // 37
+
+// laptop & desktop
+$rooms__title--font-size--md: $base--font-size--md; // 29
+$rooms__title--line-height--md: $base--line-height--md; // 37
+
+// -----------------------------------------------------------------------------
+// Conference Rooms
+// -----------------------------------------------------------------------------
+// general
+$conference-rooms__bg-color: $color-gallery;
+$conference-rooms__border-color: $color-silver-chalice;
+$conference-rooms__thead--color: $color-ship;
+$conference-rooms__td--color: $color-scorpion;
+
+$conference-rooms__caption--font-family: $font-family--brand--bold;
+$conference-rooms__caption--color: $color-scorpion;
+
+$conference-rooms__title--font-family: $font-family--brand--bold;
+
+// -----------------------------------------------------------------------------
+// Facilities List
+// -----------------------------------------------------------------------------
+// general
+$facilities-list__title--font-family: $font-family--brand;
+$facilities-list__title--color: $color-scorpion;
+$facilities-list__title--bg-color: $color-gallery;
+
+// smartphone
+$facilities-list__title-label--font-size--xs: $base--font-size--xs; // 29
+$facilities-list__title-label--line-heigt--xs: $base--line-height--xs; // 37
+
+// laptop & desktop
+$facilities-list__title-label--font-size--md: $base--font-size--md; // 29
+$facilities-list__title-label--line-height--md: $base--line-height--md; // 37
+
+// -----------------------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------------------
+// general
+$footer--bg-color: $color-tuna;
+$footer--border-color: rgba($color-snow, 0.5);
+
+// copyright
+$copyright__link-color: $color-jumbo;
+$copyright__link-active-color: $color-snow;
+
+// laptop & desktop
+$copyright--font-size--md: 13;
+$copyright--line-height--md: 24;
+$footer--font-size--md: $base--font-size--md; // 20
+$footer--line-height--md: $base--line-height--md; // 27
+
+// smartphone
+$footer--font-size--xs: $base--font-size--xs; // 29
+$footer--line-height--xs: $base--line-height--xs; // 37
+
+// -----------------------------------------------------------------------------
+// Linklist
+// -----------------------------------------------------------------------------
+
+// default
+$linklist__link-color: $color-jumbo;
+$linklist__link-active-color: $color-snow;
+$linklist--headline-color: $color-snow;
+
+// border variant
+$linklist--border--link-color: $color-snow;
+$linklist--border--link-active-color: $color-scorpion;
+$linklist--border--border-color: rgba($color-snow, 0.5);
+
+// big variant
+$linklist--big--link-color: $color-snow;
+$linklist--big--link-active-color: $color-scorpion;
+$linklist--big--border-color: $color-silver-chalice;
+
+// social variant
+$linklist--social--link-color: $color-snow;
+$linklist--social--link-active-color: $color-scorpion;
+$linklist--social--border-color: $color-silver-chalice;
+
+// -----------------------------------------------------------------------------
+// Iconlist
+// -----------------------------------------------------------------------------
+
+$iconlist--booking--color: $color-scorpion;
+
+// laptop & desktop
+$iconlist--font-size--md: $base--font-size--md; // 20
+$iconlist--line-height--md: $base--line-height--md; // 27
+
+// smartphone
+$iconlist--font-size--xs: $base--font-size--xs; // 29
+$iconlist--line-height--xs: $base--line-height--xs; // 37
+
+// -----------------------------------------------------------------------------
+// Tabs
+// -----------------------------------------------------------------------------
+// general
+$tabs__btn--color: $color-snow;
+$tabs__btn--active--color: $color-snow;
+$tabs__btn--bg-color: $color-oslo;
+$tabs__btn--active--bg-color: $color-lochmara;
+$tabs__btn--hover--bg-color: $color-scorpion;
+
+// smartphone
+$tabs__btn--padding-y--xs: 10;
+$tabs__btn--padding-x--xs: 30;
+
+$tabs__btn-label--font-size--xs: $base--font-size--xs; // 29
+$tabs__btn-label--line-height--xs: 32;
+
+// laptop & desktop
+$tabs__btn--padding-y--md: 10;
+$tabs__btn--padding-x--md: 30;
+
+$tabs__btn-label--font-size--md: $base--font-size--md; // 20
+$tabs__btn-label--line-height--md: $base--line-height--md; // 27
+
+// -----------------------------------------------------------------------------
+// Accordion
+// -----------------------------------------------------------------------------
+// general
+$accordion__title--color: $color-snow;
+$accordion__toggle--active--color: $color-snow;
+$accordion__toggle--bg-color: $color-oslo;
+$accordion__toggle--hover--bg-color: $color-scorpion;
+
+// smartphone
+$accordion__toggle--padding-y--xs: 24;
+$accordion__toggle--padding-x--xs: 38;
+
+$accordion__title--font-size--xs: $base--font-size--xs; // 29
+$accordion__title--line-height--xs: 32;
+
+// laptop & desktop
+$accordion__toggle--padding-y--md: 10;
+$accordion__toggle--padding-x--md: 30;
+
+$accordion__title--font-size--md: $base--font-size--md; // 29
+$accordion__title--line-height--md: $base--line-height--md; // 27
+
+// Rooms Variant
+// ----------------------------------
+$accordion--rooms__toggle--padding-y--xs: 12;
+$accordion--rooms__toggle--padding-x--xs: 24;
+
+// -----------------------------------------------------------------------------
+// Page Detail
+// -----------------------------------------------------------------------------
+$page-detail--bg-color: $color-snow;

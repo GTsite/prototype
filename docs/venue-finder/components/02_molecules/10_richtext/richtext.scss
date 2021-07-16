@@ -1,0 +1,145 @@
+// -----------------------------------------------------------------------------
+// RICHTEXT ELEMENTS
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &richtext {
+    // smartphone and up
+    // -----------------------------------
+    font-size: em($rte--font-size--xs);
+    line-height: $rte--line-height--xs;
+
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      font-size: em($rte--font-size--md);
+      line-height: $rte--line-height--md;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    p,
+    ul,
+    ol,
+    dl,
+    address {
+      font-size: inherit;
+      line-height: inherit;
+      font-style: normal;
+    }
+
+    p,
+    ul,
+    ol,
+    dl {
+      margin-bottom: 1em;
+    }
+
+    a {
+      @include link-richtext;
+    }
+
+    &__intro {
+      font-family: $rte__intro--font-family;
+      text-transform: uppercase;
+    }
+
+    &__subheading {
+      display: block;
+      font-family: var(--font-family-primary);
+      color: var(--color-primary-black);
+      font-size: var(--font-size-primary-text);
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: var(--font-size-heading-3);
+        line-height: 1.5;
+      }
+    }
+
+    &__inline-info-list {
+      margin: 0;
+
+      dt,
+      dd {
+        margin-left: 0;
+      }
+
+      dt + dd {
+        margin-bottom: 1em;
+      }
+    }
+
+    &__contact-item {
+      display: block;
+    }
+
+    // Block-Details Variant
+    // ----------------------------------
+    &--block-details {
+      font-family: var(--font-family-default);
+      color: var(--color-primary-black);
+      font-size: var(--font-size-medium-text);
+      line-height: 1.7142;
+
+      @include media-breakpoint-up(md) {
+        line-height: 1.4286;
+      }
+
+      p.gtc-richtext__intro {
+        text-transform: none;
+        color: var(--color-primary-black);
+        font-family: var(--font-family-primary);
+        font-size: var(--font-size-medium-text);
+        line-height: 1.4286;
+        margin: 0;
+
+        @include media-breakpoint-up(md) {
+          color: var(--color-custom-black-2);
+          line-height: 1.5;
+        }
+      }
+
+      a {
+        @include link-richtext(
+          $rte--block-details__link--color,
+          $rte--block-details__link--underline-color,
+          $rte--block-details__link--hover--underline-color
+        );
+      }
+    }
+
+    // color Variants
+    // ----------------------------------
+    &--bright,
+    &--dark {
+      p,
+      ul,
+      ol,
+      strong {
+        color: inherit;
+      }
+    }
+
+    &--bright {
+      color: $rte--bright--color;
+
+      a {
+        @include link-richtext($rte--bright--color, $rte--bright--color, $rte--bright--color);
+      }
+    }
+
+    &--dark {
+      color: $rte--dark--color;
+
+      a {
+        @include link-richtext($rte--dark--color, $rte--dark--color, $rte--dark--color);
+      }
+    }
+  }
+}

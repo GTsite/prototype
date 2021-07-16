@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// Basic button styles
+// -----------------------------------------------------------------------------
+
+@mixin button-base {
+  // smartphone and up
+  // ----------------------------------
+  display: inline-block;
+  padding: 0;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  color: $btn-base--color;
+  text-decoration: none;
+  background-color: $btn-base--bg-color;
+  border: 0 none;
+  transition: $transition-settings--hover;
+  transition-property: color, background-color, border-color;
+  outline: none;
+
+  &:disabled {
+    cursor: auto;
+    opacity: 0.5;
+  }
+
+  &__label {
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  @include hover-focus-active {
+    color: $btn-base--active--color;
+  }
+}

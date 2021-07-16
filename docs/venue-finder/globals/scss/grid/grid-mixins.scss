@@ -1,0 +1,74 @@
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+@mixin make-container-max-width {
+  // For each breakpoint, define the maximum width of the container in a media query
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-container($gutter: $grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint, $gutter in $grid-gutter-widths {
+    @include media-breakpoint-up($breakpoint) {
+      padding-left: ($gutter / 2);
+      padding-right: ($gutter / 2);
+    }
+  }
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+  @include clearfix;
+
+  @each $breakpoint, $gutter in $grid-gutter-widths {
+    @include media-breakpoint-up($breakpoint) {
+      margin-left: ($gutter / -2);
+      margin-right: ($gutter / -2);
+    }
+  }
+}
+
+@mixin make-col($gutter: $grid-gutter-width) {
+  position: relative;
+  float: left;
+  min-height: 0.1rem;
+
+  // rlt-changes
+  // -----------------------------------
+  [dir='rtl'] & {
+    float: right;
+  }
+
+  @each $breakpoint, $gutter in $grid-gutter-widths {
+    @include media-breakpoint-up($breakpoint) {
+      padding-left: ($gutter / 2);
+      padding-right: ($gutter / 2);
+    }
+  }
+}
+
+@mixin make-col-span($size, $columns: $grid-columns) {
+  width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin make-col-offset-right($size, $columns: $grid-columns) {
+  margin-right: percentage($size / $columns);
+}
+
+@mixin make-col-push($size, $columns: $grid-columns) {
+  left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-pull($size, $columns: $grid-columns) {
+  right: if($size > 0, percentage($size / $columns), auto);
+}

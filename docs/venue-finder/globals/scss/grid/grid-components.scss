@@ -1,0 +1,37 @@
+﻿@charset 'UTF-8';
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.#{$gtc-namespace}container {
+  @include make-container;
+  // -----------------------------------
+  // VenueList which is supposed to ignore the grid in mobile view.
+  // -----------------------------------
+  &--venue {
+    @include media-breakpoint-down(sm) {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+.#{$gtc-namespace}container-fluid {
+  @include make-container;
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.#{$gtc-namespace}row {
+  @include make-row;
+
+  &--relative {
+    position: relative;
+  }
+}

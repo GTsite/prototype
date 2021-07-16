@@ -1,0 +1,153 @@
+﻿// -----------------------------------------------------------------------------
+// LINK LIST
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &linklist {
+    @include reset-list;
+
+    &__link {
+      color: $linklist__link-color;
+      text-decoration: none;
+      display: block;
+
+      @include hover-focus-active {
+        color: $linklist__link-active-color;
+      }
+
+      // smartphone and up
+      // ----------------------------------
+      font-size: em($block--linklist--font-size--xs);
+      line-height: em($block--linklist--line-height--xs);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($block--linklist--font-size--md);
+        line-height: em($block--linklist--line-height--md);
+      }
+    }
+  }
+
+  // border variant
+  &linklist--border {
+    .#{$gtc-namespace}linklist__item {
+      border-bottom: em(1) solid $linklist--border--border-color;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .#{$gtc-namespace}linklist__link {
+      color: $linklist--border--link-color;
+      text-transform: uppercase;
+
+      @include hover-focus-active {
+        color: $linklist--border--link-active-color;
+      }
+    }
+  }
+
+  // big variant
+  &linklist--big {
+    .#{$gtc-namespace}linklist__link {
+      color: $linklist--big--link-color;
+      text-transform: uppercase;
+
+      @include hover-focus-active {
+        color: $linklist--big--link-active-color;
+      }
+    }
+  }
+
+  // members variant
+  &linklist--members {
+    // smartphone and up
+    // ----------------------------------
+    text-align: center;
+
+    .#{$gtc-namespace}linklist__item {
+      display: inline-block;
+      margin: em(15);
+    }
+
+    .#{$gtc-namespace}linklist__link {
+      .#{$gtc-namespace}linklist__img {
+        transition: $transition-settings--hover;
+      }
+    }
+
+    .#{$gtc-namespace}linklist__link:hover {
+      .#{$gtc-namespace}linklist__img {
+        filter: grayscale(100%);
+      }
+    }
+
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      margin: 0 em(-76);
+
+      .#{$gtc-namespace}linklist__item {
+        margin: em(10);
+      }
+
+      .#{$gtc-namespace}linklist__img {
+        max-height: em(39);
+      }
+    }
+  }
+
+  // social variant
+  &linklist--social {
+    @include clearfix;
+
+    .#{$gtc-namespace}linklist__item {
+      display: block;
+      float: left;
+      margin: em(5) em(25) em(25) 0;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        margin: em(8) em(16) em(8) 0;
+      }
+    }
+
+    .#{$gtc-namespace}linklist__link {
+      color: $linklist--social--link-color;
+
+      @include hover-focus-active {
+        color: $linklist--social--link-active-color;
+
+        .#{$gtc-namespace}linklist__icon {
+          fill: $linklist--social--link-active-color;
+        }
+      }
+    }
+
+    .#{$gtc-namespace}linklist__label {
+      @include sr-only;
+    }
+
+    .#{$gtc-namespace}linklist__icon {
+      // smartphone and up
+      // ----------------------------------
+      @include responsive-icon(1, 1);
+      position: relative;
+      fill: $linklist--social--link-color;
+      width: em(57);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        width: em(54);
+      }
+    }
+  }
+}

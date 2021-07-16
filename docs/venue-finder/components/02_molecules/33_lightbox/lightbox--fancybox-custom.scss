@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// Customized fancybox theme
+// -----------------------------------------------------------------------------
+//
+// == fancyapps fancybox plugin ==
+// Plugin URI: https://fancyapps.com/fancybox/3/
+//
+//
+// general styles / overrides
+// >>> changes in this file affect >> ALL FANCYBOXES <<
+// ------------------------------------------------------------
+// Original styles:
+// src/globals/vendors/fancybox/jquery.fancybox.scss
+// ------------------------------------------------------------
+.#{$gtc-namespace}fancybox {
+  // Buttons
+  .fancybox-button {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+
+    &__icon {
+      @include responsive-icon(1, 1);
+      width: 2.8rem;
+      height: 2.8rem;
+      fill: $color-snow;
+    }
+  }
+
+  // Navigation arrows
+  .fancybox-navigation {
+    button {
+      margin: 0;
+      width: auto;
+      height: auto;
+      transform: translateY(-50%);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import '../../../../_scss/utils/variables/breakpoints.scss';
+// -----------------------------------
+// IOS & OSX Switch/Checkbox style button
+// This button is not supposed to tbe a native button, so it doesn't look 100% like one.
+// -----------------------------------
+.#{$gtc-namespace}btn--switch {
+  width: 5em;
+  height: 2.5em;
+  background-color: var(--color-primary-grey-light);
+  box-shadow: none;
+  border-radius: 5rem;
+  position: relative;
+  transition: background-color var(--animation-time-default);
+
+  .has-hover & {
+    &:hover {
+      background-color: var(--color-primary-grey-light);
+      box-shadow: none;
+    }
+  }
+
+  &:focus,
+  &:active {
+    background-color: var(--color-primary-grey-light);
+    box-shadow: none;
+  }
+
+  &::after {
+    content: '';
+    width: 2em;
+    height: 2em;
+    display: block;
+    background-color: var(--color-custom-white);
+    border: 0.1rem solid var(--color-primary-grey-light);
+    box-sizing: border-box;
+    border-radius: 5em;
+    position: absolute;
+    top: calc(50% - (2em / 2));
+    left: 0;
+    transition: left var(--animation-time-default), background-color var(--animation-time-default);
+    box-shadow: $gtc-box-shadow2;
+  }
+
+  .#{$gtc-namespace}filter--venue__wrapper-hotel & {
+    height: 2rem;
+    width: 4rem;
+    padding: 0;
+    margin-top: 1rem;
+
+    @media (min-width: $breakpoint-lg) {
+      margin-right: 1.7rem;
+    }
+
+    &::after {
+      width: 2.4rem;
+      height: 2.4rem;
+      top: -0.2rem;
+      right: 0;
+    }
+
+    &--active::after {
+      right: calc(3.8em - 1.5em);
+    }
+  }
+  // -----------------------------------
+  // Active/Checked
+  // -----------------------------------
+  &--active {
+    background-color: var(--color-primary-blue);
+    // transition: background-color 350ms;
+
+    .has-hover & {
+      &:hover {
+        background-color: var(--color-primary-blue);
+        box-shadow: none;
+      }
+    }
+
+    &:focus,
+    &:active {
+      background-color: var(--color-primary-blue);
+      box-shadow: none;
+    }
+
+    &::after {
+      background-color: var(--color-custom-white);
+      left: calc(100% - 2.4rem);
+      transition: left var(--animation-time-default), background-color var(--animation-time-default);
+    }
+  }
+}

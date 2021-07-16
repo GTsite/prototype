@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// Tabdion - Tab-Accordion Combination
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  // smartphone and up
+  // ----------------------------------
+  &tabdion {
+    div[id^='gtc-tab-pane-rooms'],
+    div[id^='gtc-tab-pane-amenities'] {
+      display: none;
+    }
+    // tablet and down
+    // ----------------------------------
+    @include media-breakpoint-down(sm) {
+      &__tabs-nav {
+        display: none;
+      }
+
+      &__tabs-pane {
+        &--first {
+          .#{$gtc-namespace}accordion__head {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      &__tabs-pane {
+        .#{$gtc-namespace}tabdion {
+          &__accordion-head {
+            display: none;
+          }
+
+          &__accordion-item {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

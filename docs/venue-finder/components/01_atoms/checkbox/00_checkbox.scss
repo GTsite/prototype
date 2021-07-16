@@ -1,0 +1,71 @@
+// -----------------------------------
+// Checkbox Button
+// -----------------------------------
+.#{$gtc-namespace}checkbox {
+  cursor: pointer;
+  position: relative;
+
+  &__inp {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__vis {
+    position: relative;
+    background-color: var(--color-custom-white);
+    border: 0.2rem solid var(--color-primary-blue);
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.3rem;
+
+    svg {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.2rem;
+      display: none;
+    }
+  }
+
+  &__vis,
+  &__lbl {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__lbl:not(:empty) {
+    cursor: pointer;
+    padding: 0 0.75em;
+  }
+
+  &:hover {
+    .#{$gtc-namespace}checkbox__vis {
+      border-color: var(--color-primary-blue);
+    }
+  }
+
+  &--checked {
+    .#{$gtc-namespace}checkbox__vis {
+      background-color: var(--color-primary-blue);
+
+      svg {
+        display: block;
+        fill: var(--color-custom-white);
+      }
+    }
+
+    &:hover {
+      .#{$gtc-namespace}checkbox__vis {
+        border-color: var(--color-primary-blue);
+
+        svg {
+          fill: var(--color-custom-white);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// ICON LIST
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &iconlist {
+    @include reset-list;
+
+    &__item {
+      // smartphone and up
+      // ----------------------------------
+      @include clearfix;
+      position: relative;
+      font-size: em($iconlist--font-size--xs);
+      line-height: em($iconlist--line-height--xs, $iconlist--font-size--xs);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($iconlist--font-size--md);
+        line-height: em($iconlist--line-height--md, $iconlist--font-size--md);
+      }
+    }
+
+    &__icon {
+      @include responsive-icon(1, 1);
+      position: absolute;
+
+      .#{$gtc-namespace}icon {
+        vertical-align: top;
+      }
+    }
+
+    &__label {
+      // smartphone and up
+      // ----------------------------------
+      display: block;
+      padding-left: em(41);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        padding: em(2) 0 0 em(47);
+      }
+    }
+  }
+}

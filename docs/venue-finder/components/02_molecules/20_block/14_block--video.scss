@@ -1,0 +1,265 @@
+// -----------------------------------------------------------------------------
+// BLOCK VIDEO VARIANT
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace}block--video {
+  .#{$gtc-namespace}block {
+    &__block {
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__title {
+      // smartphone and up
+      // -----------------------------------
+      font-family: $block--video__title--font-family;
+      color: $block--video__title--color;
+      text-transform: uppercase;
+      display: block;
+      overflow: hidden;
+    }
+
+    &__title-text {
+      // smartphone and up
+      // -----------------------------------
+      display: inline-block;
+      font-size: em($block--video__title--font-size--xs);
+      line-height: em($block--video__title--line-height--xs, $block--video__title--font-size--xs);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($block--video__title--font-size--md);
+        line-height: em($block--video__title--line-height--md, $block--video__title--font-size--md);
+      }
+    }
+
+    &__subtitle {
+      // smartphone and up
+      // -----------------------------------
+      margin-bottom: 0;
+      color: $block--video__subtitle--color;
+    }
+
+    &__icon {
+      // smartphone and up
+      // -----------------------------------
+      @include responsive-icon(1, 1);
+      fill: $block--video__icon--color;
+      display: inline-block;
+      position: relative;
+      width: em(58);
+      height: em(58);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        width: em(75);
+        height: em(75);
+      }
+    }
+  }
+
+  // Variant square & hero
+  // --------------------------------------------------
+  &.#{$gtc-namespace}block--square,
+  &.#{$gtc-namespace}block--hero {
+    .#{$gtc-namespace}block {
+      &__title {
+        max-height: em($block--video__title--line-height--xs) * 3;
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          max-height: em($block--video__title--line-height--md) * 3;
+        }
+      }
+    }
+
+    .#{$gtc-namespace}block__heading + .#{$gtc-namespace}block__icon,
+    .#{$gtc-namespace}block__title + .#{$gtc-namespace}block__icon,
+    .#{$gtc-namespace}block__subtitle + .#{$gtc-namespace}block__icon {
+      // smartphone and up
+      // -----------------------------------
+      margin-top: em(15);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em(27);
+      }
+    }
+  }
+
+  // Variant fullwidth
+  // --------------------------------------------------
+  &.#{$gtc-namespace}block--fullwidth {
+    .#{$gtc-namespace}block {
+      &__block {
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include make-col-span(6);
+        }
+      }
+
+      &__heading {
+        // smartphone and up
+        // -----------------------------------
+        overflow: hidden;
+        max-height: em($heading--main__line--line-height--xs) * 3;
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          max-height: em($heading--main__line--line-height--md) * 3;
+        }
+      }
+
+      &__subtitle {
+        // tablet and down
+        // ----------------------------------
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          overflow: hidden;
+          max-height: em($title--line-height--md) * 3;
+        }
+      }
+
+      &__icon {
+        // smartphone and up
+        // -----------------------------------
+        width: em(94);
+        height: em(94);
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          width: em(75);
+          height: em(75);
+        }
+      }
+    }
+
+    .#{$gtc-namespace}block__heading + .#{$gtc-namespace}block__subtitle,
+    .#{$gtc-namespace}block__title + .#{$gtc-namespace}block__subtitle {
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em(10);
+      }
+    }
+
+    .#{$gtc-namespace}block__heading + .#{$gtc-namespace}block__icon,
+    .#{$gtc-namespace}block__title + .#{$gtc-namespace}block__icon,
+    .#{$gtc-namespace}block__subtitle + .#{$gtc-namespace}block__icon {
+      // smartphone and up
+      // -----------------------------------
+      margin-top: em(34);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em(27);
+      }
+    }
+  }
+
+  &__lightbox {
+    background: transparent;
+    width: 100%;
+    max-width: 120rem;
+    padding: em(15);
+    overflow: visible;
+
+    .fancybox-close-small {
+      filter: brightness(10);
+      margin-top: em(-20);
+      margin-right: em(-20);
+      transform: scale(1.8);
+      transform-origin: 25% 75%;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: em(-30);
+        margin-right: em(-5);
+      }
+
+      &::after {
+        color: $color-snow;
+      }
+
+      &:hover::after {
+        background: transparent;
+        color: $color-snow;
+      }
+    }
+
+    // rlt-changes
+    // -----------------------------------
+    [dir='rtl'] & {
+      direction: rtl;
+      text-align: right;
+    }
+  }
+
+  &__youtube {
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__lightinfo {
+    color: $color-snow;
+    font-family: $base--font-family;
+    margin-top: em(40);
+  }
+
+  &__lightinfo &__title {
+    font-size: em(32);
+  }
+
+  &__share {
+    margin-left: em(10);
+    float: right;
+    white-space: nowrap;
+
+    &-title {
+      font-family: $heading--font-family;
+      font-weight: normal;
+      font-size: em(24);
+      text-transform: uppercase;
+    }
+
+    svg {
+      vertical-align: middle;
+      margin-top: em(-10);
+      margin-left: em(10);
+      width: em(40);
+      height: auto;
+      fill: $color-snow;
+    }
+
+    // rlt-changes
+    // -----------------------------------
+    [dir='rtl'] & {
+      float: left;
+    }
+  }
+}

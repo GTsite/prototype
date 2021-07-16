@@ -1,0 +1,6 @@
+.#{$gtc-namespace} {
+  &icon {
+    transition: $transition-settings--hover;
+    transition-property: fill;
+  }
+}

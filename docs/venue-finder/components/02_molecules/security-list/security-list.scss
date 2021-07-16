@@ -1,0 +1,20 @@
+﻿// -----------------------------------------------------------------------------
+// SECURITY LIST
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &security-list {
+    @include reset-list;
+    @include clearfix;
+
+    margin-top: em(30);
+    display: flex;
+
+    &__item {
+      margin: 0 em(7) 0 0;
+    }
+    &__item:last-child {
+      margin-right: 0;
+    }
+  }
+}

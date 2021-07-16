@@ -1,0 +1,218 @@
+//
+// Heading
+// ----------------------------------------------------
+
+.#{$gtc-namespace} {
+  // ---------------------------------------------------------------------------
+  // General Heading
+  // ---------------------------------------------------------------------------
+  // reset browser headline font-sizes
+  &heading {
+    // smartphone and up
+    // -----------------------------------
+    display: block;
+    font-family: var(--font-family-primary);
+    font-size: em($base--font-size);
+    font-weight: normal;
+    color: var(--color-custom-black-2);
+    max-width: 80%;
+
+    &__line {
+      display: inline-block;
+      color: inherit;
+    }
+
+    &__subline {
+      display: block;
+      font-family: $heading__subline--font-family;
+      color: inherit;
+    }
+  }
+  // ---------------------------------------------------------------------------
+  // Heading Color Variants
+  // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // Heading Size Variants
+  // ---------------------------------------------------------------------------
+  // heading--main
+  // biggest headline
+  // ----------------------------------------------------
+  &heading--main {
+    // smartphone and up
+    // -----------------------------------
+    .#{$gtc-namespace}heading__line {
+      font-size: var(--font-size-big-text);
+      line-height: 1.25;
+
+      @include media-breakpoint-up(md) {
+        font-size: var(--font-size-venue-heading);
+        line-height: em($heading--main__line--line-height--md, $heading--main__line--font-size--md);
+      }
+    }
+    // heading--main in combination with mira modifier
+    &.#{$gtc-namespace}heading--mira {
+      // rlt-changes
+      // -----------------------------------
+      [dir='rtl'] & {
+        margin-right: em(-$spacer-x--xs);
+        margin-left: 0;
+        padding-right: em($spacer-x--xs);
+        padding-left: 0;
+      }
+
+      .#{$gtc-namespace}heading__line {
+        // rlt-changes
+        // -----------------------------------
+        [dir='rtl'] & {
+          margin-right: em(-$spacer-x--xs, $heading--main__line--font-size--xs);
+          padding-right: em($spacer-x--xs, $heading--main__line--font-size--xs);
+
+          &::before {
+            margin-right: em(-$spacer-x--xs, $heading--main__line--font-size--xs);
+          }
+        }
+      }
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        // rlt-changes
+        // -----------------------------------
+        [dir='rtl'] & {
+          margin-right: em(-$spacer-x--md);
+          margin-left: 0;
+          padding-right: em($spacer-x--md);
+          padding-left: 0;
+        }
+
+        .#{$gtc-namespace}heading__line {
+          &::before {
+            margin-left: em(-$spacer-x--md, $heading--main__line--font-size--md);
+            width: em(21, $heading--main__line--font-size--md);
+          }
+          // rlt-changes
+          // -----------------------------------
+          [dir='rtl'] & {
+            margin-right: em(-$spacer-x--md, $heading--main__line--font-size--md);
+            padding-right: em($spacer-x--md, $heading--main__line--font-size--md);
+
+            &::before {
+              margin-right: em(-$spacer-x--md, $heading--main__line--font-size--md);
+            }
+          }
+        }
+      }
+    }
+  }
+  // heading--regular
+  // normal headline
+  // ----------------------------------------------------
+  &heading--regular {
+    // smartphone and up
+    // -----------------------------------
+    .#{$gtc-namespace}heading__line {
+      font-size: em($heading--regular__line--font-size--xs);
+      line-height: em($heading--regular__line--line-height--xs, $heading--regular__line--font-size--xs);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($heading--regular__line--font-size--md);
+        line-height: em($heading--regular__line--line-height--md, $heading--regular__line--font-size--md);
+      }
+    }
+
+    .#{$gtc-namespace}heading__line + .#{$gtc-namespace}heading__subline {
+      margin-top: em(10, $heading--regular__subline--font-size--xs);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em(2, $heading--regular__subline--font-size--md);
+      }
+    }
+
+    .#{$gtc-namespace}heading__subline {
+      font-size: em($heading--regular__subline--font-size--xs);
+      line-height: em($heading--regular__subline--line-height--xs, $heading--regular__subline--font-size--xs);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($heading--regular__subline--font-size--md);
+        line-height: em($heading--regular__subline--line-height--md, $heading--regular__subline--font-size--md);
+      }
+    }
+  }
+  // heading--default
+  // normal headline
+  &heading--wide {
+    max-width: 100%;
+  }
+  // heading--default
+  // normal headline
+  // ----------------------------------------------------
+  &heading--default {
+    // smartphone and up
+    // -----------------------------------
+    .#{$gtc-namespace}heading__line {
+      font-size: em($heading--default__line--font-size--xs);
+      line-height: em($heading--default__line--line-height--xs, $heading--default__line--font-size--xs);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($heading--default__line--font-size--md);
+        line-height: em($heading--default__line--line-height--md, $heading--default__line--font-size--md);
+      }
+    }
+
+    .#{$gtc-namespace}heading__line + .#{$gtc-namespace}heading__subline {
+      margin-top: em(10, $heading--default__subline--font-size--xs);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em(2, $heading--default__subline--font-size--md);
+      }
+    }
+
+    .#{$gtc-namespace}heading__subline {
+      font-size: em($heading--default__subline--font-size--xs);
+      line-height: em($heading--default__subline--line-height--xs, $heading--default__subline--font-size--xs);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($heading--default__subline--font-size--md);
+        line-height: em($heading--default__subline--line-height--md, $heading--default__subline--font-size--md);
+      }
+    }
+  }
+  // -------------------------------------------------------------------------
+  // Heading Style Variants
+  // -------------------------------------------------------------------------
+  // General Heading-Mira sytles
+  // Mira is a heading with slash before
+  &heading--mira {
+    // smartphone and up
+    // -----------------------------------
+    .#{$gtc-namespace}heading__line {
+      // rlt-changes
+      // -----------------------------------
+      [dir='rtl'] & {
+        margin-left: 0;
+        padding-left: 0;
+
+        &::before {
+          margin-left: 0;
+          text-align: right;
+        }
+      }
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        // rlt-changes
+        // -----------------------------------
+        [dir='rtl'] & {
+          &::before {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

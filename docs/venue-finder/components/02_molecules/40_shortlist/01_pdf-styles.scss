@@ -1,0 +1,381 @@
+﻿@import '../../../../_scss/utils/variables/variables';
+
+.#{$gtc-namespace}pdf-body {
+  background-color: $color-transparent;
+
+  .#{$gtc-namespace}cookie-consent {
+    display: none;
+  }
+}
+
+// -----------------------------------
+// Venue List item
+// -----------------------------------
+.#{$gtc-namespace}pdf-venue-item {
+  &__header {
+    position: relative;
+  }
+
+  &__count {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background-color: $color-snow;
+    color: $color-dove;
+    border: 3px solid $color-dove;
+    height: 28px;
+    width: 28px;
+    line-height: 175%;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 14px;
+  }
+
+  &__img {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+
+    &-el {
+      max-width: 100%;
+      max-height: 100%;
+      min-width: 100%;
+      min-height: 125px; //the height of the element at 1024px screen width (pdf)
+    }
+  }
+
+  &__header-info {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+
+    &-txt {
+      display: block;
+      max-width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 145%;
+
+      &--bold,
+      &--headline {
+        font-family: $font-family--brand--bold;
+      }
+
+      &--headline {
+        white-space: normal;
+        font-weight: normal;
+        line-height: 125%;
+        margin: 0;
+      }
+
+      &--link {
+        color: $color-brand--twitter;
+        text-decoration: underline;
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+
+  &__cnt {
+    margin: 17px 0 0;
+
+    .#{$gtc-namespace}pdf-venue-item__table {
+      table-layout: fixed;
+      width: calc(100% - 2px);
+      border: 1px solid $color-jumbo;
+      border-collapse: collapse;
+
+      .col-name {
+        width: 25%;
+        text-align: left;
+      }
+
+      .col-ar,
+      .col-room {
+        text-align: center;
+      }
+
+      &-td {
+        border-top: 1px solid $color-jumbo;
+        border-bottom: 1px solid $color-jumbo;
+        border-right: 1px solid $color-alto;
+        padding: 2px;
+
+        &--hdr {
+          font-weight: bold;
+        }
+
+        &.center {
+          text-align: center;
+        }
+
+        &:first-of-type {
+          border-left: 1px solid $color-jumbo;
+        }
+
+        &:last-of-type {
+          border-left: 1px solid $color-jumbo;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------
+// Venue List item => Venue Variant
+// -----------------------------------
+
+.#{$gtc-namespace}pdf-venue-item--venue {
+  .#{$gtc-namespace}pdf-venue-item {
+    &__count {
+      color: $color-tapestry;
+      border-color: $color-tapestry;
+    }
+  }
+}
+
+// -----------------------------------
+// Venue List item => Hotel Variant
+// -----------------------------------
+
+.#{$gtc-namespace}pdf-venue-item--hotel {
+  .#{$gtc-namespace}ven-map__popup-hdr-rting {
+    svg {
+      fill: $color-dove;
+    }
+
+    &-sub {
+      color: $color-dove;
+    }
+  }
+}
+
+// -----------------------------------
+// Shortlist => General Styles
+// -----------------------------------
+.#{$gtc-namespace}pdf-doc {
+  &__header {
+    margin: 0;
+    $header-upper-height: 94.5mm;
+    height: 215mm;
+    overflow: hidden;
+
+    .gtc-heading--main .gtc-heading__line {
+      $side-offset: 19px;
+      @media (min-width: 60rem) {
+        font-size: 24px;
+        line-height: 1.25;
+        text-transform: uppercase;
+        padding-left: $side-offset;
+
+        &:before {
+          margin-left: -#{$side-offset};
+          width: 14px;
+          display: inline-block;
+          content: '\002F';
+          text-align: center;
+        }
+      }
+    }
+
+    // -----------------------------------
+    // Upper header with logo and image
+    // -----------------------------------
+    &-upper {
+      height: $header-upper-height;
+    }
+
+    &-img-wrap {
+      height: $header-upper-height;
+      position: relative;
+    }
+
+    &-img-box--main-bg {
+      height: $header-upper-height;
+
+      img {
+        width: auto;
+        min-width: 100%;
+        height: $header-upper-height;
+        max-width: none;
+      }
+    }
+
+    &-img-box--logo {
+      width: 20%;
+      position: absolute;
+      right: 6%;
+      top: 17%;
+    }
+
+    &-img-wrap-text {
+      font-family: $font-family--brand--bold;
+      position: absolute;
+      top: 39%;
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+      font-weight: 800;
+
+      &-line {
+        color: $color-snow;
+        font-size: 79px;
+      }
+    }
+    // -----------------------------------
+    // Lower header with intro and description
+    // -----------------------------------
+    &-lower {
+      margin: 30px 0;
+    }
+
+    &-heading {
+      font-family: $font-family--brand--regular;
+      margin: 0 0 25px 0 !important; // sass-lint:disable-line no-important
+      &__line {
+        font-size: 20px;
+      }
+    }
+
+    &-hdr-intro {
+      color: $color-scorpion;
+      line-height: 135%;
+      font-size: 18px;
+    }
+  }
+  // -----------------------------------
+  // Map
+  // -----------------------------------
+  &__map {
+    //please sync these values with the js for proper rendering
+    $map-height: 139mm;
+    $map-width: 1024px;
+    border: 1px solid $color-scorpion;
+    width: $map-width;
+    height: $map-height;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .gtc-wrap--map {
+      height: $map-height;
+      width: $map-width;
+    }
+
+    .gtc-ven-map {
+      height: $map-height;
+      width: $map-width;
+      margin: 0;
+      min-height: 0;
+    }
+
+    .gtc-ven-map__el {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-marker {
+      position: absolute;
+      background-color: $color-snow;
+      border: 2px solid $color-dove;
+      box-sizing: border-box;
+      width: 33px;
+      height: 33px;
+      overflow: hidden;
+      text-align: center;
+      line-height: 31px;
+      border-radius: 20px;
+
+      &-link {
+        text-decoration: none;
+        color: $color-dove;
+        font-family: $font-family--brand;
+        font-size: 13px;
+        cursor: pointer;
+        display: block;
+      }
+
+      &--venue {
+        border: 2px solid $color-tapestry;
+
+        .#{$gtc-namespace}pdf-doc__map-marker-link {
+          color: $color-tapestry;
+        }
+      }
+    }
+  }
+  // -----------------------------------
+  // Content
+  // -----------------------------------
+  &__sec {
+    &-hdr {
+      display: block;
+      width: 100%;
+    }
+
+    &-heading {
+      width: 100%;
+      font-size: 16px;
+      font-family: $font-family--brand--bold;
+      font-weight: normal;
+      color: $color-snow;
+      background-color: $color-dove;
+      padding: 0 !important; // sass-lint:disable-line no-important
+      text-align: center;
+      display: block;
+      margin: 0 !important; // sass-lint:disable-line no-important
+      text-transform: uppercase;
+
+      .#{$gtc-namespace}heading__line {
+        line-height: 215%;
+        margin: 0;
+        padding: 0;
+
+        &::before {
+          display: none !important; // sass-lint:disable-line no-important
+        }
+      }
+    }
+
+    &-cnt {
+      &-lst {
+        list-style: none;
+        padding: 0;
+        margin: 21px 0;
+      }
+
+      &-lst-itm {
+        list-style: none;
+        margin: 28px 0;
+        display: block;
+        width: 100%;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  // -----------------------------------
+  // Venues section
+  // -----------------------------------
+  &__sec--venues {
+    width: 100%;
+    .#{$gtc-namespace}pdf-doc__sec {
+      &-heading {
+        background-color: $color-tapestry;
+      }
+    }
+  }
+
+  .gtc-heading {
+    max-width: 100%;
+  }
+}

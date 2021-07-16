@@ -1,0 +1,45 @@
+.#{$gtc-namespace}filter--venue__wrapper-hotel {
+  .#{$gtc-namespace}btn--stars,
+  .#{$gtc-namespace}filter__item-link {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-medium-text);
+    text-align: center;
+    padding: 1.7rem 0;
+    border: 0.2rem solid var(--color-primary-grey-light);
+    border-radius: 5rem;
+    color: var(--color-primary-grey);
+
+    &:after {
+      display: none;
+    }
+
+    .has-hover & {
+      &:hover {
+        border-color: var(--color-primary-blue);
+        color: var(--color-primary-blue);
+        .#{$gtc-namespace}icon {
+          fill: var(--color-primary-blue);
+        }
+      }
+    }
+
+    &:focus {
+      border-color: var(--color-primary-blue);
+    }
+
+    .#{$gtc-namespace}icon {
+      fill: var(--color-primary-grey);
+      height: 1.2rem;
+      width: 1.2rem;
+      transition: none;
+    }
+  }
+
+  .js-#{$gtc-namespace}filter__item-active {
+    .#{$gtc-namespace}btn--stars,
+    .#{$gtc-namespace}filter__item-link {
+      border-color: var(--color-primary-blue);
+      color: var(--color-primary-blue);
+    }
+  }
+}

@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// SLIDER
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &slider {
+    // smartphone and up
+    // ----------------------------------
+
+    // Arrows
+    // ---------------------------------
+    &__arrow-icon {
+      width: em(30);
+      height: em(30);
+      fill: $color-snow;
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        width: em(16);
+        height: em(16);
+      }
+    }
+
+    &__prev,
+    &__next {
+      z-index: $zindex-slider__arrows;
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      color: transparent;
+      transform: translate(0, -50%);
+      background: transparent;
+      box-shadow: none;
+      padding: 1rem;
+
+      .has-hover &:hover,
+      &:active,
+      &:focus {
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+
+    &__prev {
+      left: em(10);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        left: 0;
+      }
+    }
+
+    &__next {
+      right: em(10);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        right: 0;
+      }
+    }
+
+    // Dots
+    // ---------------------------------
+    &__dots {
+      // NOTE: only use html elements because of plugin html without classes
+      li {
+        &.slick-active {
+          button::before {
+            background-color: $color-snow;
+          }
+        }
+
+        button {
+          &::before {
+            background-color: $color-mid;
+          }
+        }
+      }
+    }
+  }
+}

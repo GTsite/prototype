@@ -1,0 +1,64 @@
+// sass-lint:disable space-before-colon
+
+// -----------------------------------------------------------------------------
+//    Grid Variables
+// -----------------------------------------------------------------------------
+$base-font-size: $base--font-size;
+
+// Grid breakpoints
+// -----------------------------------------------------------------------------
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  // Extra small screen
+    sm: rem(712),
+  // Small screen
+    md: rem(992),
+  // Medium screen
+    lg: rem(1420) // Large screen / desktop,,,,
+) !default;
+
+// Grid containers
+// -----------------------------------------------------------------------------
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-width--xs: calc(100% - (2 * 8.9%));
+$container-max-width--sm: rem(600);
+$container-max-width--md: calc(100% - (2 * 8.9%));
+$container-max-width--lg: rem(1200);
+
+$container-max-widths: (
+  xs: $container-max-width--xs,
+  sm: $container-max-width--sm,
+  md: $container-max-width--md,
+  lg: $container-max-width--lg,
+) !default;
+
+// VW-Context's
+// -----------------------------------------------------------------------------
+// Context to calculate vw according to sizes in design
+$vw-context--xs: 730 !default;
+$vw-context--md: 1460 !default;
+// $vw-context--lg: 1920 !default;
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+// -----------------------------------------------------------------------------
+$grid-columns: 12 !default;
+$grid-gutter-width: em(30) !default;
+
+$grid-gutter-width--xs: 0;
+$grid-gutter-width--sm: 0;
+$grid-gutter-width--md: 0;
+$grid-gutter-width--lg: 0;
+
+$grid-gutter-half--xs: 15;
+$grid-gutter-half--md: 15;
+
+$grid-gutter-widths: (
+  xs: em($grid-gutter-width--xs),
+  sm: em($grid-gutter-width--sm),
+  md: em($grid-gutter-width--md),
+  lg: em($grid-gutter-width--lg),
+) !default;

@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// BLOCK FOOTER VARIANT
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &block--footer {
+    // smartphone and up
+    // ----------------------------------
+    @include make-col;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .#{$gtc-namespace}linklist__link {
+      padding: em(3) 0;
+    }
+
+    .#{$gtc-namespace}linklist--border {
+      .#{$gtc-namespace}linklist__link {
+        padding: em(15) 0;
+      }
+    }
+
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      @include make-col-span(3);
+
+      margin-bottom: 0;
+    }
+  }
+}

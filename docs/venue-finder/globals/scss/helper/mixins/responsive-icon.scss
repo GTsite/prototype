@@ -1,0 +1,19 @@
+@mixin responsive-icon($width, $height) {
+  position: relative;
+  display: block; // in case it isn't a block element
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: percentage($height / $width);
+  }
+
+  .#{$gtc-namespace}icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

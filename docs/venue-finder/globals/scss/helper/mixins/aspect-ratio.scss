@@ -1,0 +1,29 @@
+//
+// Aspect Ratio Mixin
+// a method of using psuedo elements to maintain an elements aspect ratio,
+// even as it scales
+// -----------------------------------------------------------------------------
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  display: block; // in case it isn't a block element
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: percentage($height / $width);
+  }
+
+  .#{$gtc-namespace}stretchy-clip {
+    @include stretchy-clip;
+  }
+}
+
+// change existing aspect ratio
+// ----------------------------------------------------
+@mixin aspect-ratio-change($width, $height) {
+  &::before {
+    padding-top: percentage($height / $width);
+  }
+}

@@ -1,0 +1,52 @@
+//
+//  CSS-BROWSER-HACKS
+// -----------------------------------
+// sass-lint:disable-block no-vendor-prefixes
+// sass-lint:disable-block force-element-nesting
+// sass-lint:disable-block single-line-per-selector
+
+// Firefox only
+@mixin css-hack-firefox-only {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+// Webkit only
+@mixin css-hack-webkit-only {
+  @supports (-webkit-appearance: none) {
+    @content;
+  }
+}
+// Edge Only
+@mixin css-hack-edge-only {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+// CSS Hacks for Safari 6.1, 7, 8 and 9 (Not Chrome!)
+// Safari 6.1+ (9.0 is the latest version of Safari at this time)
+@mixin css-hack-safari-only {
+  @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+    @content;
+  }
+}
+
+// -----------------------------------
+// Mobile Safari
+// -----------------------------------
+@mixin mobile-safari {
+  @supports (-webkit-overflow-scrolling: touch) {
+    @content;
+  }
+}
+
+// -----------------------------------
+// IE10+
+// -----------------------------------
+@mixin browser-ie10p {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}

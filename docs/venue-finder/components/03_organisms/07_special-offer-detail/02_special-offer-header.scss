@@ -1,0 +1,29 @@
+//
+// Special Offer Banner
+// ----------------------------------------------------
+
+.#{$gtc-namespace}special-offer-header {
+  overflow: hidden;
+  position: relative;
+  height: em(350);
+
+  &__image {
+    .#{$gtc-namespace}image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100.1%;
+      width: auto;
+      max-width: none;
+      min-height: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // laptop / tablet view and up
+  // -----------------------------------
+  @include media-breakpoint-up(md) {
+    height: em(680);
+  }
+}

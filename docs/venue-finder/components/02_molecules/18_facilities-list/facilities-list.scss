@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------
+// Checkmark-List
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &facilities-items {
+    display: none;
+
+    /* @include reset-list;
+    @include clearfix;
+    height: 100%;
+    margin-top: em(20);
+    margin-bottom: em(20);
+    margin-right: em(-7);
+    margin-left: em(-7);
+
+    &__icon {
+      @include responsive-icon(1, 1);
+      width: em(40);
+      height: em(40);
+      float: left;
+      margin-right: em(12);
+      margin-left: em(12);
+      fill: $social-share__btn-icon--fill;
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        width: em(24);
+        height: em(24);
+        margin-right: em(7);
+        margin-left: em(7);
+      }
+    } */
+  }
+
+  &facilities-list {
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: em(-15);
+      margin-left: em(-15);
+    }
+
+    // smartphone and up
+    // -----------------------------------
+    @include reset-list;
+
+    &__item {
+      padding-right: em(15);
+      padding-bottom: em(40);
+      padding-left: em(15);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        padding-right: em(45);
+        padding-bottom: em(60);
+        padding-left: em(45);
+        width: 50%;
+      }
+    }
+
+    &__title {
+      display: block;
+      margin-bottom: em(20);
+      margin-right: em(-15);
+      margin-left: em(-15);
+      padding: em(15);
+      font-family: $facilities-list__title--font-family;
+      color: $facilities-list__title--color;
+      background-color: $facilities-list__title--bg-color;
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-right: em(-30);
+        margin-bottom: em(30);
+        margin-left: em(-30);
+        padding-right: em(30);
+        padding-left: em(30);
+      }
+    }
+
+    &__title-label {
+      font-size: em($facilities-list__title-label--font-size--xs);
+      line-height: em($facilities-list__title-label--line-heigt--xs, $facilities-list__title-label--font-size--xs);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($facilities-list__title-label--font-size--md);
+        line-height: em($facilities-list__title-label--line-height--md, $facilities-list__title-label--font-size--md);
+      }
+    }
+
+    &__checklist {
+      font-size: em($rte--font-size--xs);
+      line-height: em($rte--block-details--line-height--xs, $rte--font-size--xs);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($rte--font-size--md);
+        line-height: $rte--line-height--md;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@import '../../../globals/scss/helper/mixins/exports';
+@import '00_mixins';
+
+@include exports('button-pmt') {
+  .#{$gtc-namespace} {
+    // -------------------------------------------------------------------------
+    // Plus-Minus-Toggle Button
+    // -------------------------------------------------------------------------
+
+    &btn-pmt {
+      &__box {
+        position: relative;
+        display: block;
+        width: em(58);
+        height: em(54);
+        border: em(2) solid $color-snow;
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          width: em(52);
+          height: em(46);
+        }
+      }
+
+      &__inner {
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-top: em(-2);
+        margin-left: em(-14);
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          margin-top: em(-1);
+          margin-left: em(-8);
+        }
+      }
+
+      &__inner,
+      &__inner::before {
+        position: absolute;
+        width: em(28);
+        height: em(4);
+        background-color: $color-snow;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          width: em(16);
+          height: em(2);
+        }
+      }
+
+      &__inner::before {
+        content: '';
+        display: block;
+        background-color: inherit;
+        transform: rotate(90deg);
+      }
+
+      &[aria-expanded='true'],
+      [aria-expanded='true'] & {
+        .#{$gtc-namespace}btn-pmt__inner {
+          transform: rotate(180deg);
+          transition-delay: 0.12s;
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          &::before {
+            opacity: 0;
+            transition: opacity 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    // Button Variants
+    // -------------------------------------------------------------------------
+
+    // Bigger (mobile) Variant e.g. used within fullwidth blocks
+    &btn-pmt--big {
+      .#{$gtc-namespace}btn-pmt {
+        &__box {
+          width: em(83);
+          height: em(75);
+
+          // laptop / tablet view and up
+          // -----------------------------------
+          @include media-breakpoint-up(md) {
+            width: em(52);
+            height: em(46);
+          }
+        }
+      }
+    }
+
+    // Special for navigation main
+    // ---------------------------------
+    &btn-pmt--navigation-main {
+      .#{$gtc-namespace}btn-pmt {
+        &__box {
+          width: em(24);
+          height: em(24);
+          border: 0 none;
+        }
+
+        &__inner {
+          margin-top: em(-2);
+          margin-left: em(-12);
+        }
+
+        &__inner,
+        &__inner::before {
+          width: em(24);
+          height: em(4);
+        }
+      }
+    }
+
+    &btn-pmt--accordion {
+      .#{$gtc-namespace}btn-pmt {
+        &__box {
+          width: em(18);
+          height: em(18);
+          border: 0 none;
+
+          // // laptop / tablet view and up
+          // // -----------------------------------
+          // @include media-breakpoint-up(md) {
+          //   width: em(52);
+          //   height: em(46);
+          // }
+        }
+
+        &__inner {
+          margin-top: em(-2);
+          margin-left: em(-9);
+        }
+
+        &__inner,
+        &__inner::before {
+          width: em(18);
+          height: em(3);
+        }
+      }
+    }
+  }
+}

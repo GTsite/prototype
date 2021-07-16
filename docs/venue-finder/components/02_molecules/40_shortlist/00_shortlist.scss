@@ -1,0 +1,237 @@
+﻿/*#region Reference Paths*/
+
+/*#region Variables*/
+/// <reference path="../../../../src/globals/scss/settings/_variables.scss" />
+/// <reference path="../../../../src/components/05_pages/one-campaign/_variables.scss" />
+/*#endregion*/
+
+/*#region Grid*/
+/// <reference path="../../../../src/globals/scss/grid/grid-breakpoints.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-components.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-media-breakpoints.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-mixins.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-overlay.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-variables.scss" />
+/*#endregion*/
+
+/*#region Functions*/
+/// <reference path="../../../../src/globals/scss/helper/functions/01_em.scss" />
+/// <reference path="../../../../src/globals/scss/helper/functions/02_rem.scss" />
+/// <reference path="../../../../src/globals/scss/helper/functions/03_vw.scss" />
+/*#endregion*/
+
+/*#region Mixins*/
+/// <reference path="../../../../src/globals/scss/helper/mixins/_gradients.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/aspect-ratio.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/clearfix.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/css-browser-hacks.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/exports.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/hidden-accessible.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/hover.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/input-placeholder.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/reset-list.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/responsive-icon.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/spin.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/sr-only.scss />
+/// <reference path="../../../../src/globals/scss/helper/mixins/stretchy-clip.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/tab-focus.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/_nowrap.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/_object-fit.scss" />
+/*#endregion*/
+/*#endregion*/
+
+// -----------------------------------
+// Shortlist => General Styles
+// -----------------------------------
+.#{$gtc-namespace}shortlist {
+  &-filter-form {
+    display: none;
+  }
+
+  &-hidden {
+    display: none !important; // sass-lint:disable-line no-important
+  }
+
+  .#{$gtc-namespace}pdfExpBtn,
+  .#{$gtc-namespace}print-btn {
+    position: relative;
+    display: inline-block;
+    margin-right: em($grid-gutter-half--md);
+    margin-left: em($grid-gutter-half--md);
+
+    @include media-breakpoint-down(sm) {
+      margin-right: em($grid-gutter-half--xs);
+      margin-left: em($grid-gutter-half--xs);
+      margin-bottom: em($grid-gutter-half--xs);
+    }
+  }
+  // -----------------------------------
+  // Header PDF Export Button (currently not present and being rendered)
+  // -----------------------------------
+  .#{$gtc-namespace}pdfExpBtn {
+    &__loading-wrap {
+      $offset-left: em(50) + em($grid-gutter-half--md);
+      position: absolute;
+      left: -$offset-left;
+      top: 0;
+      width: calc(100% + #{$offset-left});
+      height: em(50);
+
+      [dir='rtl'] {
+        right: -$offset-left;
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      .js-gtc-loading__overlay {
+        position: absolute;
+        background-color: $loading__overlay--bg-color-bright-2;
+      }
+
+      .js-gtc-loading__spin {
+        width: em(45);
+        height: em(45);
+        left: em(2.5);
+        top: em(2.5);
+      }
+    }
+  }
+
+  .#{$gtc-namespace}venue-finder-view-switcher__fltr-switch {
+    display: none;
+  }
+  // -----------------------------------
+  // The section for the form element on the shortlist page.
+  // -----------------------------------
+  .type-grid {
+    // smartphone and up
+    // ----------------------------------
+    padding-top: em($section--padding-y-reduced--xs + 20);
+    padding-bottom: em($section--padding-y-reduced--xs);
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      padding-top: em($section--padding-y-reduced--md + 20);
+      padding-bottom: em(20);
+    }
+  }
+
+  .#{$gtc-namespace}venue-finder-glst {
+    // -----------------------------------
+    // List Column Base
+    // -----------------------------------
+    &__col {
+      float: none;
+      width: calc((100% - 16.45% - 13% - 31%) / 5);
+      text-align: center;
+      cursor: default;
+
+      .#{$gtc-namespace}btn {
+        cursor: default;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 25%;
+      }
+      // -----------------------------------
+      // Sort enabled
+      // -----------------------------------
+      &-sen {
+        cursor: pointer;
+
+        .#{$gtc-namespace}btn {
+          cursor: pointer;
+        }
+      }
+      // -----------------------------------
+      // Base sorted class
+      // -----------------------------------
+      &-srt {
+        background-color: $color-dark-gallery;
+        text-align: left;
+        padding-right: em(35);
+      }
+      // -----------------------------------
+      // Image
+      // -----------------------------------
+      &_0 {
+        width: 16.45%;
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      // -----------------------------------
+      // Title
+      // -----------------------------------
+      &_1 {
+        text-align: left;
+        width: 31%;
+
+        @include media-breakpoint-down(sm) {
+          width: 50%;
+        }
+      }
+      // -----------------------------------
+      // Type Name
+      // -----------------------------------
+      &_2 {
+        width: 13%;
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      // -----------------------------------
+      // # of meeting rooms
+      // -----------------------------------
+      &_3 {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      // -----------------------------------
+      // Largest Room (SQ M)
+      // -----------------------------------
+      //&_4 {
+      //}
+      // -----------------------------------
+      // Largest Room (SQ FT)
+      // -----------------------------------
+      &_5 {
+        display: none;
+      }
+      // -----------------------------------
+      // Theater Capacity
+      // -----------------------------------
+      &_6 {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      // -----------------------------------
+      // Number Of Rooms
+      // -----------------------------------
+      &_7 {
+        display: block;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.#{$gtc-namespace}section--shortlist {
+  padding-top: 0;
+
+  .gtc-venue-finder-view-switcher {
+    margin-top: 0;
+
+    &__fltr-switch {
+      display: none;
+    }
+  }
+}

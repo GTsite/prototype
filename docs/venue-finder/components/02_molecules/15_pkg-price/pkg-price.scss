@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// RESTAURANT CHEF
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &pkg-price {
+    // smartphone and up
+    // ----------------------------------
+    &__rates .#{$gtc-namespace}richtext & {
+      margin-bottom: 0;
+    }
+
+    &__rates-description .#{$gtc-namespace}richtext & {
+      display: block;
+      margin-bottom: em(10);
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-bottom: em(5);
+      }
+    }
+  }
+}

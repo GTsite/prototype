@@ -1,0 +1,25 @@
+//
+// Create a animated spin icon
+// ----------------------------------------------------
+
+@mixin spin($color1: null, $color2: null) {
+  @if $color1 == null {
+    // if color is not passed, or empty do this
+    $color1: $loading--spin--border-color;
+  }
+
+  @if $color2 == null {
+    // if hover-color is not passed, or empty do this
+    $color2: $loading--spin--border-top-color;
+  }
+
+  z-index: $zindex-loading--spin;
+  display: block;
+  position: relative;
+  width: rem($loading--spin--width);
+  height: rem($loading--spin--height);
+  border: rem($loading--spin--border-width) solid $color1;
+  border-top-color: $color2;
+  border-radius: 50%;
+  animation: spin $loading--spin--duration infinite linear;
+}

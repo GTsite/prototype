@@ -1,0 +1,30 @@
+//
+// Special Offer Banner
+// ----------------------------------------------------
+
+.#{$gtc-namespace}special-offer-banner {
+  overflow: hidden;
+  position: relative;
+  height: em(265);
+
+  &__image {
+    .#{$gtc-namespace}image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      // min-width: 100.5%; // NOTE: 100.5% because of subpixel bug in combination with transform translate
+      min-width: 100.1%;
+      width: auto;
+      max-width: none;
+      min-height: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // laptop / tablet view and up
+  // -----------------------------------
+  @include media-breakpoint-up(md) {
+    height: em(680);
+  }
+}

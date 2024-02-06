@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// Checkmark-List
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &checkmark-list {
+    // smartphone and up
+    // -----------------------------------
+    @include reset-list;
+
+    &__item {
+      padding-left: em(26);
+
+      &::before {
+        float: left;
+        display: block;
+        margin-top: em(3);
+        margin-left: em(-26);
+        content: '';
+        width: em(16);
+        height: em(16);
+        background: url('#{$svg-path}/icon-checkmark.svg');
+      }
+    }
+
+    // Variant within richtext
+    // --------------------------------------
+    .#{$gtc-namespace}richtext & {
+      &__item {
+        padding-left: em(37, $rte--font-size--xs);
+
+        &::before {
+          margin-top: em(5, $rte--font-size--xs);
+          margin-left: em(-37, $rte--font-size--xs);
+          width: em(23, $rte--font-size--xs);
+          height: em(23, $rte--font-size--xs);
+        }
+
+        // laptop & desktop and up
+        // ----------------------------------
+        @include media-breakpoint-up(md) {
+          padding-left: em(26, $rte--font-size--md);
+
+          &::before {
+            margin-top: em(5, $rte--font-size--md);
+            margin-left: em(-26, $rte--font-size--md);
+            width: em(16, $rte--font-size--md);
+            height: em(16, $rte--font-size--md);
+          }
+        }
+      }
+    }
+  }
+}

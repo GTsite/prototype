@@ -1,0 +1,238 @@
+﻿// -----------------------------------
+// Shortlist send to me form
+// -----------------------------------
+.#{$gtc-namespace}shortlist-form {
+  background-color: $color-snow;
+  padding: em(25) 0;
+  box-sizing: border-box;
+  position: relative;
+
+  @media print {
+    display: none;
+  }
+  // -----------------------------------
+  // Base elements
+  // -----------------------------------
+  .form-group {
+    @include clearfix;
+  }
+
+  .pull-right {
+    line-height: normal;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1em;
+    }
+  }
+
+  .form-group:nth-child(2),
+  .form-group:nth-child(3),
+  .form-group:nth-child(4) {
+    @include make-col();
+    @include make-col-span(4);
+
+    @include media-breakpoint-down(sm) {
+      @include make-col-span(12);
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .form-group:nth-child(2),
+  .form-group:nth-child(4) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .form-group {
+    &.bg-warning {
+      width: 100%;
+      margin: em(5) 0 em(20);
+    }
+  }
+
+  .form-submit-border {
+    position: relative;
+    clear: none;
+    @include clearfix;
+  }
+
+  .#{$gtc-namespace}form-submit {
+    position: absolute;
+    top: em(-90);
+    //fix the positioning issues for sm
+    transform: translateX(-50%);
+    left: 50%;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1em;
+      top: em(-125);
+    }
+  }
+
+  h1:not(.#{$gtc-namespace}form-heading) {
+    font-size: em(25);
+    font-family: $font-family--brand--regular;
+    text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      font-size: em(40);
+    }
+  }
+
+  .#{$gtc-namespace}form-heading {
+    line-height: 125%;
+  }
+
+  .#{$gtc-namespace}form-field--html-text {
+    line-height: 115%;
+  }
+  // -----------------------------------
+  // Typed elements
+  // -----------------------------------
+  // -----------------------------------
+  // Mandatory fields label
+  // -----------------------------------
+  label {
+    &.pull-right {
+      @include media-breakpoint-down(sm) {
+        font-size: em($base--font-size--md);
+        padding-left: em($grid-gutter-half--xs);
+        padding-right: em($grid-gutter-half--xs);
+        display: block;
+        float: none !important; // sass-lint:disable-line no-important
+        line-height: 225%;
+        text-align: right;
+      }
+    }
+  }
+  // -----------------------------------
+  // Checkbox
+  // -----------------------------------
+  .#{$gtc-namespace}checkbox {
+    &.#{$gtc-namespace}form-checkbox {
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 1em;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .#{$gtc-namespace}checkbox__vis,
+      .#{$gtc-namespace}checkbox__lbl {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .#{$gtc-namespace}checkbox__vis {
+        width: em(35);
+        height: em(35);
+      }
+
+      .#{$gtc-namespace}checkbox__lbl {
+        line-height: normal;
+        $offset: em(45);
+        width: calc(100% - #{$offset});
+        font-family: $font-family--brand--regular;
+
+        @include media-breakpoint-down(sm) {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  // -----------------------------------
+  // Link
+  // -----------------------------------
+  .#{$gtc-namespace}form-link {
+    color: $color-lochmara;
+    text-decoration: underline;
+  }
+  // -----------------------------------
+  // Loading spinner for the form elemet
+  // -----------------------------------
+  .#{$js-namespace-prefix}#{$gtc-namespace}loading {
+    &__overlay {
+      position: absolute;
+    }
+  }
+}
+
+// -----------------------------------
+// Override syntax
+// -----------------------------------
+.#{$gtc-namespace} {
+  &container {
+    // inline forms
+    form {
+      &.#{$gtc-namespace}shortlist-form {
+        fieldset {
+          @include make-col-span(12);
+          width: 100%;
+          padding: 0 em(30);
+
+          // -----------------------------------
+          // Base elements
+          // -----------------------------------
+          .form-group {
+            margin-bottom: rem(25);
+          }
+
+          .form-group:nth-child(6) {
+            margin-bottom: em(35);
+          }
+
+          .form-group:last-of-type {
+            margin-top: em(90);
+            margin-bottom: 0;
+
+            @include media-breakpoint-down(sm) {
+              margin-top: em(110);
+            }
+          }
+
+          .form-group > .form-group {
+            margin-top: 0;
+          }
+          // -----------------------------------
+          // Typed elements
+          // -----------------------------------
+          // -----------------------------------
+          // Checkbox
+          // -----------------------------------
+          .#{$gtc-namespace}checkbox__lbl {
+            color: $color-jumbo;
+          }
+          // -----------------------------------
+          // Recaptcha
+          // -----------------------------------
+          .g-recaptcha {
+            clear: none;
+          }
+        }
+        // -----------------------------------
+        // Typed elements
+        // -----------------------------------
+        input {
+          color: $color-jumbo;
+          border: 0.1rem solid $color-jumbo;
+          background: $color-snow;
+
+          &[type='text'] {
+            background: $color-snow;
+            border: 0.1rem solid $color-jumbo;
+          }
+        }
+      }
+    }
+  }
+}

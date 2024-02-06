@@ -1,0 +1,230 @@
+﻿//
+// Form
+// -----------------------------------------------------------------------------
+.#{$gtc-namespace} {
+  &container {
+    // inline forms
+    form {
+      h1 {
+        font-family: $font-family--brand--bold;
+        font-size: em($heading--main__line--font-size--xs);
+        line-height: em($heading--main__line--line-height--xs, $heading--main__line--font-size--xs);
+
+        @include media-breakpoint-up(md) {
+          font-size: em($heading--main__line--font-size--md);
+          line-height: em($heading--main__line--line-height--md, $heading--main__line--font-size--md);
+        }
+      }
+
+      .validation-summary-errors {
+        display: none;
+      }
+
+      fieldset {
+        padding-bottom: em(96);
+        @include make-col;
+        @include make-col-span(12);
+        // laptop & desktop and up
+        // ----------------------------------
+        @include media-breakpoint-up(md) {
+          @include make-col-span(4);
+          margin-bottom: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        .form-group {
+          margin-bottom: em(20);
+
+          .control-label {
+            display: none;
+          }
+        }
+
+        select,
+        textarea,
+        input {
+          background: $color-concrete;
+          color: $color-lochmara;
+          font-family: $font-family--brand--light-italic;
+          font-size: em($input--font-size--xs);
+          line-height: em($input--line-height--xs, $input--font-size--xs);
+          display: inline-block;
+          width: 100%;
+          height: em(81, $input--font-size--xs);
+          box-sizing: border-box;
+          padding: 0 em(29, $input--font-size--xs);
+
+          @include input-placeholder {
+            color: $color-ship;
+          }
+
+          // laptop / tablet view and up
+          // -----------------------------------
+          @include media-breakpoint-up(md) {
+            font-size: em($input--font-size--md);
+            line-height: em($input--line-height--md, $input--font-size--md);
+            padding: 0 em(18, $input--font-size--md);
+            height: em(53, $input--font-size--md);
+          }
+
+          &[type='text'] {
+            background: $color-concrete;
+            color: $color-lochmara;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+
+            @include input-placeholder {
+              color: $color-ship;
+            }
+          }
+        }
+
+        input {
+          &[type='text'] {
+            border: em(1) solid $color-white-graphite;
+          }
+
+          &.input-validation-error {
+            @include input-placeholder();
+          }
+
+          &:focus {
+            outline: em(2) solid transparent;
+            border: em(1) solid $color-lochmara;
+            color: $color-lochmara;
+          }
+        }
+
+        select,
+        textarea {
+          border: em(1) solid $color-white-graphite;
+
+          &.input-validation-error {
+            @include input-placeholder();
+          }
+
+          &:focus {
+            outline: em(2) solid transparent;
+            border: em(1) solid $color-lochmara;
+            color: $color-lochmara;
+          }
+        }
+
+        select {
+          color: $color-ship;
+
+          &:not([multiple]) {
+            background: url('#{$img-path}/icon-arrow-down--grey.png') no-repeat calc(100% - #{em(18, $input--font-size--xs)})
+              em(32, $input--font-size--xs) transparent;
+            background-size: em(30, $input--font-size--xs) em(18, $input--font-size--xs);
+            appearance: none;
+
+            // laptop / tablet view and up
+            // -----------------------------------
+            @include media-breakpoint-up(md) {
+              background: url('#{$img-path}/icon-arrow-down--grey.png') no-repeat calc(100% - #{em(12, $input--font-size--md)})
+                em(20, $input--font-size--md) transparent;
+              background-size: em(18, $input--font-size--md) em(11, $input--font-size--md);
+            }
+          }
+        }
+
+        textarea {
+          height: auto;
+          padding: em(18);
+        }
+        // TODO: adapt these selectors below
+        .rc-anchor-normal {
+          height: em(74);
+          width: em(300);
+        }
+
+        .pull-right {
+          float: right;
+        }
+
+        label:not(.changeDates, .gtc-checkbox__lbl, .gtc-lbl) {
+          font-size: em($input--font-size--md);
+          line-height: em($input--line-height--md, $input--font-size--md);
+          font-weight: normal;
+          font-family: latolight_italic;
+          margin-bottom: 0;
+          color: $color-ship;
+          vertical-align: top;
+
+          @include media-breakpoint-down(sm) {
+            font-size: em($input--font-size--xs);
+            line-height: em($input--line-height--xs, $input--font-size--xs);
+          }
+
+          &.error {
+            color: $color-error;
+            display: block;
+            clear: both;
+            padding: 0 0 0 em(15, $input--font-size--xs);
+            margin: 0;
+
+            // laptop / tablet view and up
+            // -----------------------------------
+            @include media-breakpoint-up(md) {
+              padding-left: em(15, $input--font-size--md);
+            }
+
+            &::before {
+              content: '\e014';
+              font-family: 'Glyphicons Halflings';
+              font-size: em(14);
+              padding-right: em(6);
+            }
+
+            strong {
+              font-weight: normal;
+            }
+          }
+        }
+        $sr-only-size: 0.1rem;
+        .sr-only {
+          position: absolute;
+          width: $sr-only-size;
+          height: $sr-only-size;
+          margin: -0.1rem;
+          padding: 0;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          border: 0;
+        }
+
+        .g-recaptcha {
+          clear: both;
+        }
+
+        .g-recaptcha__scale {
+          transform-origin: 0 0;
+        }
+
+        .field-validation-error {
+          &.help-block {
+            color: $color-error;
+            display: block;
+            clear: both;
+            line-height: em(48);
+            padding: 0 0 0 em(15);
+            margin: 0;
+            font-size: normal em(20);
+            font-family: latolight_italic;
+          }
+        }
+      }
+
+      .form-submit-border {
+        clear: both;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

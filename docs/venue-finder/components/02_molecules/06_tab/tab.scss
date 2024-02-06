@@ -1,0 +1,118 @@
+// -----------------------------------------------------------------------------
+// Tabs
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  // smartphone and up
+  // ----------------------------------
+  &tabs {
+    // Tabs nav
+    // -----------------------------------
+    &__nav {
+      @include clearfix;
+      @include reset-list;
+    }
+
+    &__nav-item {
+      &:only-child {
+        @include hidden-accessible;
+      }
+    }
+
+    &__btn {
+      position: relative;
+      display: block;
+      width: 100%;
+      background-color: var(--color-custom-white);
+      box-shadow: 0 0 0.3rem var(--color-custom-black-semi-darker);
+      color: var(--color-primary-blue);
+      white-space: nowrap;
+
+      .has-hover &:hover {
+        box-shadow: 0 0 0 0.2rem var(--color-primary-blue) inset;
+      }
+
+      &[aria-selected='true'] {
+        cursor: default;
+        background-color: var(--color-primary-blue);
+        color: var(--color-custom-white);
+      }
+    }
+
+    &__btn-label {
+      color: inherit;
+    }
+
+    // Tabbable tabs content
+    // -----------------------------------
+
+    &__pane {
+      transition: $transition-settings--tab-pane;
+      transition-property: opacity;
+
+      &[aria-hidden='false'] {
+        // display: block;
+        height: auto;
+        overflow-y: visible;
+        opacity: 1;
+      }
+
+      &[aria-hidden='true'] {
+        // display: none;
+        // NOTE: Workaround because slick is not setup correct wthin display none tab
+        height: 0;
+        overflow-y: hidden;
+        opacity: 0;
+      }
+    }
+
+    // tablet and down
+    // ----------------------------------
+    @include media-breakpoint-down(sm) {
+      // Tabs nav
+      // -----------------------------------
+      &__nav-item {
+        width: 100%;
+        padding-bottom: em(2);
+      }
+
+      &__btn {
+        padding-top: em($tabs__btn--padding-y--xs);
+        padding-right: em($tabs__btn--padding-x--xs);
+        padding-bottom: em($tabs__btn--padding-y--xs);
+        padding-left: em($tabs__btn--padding-x--xs);
+      }
+
+      &__btn-label {
+        font-size: em($tabs__btn-label--font-size--xs);
+        line-height: em($tabs__btn-label--line-height--xs, $tabs__btn-label--font-size--xs);
+      }
+    }
+
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      &__nav {
+        display: flex;
+        margin-bottom: 3.4rem;
+      }
+
+      &__nav-item {
+        flex-basis: 22.2rem;
+        margin-right: 2.4rem;
+      }
+
+      &__btn {
+        padding-top: em($tabs__btn--padding-y--md);
+        padding-right: em($tabs__btn--padding-x--md);
+        padding-bottom: em($tabs__btn--padding-y--md);
+        padding-left: em($tabs__btn--padding-x--md);
+      }
+
+      &__btn-label {
+        font-size: var(--font-size-medium-text);
+        line-height: 1;
+      }
+    }
+  }
+}

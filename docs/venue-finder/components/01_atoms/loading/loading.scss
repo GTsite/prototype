@@ -1,0 +1,58 @@
+﻿//----------------------------
+// Namespace definition
+//----------------------------
+$nslocal: 'loading';
+$nslocal0: 'body-';
+
+//
+// Fullsize Overlay
+// --------------------------------------------------
+.#{$js-namespace-prefix + $gtc-namespace + $nslocal} {
+  &__overlay {
+    z-index: $zindex-loading--overlay;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $loading__overlay--bg-color;
+
+    body > & {
+      position: fixed;
+    }
+  }
+
+  &__spin {
+    @include spin;
+    position: absolute;
+    top: calc(50% - (#{rem($loading__spin--height)} / 2));
+    left: calc(50% - (#{rem($loading__spin--width)} / 2));
+    transform: translate(-50%, -50%);
+  }
+}
+
+//
+// Fullsize Overlay
+// --------------------------------------------------
+.#{$js-namespace-prefix + $gtc-namespace + $nslocal}--bright {
+  .#{$js-namespace-prefix + $gtc-namespace + $nslocal} {
+    &__overlay {
+      background-color: $loading__overlay--bg-color-bright;
+    }
+
+    &__spin {
+      border-color: $loading__spin--border-color-bright;
+      border-top-color: $loading__spin--border-top-color-bright;
+    }
+  }
+}
+//
+// Body Loading
+// --------------------------------------------------
+.#{$js-namespace-prefix + $gtc-namespace + $nslocal0 + $nslocal} {
+  overflow: hidden;
+  //support IOS
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}

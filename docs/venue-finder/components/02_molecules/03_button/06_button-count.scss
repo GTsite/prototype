@@ -1,0 +1,10 @@
+// -----------------------------------
+// Button with a counter on top-right side of it.
+// -----------------------------------
+.#{$gtc-namespace}btn--count {
+  position: relative;
+
+  .#{$gtc-namespace}btn__count {
+    font-size: inherit;
+  }
+}

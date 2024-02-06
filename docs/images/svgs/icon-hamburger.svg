@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 22.5 18" style="enable-background:new 0 0 22.5 18;" xml:space="preserve">
+	<g>
+		<rect x="5.2" y="1.1" class="st0" width="17.3" height="3"/>
+		<rect x="5.2" y="7.5" class="st0" width="17.3" height="3"/>
+		<path class="st0" d="M5.2,13.9h17.3v3H5.2V13.9z"/>
+	</g>
+	<g>
+		<rect y="1.1" class="st0" width="3" height="3"/>
+		<rect y="7.5" class="st0" width="3" height="3"/>
+		<path d="M0,13.9h3v3H0V13.9z"/>
+	</g>
+</svg>

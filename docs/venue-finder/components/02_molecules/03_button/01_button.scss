@@ -1,0 +1,134 @@
+/*#region Reference Paths*/
+
+/*#region Variables*/
+/// <reference path="../../../../src/globals/scss/settings/_variables.scss" />
+/// <reference path="../../../../src/components/05_pages/one-campaign/_variables.scss" />
+/*#endregion*/
+
+/*#region Grid*/
+/// <reference path="../../../../src/globals/scss/grid/grid-breakpoints.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-components.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-media-breakpoints.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-mixins.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-overlay.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-variables.scss" />
+/*#endregion*/
+
+/*#region Functions*/
+/// <reference path="../../../../src/globals/scss/helper/functions/01_em.scss" />
+/// <reference path="../../../../src/globals/scss/helper/functions/02_rem.scss" />
+/// <reference path="../../../../src/globals/scss/helper/functions/03_vw.scss" />
+/*#endregion*/
+
+/*#region Mixins*/
+/// <reference path="../../../../src/globals/scss/helper/mixins/_gradients.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/aspect-ratio.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/clearfix.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/css-browser-hacks.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/exports.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/hidden-accessible.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/hover.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/input-placeholder.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/reset-list.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/responsive-icon.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/spin.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/sr-only.scss />
+/// <reference path="../../../../src/globals/scss/helper/mixins/stretchy-clip.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/tab-focus.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/_nowrap.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/_object-fit.scss" />
+/*#endregion*/
+/*#endregion*/
+
+@import '../../../globals/scss/helper/mixins/exports';
+@import '00_mixins';
+@import '../../../../_scss/utils/mixins.scss';
+
+@include exports('button') {
+  .#{$gtc-namespace} {
+    // -------------------------------------------------------------------------
+    // General Button
+    // -------------------------------------------------------------------------
+    &btn {
+      @include button-primary();
+      border-radius: 3rem;
+      font-size: var(--font-size-medium-text-3);
+      @include media-breakpoint-up(md) {
+        font-size: var(--font-size-big-text);
+      }
+      &__label {
+        line-height: 1.05;
+        font-size: inherit;
+      }
+
+      &__icon {
+        @include responsive-icon(1, 1);
+        display: inline-block;
+        float: left;
+        width: em($btn__icon--width--xs);
+        vertical-align: middle;
+        // background-color: $color-debug3;
+      }
+
+      &__label + &__icon {
+        margin-left: em(12);
+        float: right;
+        margin: 0;
+        // rlt-changes
+        // -----------------------------------
+        [dir='rtl'] & {
+          margin-right: em(12);
+          margin-left: 0;
+        }
+      }
+
+      &__icon {
+        &.#{$gtc-namespace}btn__icon--left {
+          margin-right: em(14);
+          float: left;
+          // rlt-changes
+          // -----------------------------------
+          [dir='rtl'] & {
+            float: right;
+            margin-left: em(14);
+            margin-right: 0;
+          }
+        }
+      }
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        &__icon {
+          width: em($btn__icon--width--md);
+        }
+      }
+    }
+    // -------------------------------------------------------------------------
+    // Button Sizing Variants
+    // -------------------------------------------------------------------------
+    // Button uppercase font
+    &btn--uc {
+      .#{$gtc-namespace}btn__label {
+        text-transform: uppercase;
+      }
+    }
+    // -----------------------------------
+    // Reduced font-size for the button.
+    // -----------------------------------
+    &btn--sm {
+      font-size: em($btn--font-size--xs-reduced);
+      padding: em($btn--padding-y--xs) em($btn--padding-x--xs-reduced);
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($btn--font-size--md-reduced);
+        padding: em($btn--padding-y--md) em($btn--padding-x--md-reduced);
+
+        .#{$gtc-namespace}btn__label {
+          font-size: em($btn--font-size--md-reduced);
+          line-height: em($btn--line-height--md-reduced, $btn--font-size--md-reduced);
+        }
+      }
+    }
+  }
+}

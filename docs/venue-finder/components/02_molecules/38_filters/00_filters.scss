@@ -1,0 +1,350 @@
+﻿@import '../../../../_scss/utils/mixins.scss';
+// -----------------------------------
+// Complete offtopic stuff
+// -----------------------------------
+.#{$gtc-namespace} {
+  &row {
+    // -----------------------------------
+    // The general messages to be displayed for the filter
+    // -----------------------------------
+    .alert {
+      display: none;
+      clear: both;
+      padding-right: 100%;
+      padding-left: 100%;
+      margin: 0 -100%;
+      padding-top: em(15);
+      padding-bottom: em(15);
+      text-align: center;
+
+      &.alert-success {
+        display: block;
+        background-color: $state-success-bg;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+// -----------------------------------
+// Events, Attractions, Venue ==> Filter elements
+// -----------------------------------
+.#{$gtc-namespace}filter {
+  @include make-container;
+  display: block;
+  margin-bottom: em(40);
+
+  // laptop / tablet view and up
+  // -----------------------------------
+  @include media-breakpoint-up(md) {
+    margin-bottom: em(15);
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+  }
+
+  // -----------------------------------
+  // base row with date and text, search button
+  // -----------------------------------
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .#{$gtc-namespace}input-group {
+      &__icon {
+        right: em(20);
+      }
+
+      &__input {
+        padding-left: em(20);
+        padding-right: em(20);
+
+        @include input-placeholder {
+          color: $color-ship;
+          font-family: $font-family--brand--light-italic;
+
+          @include css-hack-edge-only {
+            font-style: italic;
+            opacity: 0.7;
+            font-family: $font-family--brand--regular;
+          }
+        }
+
+        &.#{$gtc-namespace}filter__search {
+          padding: 1.3rem 3.3rem 1.3rem 1.3rem;
+          border: 0.1rem solid var(--color-primary-grey);
+          border-radius: 1.4rem;
+          height: auto;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: var(--color-primary-grey-light);
+            font-size: var(--font-size-medium-text);
+          }
+        }
+      }
+
+      .#{$gtc-namespace}datepicker--init {
+        padding-right: em(45);
+      }
+    }
+
+    .#{$gtc-namespace}input-group-item {
+      box-sizing: border-box;
+      flex: 0 1 em(250);
+      // -----------------------------------
+      // Search button
+      // -----------------------------------
+      &--srh-btn {
+        flex: 0 1 em(100);
+      }
+
+      @include media-breakpoint-down(sm) {
+        flex: 0 1 100%;
+      }
+
+      .#{$gtc-namespace}btn:not(.#{$gtc-namespace}btn--sm) {
+      }
+    }
+  }
+  // -----------------------------------
+  // Page specific filters (Today, All, Music, etc.)
+  // -----------------------------------
+  &__row--sub {
+    .#{$gtc-namespace}input-group-item {
+      flex: auto;
+      width: auto;
+
+      @include media-breakpoint-down(sm) {
+        flex: auto;
+        width: auto;
+      }
+    }
+  }
+  // -----------------------------------
+  // Hidden filter section/more filters
+  // -----------------------------------
+  &__row--more {
+    padding-left: 100%;
+    padding-right: 100%;
+    margin-left: -100%;
+    margin-right: -100%;
+    background-color: $color-snow;
+
+    &[aria-hidden='false'] {
+      display: block;
+      margin-top: em(20);
+      margin-bottom: em(20);
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
+  &__more-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__more-col {
+    padding: 0 1em;
+    flex: 0 1 100%;
+    max-width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      border-right: 0.1rem solid $color-pale;
+      flex: 0 1 50%;
+      max-width: 50%;
+    }
+    // -----------------------------------
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      flex: 0 1 33;
+      max-width: 33%;
+    }
+  }
+
+  &__more-title {
+    display: block;
+    text-transform: uppercase;
+    color: $color-lochmara;
+    font-weight: normal;
+    // -----------------------------------
+    // Tablet view and down
+    // -----------------------------------
+    @include media-breakpoint-down(sm) {
+      font-size: em($btn--font-size--xs);
+    }
+  }
+
+  &__more-list {
+    display: block;
+    padding: 0;
+    list-style: none;
+    margin: em(25) 0;
+  }
+
+  &__more-item {
+    width: 100%;
+    padding-left: 0 !important; // sass-lint:disable-line no-important
+    padding-right: 0 !important; // sass-lint:disable-line no-important
+    .#{$gtc-namespace}filter__item-link {
+      width: 100%;
+    }
+  }
+
+  &__item-link {
+    // Restyling buttons to checkboxes
+    width: 100%;
+    text-overflow: ellipsis;
+    box-shadow: none;
+    text-align: left;
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-medium-text);
+    position: relative;
+    border-radius: 0;
+    color: var(--color-primary-black);
+    padding: 2rem 3rem 2rem 0;
+    border: 0.1rem solid transparent;
+    border-bottom-color: var(--color-primary-grey-light);
+    background-color: transparent;
+    max-width: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: transparent;
+      border-bottom-color: var(--color-primary-grey-light);
+      outline: none;
+      background-color: transparent;
+      color: var(--color-primary-black);
+      box-shadow: none;
+    }
+
+    .has-hover & {
+      &:hover {
+        background-color: transparent;
+        color: var(--color-primary-black);
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      @include size(2rem);
+      border: 0.2rem solid var(--color-primary-grey-light);
+      border-radius: 0.3rem;
+    }
+
+    &[data-category='Configuration'] {
+      &:after {
+        border: 0.2rem solid var(--color-primary-grey-light);
+        border-radius: 100%;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0.6rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @include size(1.2rem);
+        border-radius: 100%;
+        background: var(--color-primary-grey-light);
+      }
+    }
+
+    .gtc-btn__label {
+      font-size: var(--font-size-medium-text);
+    }
+  }
+  // -----------------------------------
+  // Callout to be displayed below th more button when more filters is active
+  // -----------------------------------
+  &__item-link-toggle {
+    &::after {
+      display: none;
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 0.25rem);
+      width: 0;
+      height: 0;
+      border: 0.8rem solid transparent;
+      margin-left: -0.4rem;
+      border-bottom-color: $color-snow;
+    }
+  }
+}
+
+// -----------------------------------
+// Js base selectors
+// -----------------------------------
+.js-#{$gtc-namespace}filter__item-active {
+  // -----------------------------------
+  // The active item button should have the same styles as the default hover/focus/active styles.
+  // -----------------------------------
+  .#{$gtc-namespace}filter__item-link {
+    &:after {
+      background-color: var(--color-primary-blue);
+      border-color: var(--color-primary-blue);
+    }
+
+    &:before {
+      content: '';
+      width: 1.7rem;
+      height: 1.2rem;
+      position: absolute;
+      right: 0.3rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-size: cover;
+      z-index: 2;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.17 16.06"%3E%3Cpolygon fill="%23fff" points="2.08 6.22 0 8.39 8.02 16.06 21.17 2.3 18.77 0 7.69 11.58 2.08 6.22"/%3E%3C/svg%3E');
+    }
+
+    &[data-category='Configuration'] {
+      &:after {
+        background-color: transparent;
+        border-color: var(--color-primary-blue);
+      }
+
+      &:before {
+        right: 0.6rem;
+        background: var(--color-primary-blue);
+        @include size(1.2rem);
+      }
+    }
+
+    .#{$gtc-namespace}icon {
+      fill: var(--color-primary-blue);
+    }
+  }
+
+  .#{$gtc-namespace}filter__item-link-toggle {
+    &::after {
+      display: block;
+    }
+  }
+}

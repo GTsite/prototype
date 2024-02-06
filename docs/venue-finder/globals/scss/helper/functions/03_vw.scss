@@ -1,0 +1,10 @@
+//
+// Calculating VWs - automatically converts pixels to VWs
+// -------------------------------------------------------------------
+
+// To convert a px value to vw, we’ll need a pixel-based target equal to 1% of some value (context)
+
+@function vw($target, $context) {
+  $vw-context: ($context * 0.01) * 1;
+  @return ($target / $vw-context) * 1vw;
+}

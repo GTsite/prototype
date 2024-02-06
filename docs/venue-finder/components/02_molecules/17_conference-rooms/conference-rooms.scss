@@ -1,0 +1,264 @@
+// -----------------------------------------------------------------------------
+// DETAIL CONFERENCE ROOMS
+// -----------------------------------------------------------------------------
+
+$tooltip-arrow-width: 0.4rem;
+
+.#{$gtc-namespace} {
+  &conference-rooms {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-medium-text);
+    line-height: 1.286;
+    border-collapse: collapse;
+    color: var(--color-primary-black);
+    margin-bottom: -2rem;
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      line-height: 1.714;
+      margin-bottom: 0;
+    }
+
+    &__caption {
+      display: none;
+    }
+
+    &__thead {
+      // tablet and down
+      // ----------------------------------
+      @include media-breakpoint-down(sm) {
+        @include hidden-accessible;
+      }
+    }
+
+    &__thead &__td {
+      padding: 0;
+    }
+
+    &__th {
+      font-weight: normal;
+      vertical-align: top;
+      padding: 0 0.8rem 1.2rem;
+      text-align: left;
+      line-height: 1.26;
+      position: relative;
+      & > span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      @include media-breakpoint-up(md) {
+        &:not(:empty):after {
+          content: attr(data-title);
+          position: absolute;
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          border-radius: 0.8rem;
+          background: var(--color-primary-blue);
+          color: var(--color-custom-white);
+          font-family: var(--font-family-primary);
+          padding: 0.5rem 1.8rem 0.5rem;
+          font-size: var(--font-size-tiny-text);
+          line-height: 1.2;
+          top: -2.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        &:not(:empty):before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: -#{$tooltip-arrow-width};
+          border: $tooltip-arrow-width solid transparent;
+          border-top-color: var(--color-primary-blue);
+          margin-left: -#{$tooltip-arrow-width};
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        &:hover {
+          overflow: visible;
+          &:after,
+          &:before {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-family: var(--font-family-primary);
+        font-size: var(--font-size-primary-text);
+        width: calc((100% - 20%) / 8);
+
+        &:first-child {
+          width: 20%;
+        }
+
+        &:nth-child(2) {
+          text-align: center;
+        }
+      }
+    }
+
+    &__tr {
+      border-top: 0.1rem solid var(--color-primary-grey-light);
+      // tablet and down
+      // ----------------------------------
+      @include media-breakpoint-down(sm) {
+        display: block;
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+    }
+
+    &__td {
+      vertical-align: top;
+      padding: 0.4rem 0;
+
+      &:first-child {
+        padding: 2rem 0 0.6rem;
+      }
+
+      &:last-child {
+        padding-bottom: 2rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 1.2rem 0.8rem;
+
+        &:first-child {
+          padding: 1.2rem 0.8rem 1.2rem 0;
+        }
+
+        &:last-child {
+          padding-bottom: 1.2rem;
+        }
+      }
+      // tablet and down
+      // ----------------------------------
+      @include media-breakpoint-down(sm) {
+        display: block;
+
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+
+        &::before {
+          &:first-child {
+            content: '';
+          }
+
+          content: attr(data-label);
+          float: left;
+        }
+      }
+    }
+
+    &__tbody &__td {
+      text-align: right;
+
+      @include media-breakpoint-up(md) {
+        text-align: left;
+
+        &:nth-child(2) {
+          text-align: center;
+        }
+      }
+    }
+
+    &__title {
+      display: block;
+      font-family: var(--font-family-primary);
+      font-size: var(--font-size-primary-text);
+      line-height: 1.25;
+      text-align: left;
+
+      @include media-breakpoint-up(md) {
+        line-height: 1.5;
+      }
+    }
+
+    &__capacities {
+      @include reset-list;
+      @include clearfix;
+      display: none;
+    }
+
+    &__capacities-label {
+      float: left;
+    }
+
+    &__capacities-value {
+      float: right;
+      padding-right: 0;
+      padding-top: 0;
+
+      &.gtc-btn {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        float: none;
+        font-family: var(--font-family-default);
+        color: var(--color-primary-blue);
+        border-radius: 0;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: -0.4rem;
+
+        .has-hover &:hover {
+          color: var(--color-primary-blue);
+        }
+
+        .gtc-btn__label {
+          font-size: var(--font-size-medium-text);
+          line-height: 1.714;
+        }
+
+        &::after {
+          content: '';
+          background: url(../images/icons/gallery-blue.svg) no-repeat;
+          width: 2.1rem;
+          height: 1.9rem;
+          margin-left: 0.5rem;
+        }
+
+        &:disabled {
+          color: var(--color-primary-grey);
+          cursor: default;
+
+          .has-hover &:hover {
+            box-shadow: none;
+            background: transparent;
+            color: var(--color-primary-grey);
+          }
+
+          &::after {
+            background: url(../images/icons/gallery-gray.svg) no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

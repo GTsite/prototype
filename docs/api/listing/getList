@@ -1,0 +1,156 @@
+{
+  "Filters": [
+    {
+      "label": "Family friendly",
+      "id": "0"
+    },
+    {
+      "label": "Old town",
+      "id": "1"
+    },
+    {
+      "label": "Romantic",
+      "id": "2"
+    },
+    {
+      "label": "Business",
+      "id": "3"
+    }
+  ],
+  "ListingResults": [
+    {
+      "Title": "Hotel Geneva1",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit.</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-1.jpg",
+      "ImageList": [
+        "https://gtsite.github.io/prototype/images/listing/image-1.jpg",
+        "https://gtsite.github.io/prototype/images/listing/image-2.jpg"
+      ],
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a11",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "rating": "5 sup",
+        "sustainable": "Sustainable choice"
+      },
+      "Lat": "46.2014918",
+      "Lng": "6.1400442",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva2 Hotel Geneva2",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-2.jpg",
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a12",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "rating": "4",
+        "sustainable": "Sustainable choice"
+      },
+      "Lat": "46.2014936",
+      "Lng": "6.1400425",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva3",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-3.jpg",
+      "ImageList": [
+        "https://gtsite.github.io/prototype/images/listing/image-3.jpg",
+        "https://gtsite.github.io/prototype/images/listing/image-1.jpg",
+        "https://gtsite.github.io/prototype/images/listing/image-2.jpg",
+        "https://gtsite.github.io/prototype/images/listing/image-4.jpg",
+        "https://gtsite.github.io/prototype/images/listing/image-5.jpg"
+      ],
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a13",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "rating": "3 sup"
+      },
+      "Lat": "46.2014926",
+      "Lng": "6.1400435",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva4",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-4.jpg",
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a14",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "text": "Free entry",
+        "sustainable choice": "Sustainable choice"
+      },
+      "Lat": "46.2020766",
+      "Lng": "6.142089",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva5",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-5.jpg",
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a15",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "rating": "2 sup"
+      },
+      "Lat": "46.2015305",
+      "Lng": "6.15095",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva6",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-6.jpg",
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a16",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "rating": "1"
+      },
+      "Lat": "46.2002283",
+      "Lng": "6.151739",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva7",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-1.jpg",
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a17",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "rating": "1 sup"
+      },
+      "Lat": "46.2027244",
+      "Lng": "6.1449716",
+      "Pin": "pin-attraction"
+    },
+    {
+      "Title": "Hotel Geneva8",
+      "Paragraph": "<p>Lorem <b>ipsum</b>ipsum dolor sit, consectetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore amet</p>",
+      "Image": "https://gtsite.github.io/prototype/images/listing/image-2.jpg",
+      "ItemLink": "/en/hotel-Geneva",
+      "LinkLabel": "Discover more",
+      "ItemId": "d2ff9791-3570-43c9-9187-f3651d999a18",
+      "TemplateName": "Listing Page",
+      "Tag": {
+        "sustainable choice": "Sustainable choice"
+      }
+    }
+  ],
+  "TotalNumberOfResults": 37,
+  "NextPageNumber": 1,
+  "HasMoreResults": true
+}

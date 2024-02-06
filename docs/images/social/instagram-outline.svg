@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   style="fill:none"
+   id="svg17"
+   version="1.1"
+   viewBox="0 0 25 25"
+   height="25"
+   width="25">
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="display:inline;fill:#000000"
+     id="path4"
+     d="M 18.2291,25 H 6.7709 C 3.0375,25 0,21.9628 0,18.2291 V 6.7709 C 0,3.0372 3.0375,0 6.7709,0 H 18.2291 C 21.9628,0 25,3.0372 25,6.7709 V 18.2294 C 25,21.9628 21.9628,25 18.2291,25 Z M 6.7709,2.08344 c -2.5847,0 -4.68746,2.10276 -4.68746,4.68746 v 11.4585 c 0,2.5847 2.10276,4.6875 4.68746,4.6875 h 11.4582 c 2.5847,0 4.6875,-2.1028 4.6875,-4.6875 V 6.7709 c 0,-2.5847 -2.1028,-4.68746 -4.6875,-4.68746 z" />
+  <path
+     style="fill:#000000"
+     id="path6"
+     d="m 12.5,18.75 c -3.4462,0 -6.25,-2.8041 -6.25,-6.25 0,-3.4466 2.8038,-6.25 6.25,-6.25 3.4462,0 6.25,2.8034 6.25,6.25 0,3.4459 -2.8038,6.25 -6.25,6.25 z m 0,-10.4166 c -2.2975,0 -4.1666,1.8691 -4.1666,4.1666 0,2.2978 1.8691,4.1666 4.1666,4.1666 2.2975,0 4.1666,-1.8688 4.1666,-4.1666 0,-2.2975 -1.8688,-4.1666 -4.1666,-4.1666 z" />
+  <path
+     style="display:inline;fill:#000000"
+     id="path8"
+     d="m 19.1407,7.2916 c 0.791,0 1.4322,-0.6412 1.4322,-1.4322 0,-0.791 -0.6412,-1.4322 -1.4322,-1.4322 -0.791,0 -1.4322,0.6412 -1.4322,1.4322 0,0.791 0.6412,1.4322 1.4322,1.4322 z" />
+  <defs
+     id="defs15">
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="3.6157501"
+       x2="31.4727"
+       y1="36.384602"
+       x1="8.5276899"
+       id="paint0_linear">
+      <stop
+         id="stop10"
+         stop-color="#FFB900" />
+      <stop
+         id="stop12"
+         stop-color="#9100EB"
+         offset="1" />
+    </linearGradient>
+  </defs>
+</svg>

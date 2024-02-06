@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.881 15.229">
+  <g data-name="Groupe 1068" transform="translate(-644.002 -2054)">
+    <g data-name="Icon feather-chevrons-down">
+      <path fill="#282828" d="M651.442 2069.228a1 1 0 0 1-.65-.24l-6.44-5.5a1 1 0 1 1 1.3-1.521l5.791 4.947 5.791-4.947a1 1 0 0 1 1.3 1.521l-6.44 5.5a1 1 0 0 1-.652.24Z" data-name="Tracé 1181"/>
+    </g>
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#282828" data-name="Ellipse 1" transform="translate(650 2059)"/>
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#282828" data-name="Ellipse 2" transform="translate(650 2054)"/>
+  </g>
+</svg>

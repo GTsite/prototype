@@ -1,0 +1,219 @@
+// -----------------------------------
+// Slider and Range Slider
+// -----------------------------------
+
+.#{$gtc-namespace}slider {
+  @include clearfix;
+  display: block;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  color: $btn-base--color;
+  text-decoration: none;
+  background-color: $btn-base--bg-color;
+  border: 0 none;
+  transition: $transition-settings--hover;
+  transition-property: color, background-color, border-color;
+  font-family: $btn--font-family;
+  text-align: center;
+  box-sizing: border-box;
+
+  &__lbl {
+    font-family: var(--font-family-default);
+    font-style: italic;
+    font-weight: normal;
+    display: block;
+    text-align: left;
+    color: $base--color;
+
+    @include media-breakpoint-down(sm) {
+      font-size: em(32);
+      line-height: em(35, 32);
+    }
+
+    &-to {
+      float: right;
+    }
+  }
+
+  &__slider {
+    &.ui-widget-content {
+      margin: 2rem 1.3rem 3rem;
+      height: 0.4rem;
+      background: $color-alto;
+      border-radius: 0.5rem;
+      border: 0.1rem solid $color-alto;
+    }
+
+    .ui-slider-range {
+      height: 0.4rem;
+    }
+
+    .ui-widget-header {
+      background: $btn-base--active--color;
+      border: none;
+    }
+
+    .ui-slider-handle {
+      $var-for-vars-sake: 0 0.2rem 0.4rem 0.1rem rgba(0, 0, 0, 0.15);
+      box-shadow: $var-for-vars-sake;
+      background: $btn-base--active--color;
+      border: 0.8rem solid $color-snow;
+      border-radius: 50%;
+      height: 2.4rem;
+      width: 2.4rem;
+      top: -1.2rem;
+      margin-left: -1.2rem;
+      cursor: pointer;
+
+      &.ui-state-hover,
+      &.ui-state-active {
+        background: $btn-base--active--color-p20;
+      }
+    }
+  }
+}
+
+// -----------------------------------
+// Button Juna
+// brand blue background, white font
+// -----------------------------------
+.#{$gtc-namespace}slider--juna {
+  .#{$gtc-namespace}slider {
+    &__lbl {
+      color: $btn--juna--color;
+    }
+
+    &__slider {
+      .ui-widget-header {
+        background: $btn--juna--active--bg-color;
+      }
+
+      .ui-slider-handle {
+        background: $btn--juna--active--bg-color;
+        outline: none;
+
+        &.ui-state-hover,
+        &.ui-state-active {
+          background: $btn--juna--active--bg-color-p20;
+        }
+      }
+    }
+  }
+}
+// -----------------------------------
+// Button Maya
+// light blue, white font
+// -----------------------------------
+.#{$gtc-namespace}slider--maya {
+  .#{$gtc-namespace}slider {
+    &__lbl {
+      color: $btn--maya--color;
+    }
+
+    &__slider {
+      .ui-widget-header {
+        background: $btn--maya--active--bg-color;
+      }
+
+      .ui-slider-handle {
+        background: $btn--maya--active--bg-color;
+        outline: none;
+
+        &.ui-state-hover,
+        &.ui-state-active {
+          background: $btn--maya--active--bg-color-p20;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------
+// Button Leia
+// white background, blue font
+// -----------------------------------
+.#{$gtc-namespace}slider--leia {
+  .#{$gtc-namespace}slider {
+    &__lbl {
+      color: $btn--leia--color;
+    }
+
+    &__slider {
+      .ui-widget-header {
+        background: $btn--leia--active--bg-color;
+      }
+
+      .ui-slider-handle {
+        background: $btn--leia--active--bg-color;
+        outline: none;
+
+        &.ui-state-hover,
+        &.ui-state-active {
+          background: $btn--leia--active--bg-color-p20;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------
+// Button Kara
+// dark background, white
+// -----------------------------------
+.#{$gtc-namespace}slider--kara {
+  .#{$gtc-namespace}slider {
+    .ui-slider-range {
+      height: 0.2rem;
+      border-top: 0.1rem solid $btn--kara--active--bg-color;
+      border-bottom: 0.1rem solid $btn--kara--active--bg-color;
+    }
+
+    &__slider {
+      .ui-widget-header {
+        background: $btn--kara--active--bg-color;
+      }
+
+      .ui-slider-handle {
+        background: $btn--kara--active--bg-color;
+        outline: none;
+
+        &.ui-state-hover,
+        &.ui-state-active {
+          background: $btn--kara--active--bg-color-p20;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------
+// Button Nyla
+// transparent background, grey font, grey border
+// -----------------------------------
+.#{$gtc-namespace}slider--nyla {
+  .#{$gtc-namespace}slider {
+    &__lbl {
+      color: $btn--nyla--color;
+      font-size: var(--font-size-big-text);
+      font-style: italic;
+    }
+
+    &__slider {
+      .ui-widget-header {
+        background: var(--color-primary-blue);
+      }
+
+      .ui-slider-handle {
+        background: var(--color-primary-blue);
+        outline: none;
+
+        &.ui-state-hover,
+        &.ui-state-active {
+          background: $btn--nyla--active--bg-color-p20;
+        }
+      }
+    }
+  }
+}

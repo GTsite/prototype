@@ -1,0 +1,92 @@
+// -----------------------------------------------------------------------------
+// DETAIL ROOMS
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &rooms {
+    &__images {
+      display: none;
+    }
+
+    &__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: $rooms__head--bg-color;
+
+      // tablet and down
+      // ----------------------------------
+      @include media-breakpoint-down(sm) {
+        justify-content: flex-end;
+      }
+    }
+
+    &__title {
+      display: block;
+      font-family: $rooms__title--font-family;
+      font-size: em($rooms__title--font-size--xs);
+      line-height: em($rooms__title--line-height--xs, $rooms__title--font-size--xs);
+      font-weight: normal;
+      color: $rooms__title--color;
+
+      // tablet and down
+      // ----------------------------------
+      @include media-breakpoint-down(sm) {
+        padding-top: em(15, $rooms__title--font-size--xs);
+        padding-right: em(15, $rooms__title--font-size--xs);
+        padding-bottom: em(15, $rooms__title--font-size--xs);
+        padding-left: em(15, $rooms__title--font-size--xs);
+        width: 100%;
+        // background-color: $color-snow;
+      }
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        flex-grow: 2;
+        padding-left: em(30, $rooms__title--font-size--md);
+        padding-right: em(30, $rooms__title--font-size--md);
+        font-size: em($rooms__title--font-size--md);
+        line-height: em($rooms__title--line-height--md, $rooms__title--font-size--md);
+      }
+    }
+
+    &__gallery-btn {
+      color: $rooms__gallery-btn--color;
+      fill: $rooms__gallery-btn--color;
+
+      @include hover-focus-active {
+        color: $rooms__gallery-btn--hover--color;
+        fill: $rooms__gallery-btn--hover--color;
+      }
+    }
+
+    &__details {
+      @include clearfix;
+      padding-top: em(20);
+      padding-bottom: em(45);
+    }
+
+    &__col {
+      padding-left: em(15);
+      padding-right: em(15);
+
+      // tablet and down
+      // ----------------------------------
+      @include media-breakpoint-down(sm) {
+        &:first-of-type {
+          padding-bottom: 1em;
+        }
+      }
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        float: left;
+        width: 50%;
+        padding-left: em(30);
+        padding-right: em(30);
+      }
+    }
+  }
+}

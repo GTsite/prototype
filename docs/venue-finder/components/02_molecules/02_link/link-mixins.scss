@@ -1,0 +1,65 @@
+// Default Link
+// ----------------------------------
+
+@mixin link-default($color: null, $text-decoration: null, $hover-color: null, $hover-decoration: null) {
+  @if $color == null {
+    // if color is not passed, or empty do this
+    $color: $link-default--color;
+  }
+
+  @if $text-decoration == null {
+    // if text-decoration is not passed, or empty do this
+    $text-decoration: $link-default--decoration;
+  }
+
+  @if $hover-color == null {
+    // if hover-color is not passed, or empty do this
+    $hover-color: $link-default--hover--color;
+  }
+
+  @if $hover-decoration == null {
+    // if hover-decoration is not passed, or empty do this
+    $hover-decoration: $link-default--hover--decoration;
+  }
+
+  color: $color;
+  text-decoration: $link-default--decoration;
+  transition: $transition-settings--hover;
+  transition-property: color, border-color, background-color;
+
+  @include hover-focus-active {
+    color: $hover-color;
+    text-decoration: $hover-decoration;
+  }
+}
+
+// Richtext Link
+// -----------------------------------
+
+@mixin link-richtext($color: null, $underline-color: null, $hover-underline-color: null) {
+  @if $color == null {
+    // if color is not passed, or empty do this
+    $color: $link-richtext--color;
+  }
+
+  @if $underline-color == null {
+    // if underline-color is not passed, or empty do this
+    $underline-color: $link-richtext--underline-color;
+  }
+
+  @if $hover-underline-color == null {
+    // if hover-color is not passed, or empty do this
+    $hover-underline-color: $link-richtext--hover--underline-color;
+  }
+
+  color: $color;
+  text-decoration: none;
+  border-bottom: em(1) solid $underline-color;
+  transition: $transition-settings--hover;
+  transition-property: color, border-color;
+
+  @include hover-focus-active {
+    color: $color;
+    border-bottom-color: $hover-underline-color;
+  }
+}

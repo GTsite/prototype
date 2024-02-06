@@ -1,0 +1,167 @@
+﻿// -----------------------------------
+// Venue Finder List specific Styles
+// -----------------------------------
+.#{$gtc-namespace}block-itm {
+  @include make-row();
+  margin-bottom: 1rem;
+  position: relative;
+  width: auto;
+  font-size: em($btn--font-size--md);
+  background-color: var(--color-custom-white);
+
+  @include media-breakpoint-down(sm) {
+    font-size: em($btn--font-size--xs);
+  }
+
+  &-hidden {
+    display: none;
+  }
+
+  &-dtl {
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    [aria-hidden='false'] {
+      display: block;
+    }
+  }
+  // -----------------------------------
+  // List Element
+  // -----------------------------------
+  &__lst {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-snow;
+    padding: 0 em(15);
+    list-style: none;
+    @include media-breakpoint-up(sm) {
+      padding: 0;
+    }
+    @include media-breakpoint-up(md) {
+      height: 9.6rem;
+    }
+    // -----------------------------------
+    // List Element content
+    // -----------------------------------
+    &-prop {
+      cursor: pointer;
+      width: 100%;
+      padding: 0 em(10);
+      background-color: $color-snow;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      // -----------------------------------
+      // Text
+      // -----------------------------------
+      &--txt {
+        padding: em(10) em(20);
+        line-height: em(35);
+        font-family: $font-family--brand--bold;
+        @include nowrap-ellipsis();
+
+        @include media-breakpoint-down(sm) {
+          padding: em(5) em(20);
+        }
+      }
+      // -----------------------------------
+      // Multi Line Text
+      // -----------------------------------
+      &--txt-mul {
+        overflow: hidden;
+        white-space: normal;
+        // -----------------------------------
+        // SVG Rating special case for the content type
+        // -----------------------------------
+        .#{$gtc-namespace}txt--svg-rting {
+          display: block;
+        }
+
+        $size-txt-svg: 1.1rem;
+        .#{$gtc-namespace}txt--svg {
+          width: $size-txt-svg;
+          min-height: $size-txt-svg;
+          display: inline-block;
+          vertical-align: middle;
+          line-height: em(25);
+          margin-top: em(-8.5);
+        }
+
+        .#{$gtc-namespace}txt--svg-sub {
+          display: inline-block;
+          margin-top: em(4);
+        }
+
+        @include media-breakpoint-down(sm) {
+          line-height: em(23);
+        }
+      }
+      // -----------------------------------
+      // Numeric
+      // -----------------------------------
+      &--num {
+        .#{$gtc-namespace}txt--num {
+          + .#{$gtc-namespace}txt--num {
+            padding: 0 0 0 em(5);
+          }
+
+          &.#{$gtc-namespace}txt--dash {
+            visibility: hidden;
+            padding: 0;
+            display: block;
+            position: relative;
+
+            &:after {
+              content: '-';
+              visibility: visible;
+              width: 100%;
+              position: absolute;
+              display: block;
+              top: 0;
+            }
+          }
+        }
+      }
+      // -----------------------------------
+      // Picture
+      // -----------------------------------
+      &--image {
+        padding: 0;
+
+        .#{$gtc-namespace}image {
+          display: block;
+        }
+      }
+      // -----------------------------------
+      // Checkbox
+      // -----------------------------------
+      /* &--check {
+      } */
+      // -----------------------------------
+      // Text Base
+      // -----------------------------------
+      &--txt-bse {
+        font-family: $font-family--brand--regular;
+      }
+    }
+  }
+  // -----------------------------------
+  // Loading overlay and spinner
+  // -----------------------------------
+  &__lod {
+    .js-gtc-loading__overlay {
+      position: absolute;
+    }
+  }
+
+  &-rmb {
+    background-color: $color-snow;
+    margin: -1.2em 0 em(15);
+    padding: 1em 2.1em 1em 0.5em;
+
+    .#{$gtc-namespace}pdf-venue-item__header {
+      display: none;
+    }
+  }
+}

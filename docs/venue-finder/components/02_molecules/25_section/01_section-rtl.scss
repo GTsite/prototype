@@ -1,0 +1,13 @@
+// -----------------------------------
+// Section RTL Styles
+// -----------------------------------
+[dir='rtl'] {
+  .#{$gtc-namespace} {
+    &section {
+      &__heading-link {
+        right: auto;
+        left: em(15);
+      }
+    }
+  }
+}

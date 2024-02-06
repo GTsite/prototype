@@ -1,0 +1,673 @@
+﻿@import '../../../../_scss/utils/variables/breakpoints.scss';
+
+// -----------------------------------
+// Link Button between short list and venue finder pages on top of the page.
+// -----------------------------------
+.#{$gtc-namespace}venue-finder {
+  .#{$gtc-namespace}section__heading-link {
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      right: em(15);
+      top: 0;
+      margin: 0;
+    }
+  }
+}
+
+// -----------------------------------
+// Venue Finder ==> Filter Elements
+// -----------------------------------
+.#{$gtc-namespace}filter--venue {
+  @media print {
+    display: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin: 0;
+    background-color: $color-snow;
+    transform: translateX(100%);
+    transition: transform linear 0.25s;
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes //allow proper scrolling on ios
+  }
+
+  &__venue-type {
+    .#{$gtc-namespace}filter--venue__col-box & {
+      @media (max-width: $breakpoint-lg - 1) {
+        display: flex;
+        flex-direction: column;
+
+        li.gtc-input-group-item:nth-of-type(2) {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+
+  &__wrapper {
+    @include make-container;
+    overflow: hidden;
+    padding: 8rem 1.6rem 0;
+
+    &.#{$gtc-namespace}filter--venue__wrapper-hotel {
+      padding-top: 0;
+      padding-bottom: 5rem;
+      @include media-breakpoint-up(md) {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 1.6rem;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        border-radius: 1rem 0 0 1rem;
+        box-shadow: none;
+        background-color: transparent;
+        height: 53.6rem;
+        width: 30rem;
+        padding-bottom: 0;
+
+        .#{$gtc-namespace}filter--venue__container {
+          display: flex;
+          flex-direction: row-reverse;
+          padding: 1.8rem 1.4rem;
+          background-color: var(--color-custom-white);
+          border: 0.1rem solid var(--color-primary-grey-light);
+
+          & > div {
+            padding: 0;
+            margin: 0;
+          }
+
+          .#{$gtc-namespace}filter--venue__col-title {
+            margin: 0 1.7rem 0 0;
+          }
+
+          .#{$gtc-namespace}filter--venue__col-title-empty {
+            display: none;
+          }
+
+          .#{$gtc-namespace}filter--venue__row-title {
+            border: none;
+
+            &-icon,
+            &-txt {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+
+          .#{$gtc-namespace}filter--venue__col-box {
+            margin: 0;
+          }
+        }
+      }
+
+      .#{$gtc-namespace}filter--venue__row-title {
+        &--disabled {
+          .#{$gtc-namespace}filter--venue__row-title-txt {
+            color: var(--color-custom-grey-light-2);
+          }
+          .#{$gtc-namespace}filter--venue__row-title-icon {
+            fill: var(--color-custom-grey-light-2);
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        left: 0;
+      }
+
+      .#{$gtc-namespace}filter--venue__fake-pos {
+        @include media-breakpoint-up(md) {
+          height: 100%;
+          padding: 1.8rem 1.4rem;
+          background-color: var(--color-custom-white);
+          border: 0.1rem solid var(--color-primary-grey-light);
+          border-top: none;
+
+          .#{$gtc-namespace}filter--venue__col-title {
+            margin: 0;
+          }
+
+          .#{$gtc-namespace}filter--venue__row {
+            display: flex;
+            flex-direction: column;
+
+            & > .#{$gtc-namespace}filter--venue__col {
+              width: 100%;
+              max-width: 100%;
+            }
+          }
+
+          .#{$gtc-namespace}filter--venue__col-box {
+            margin-bottom: 1rem;
+          }
+        }
+
+        .#{$gtc-namespace}filter--venue__col-lst--inner {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          & > .#{$gtc-namespace}filter--venue__col-itm {
+            margin: 0 0 1rem;
+            flex: auto;
+            max-width: 48%;
+          }
+        }
+      }
+
+      .#{$gtc-namespace}filter--venue__col-title {
+        font-size: var(--font-size-primary-text);
+      }
+
+      .mapDisplayed & {
+        display: block;
+      }
+
+      .#{$gtc-namespace}filter__srh-btn {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(sm) {
+      padding: 8rem 1.6rem 0;
+    }
+    @include media-breakpoint-up(md) {
+      padding: 3rem 6rem 6rem;
+      background-color: var(--color-custom-white);
+      border-radius: 1rem;
+      box-shadow: 0 0.2rem 2.5rem var(--color-custom-black-semi-lighter);
+
+      + .#{$gtc-namespace}filter--venue__wrapper {
+        margin-top: em(15);
+      }
+    }
+  }
+
+  &__row {
+    // -----------------------------------
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      &::before,
+      &::after {
+        display: block;
+      }
+    }
+  }
+  // -----------------------------------
+  // Allowing for a smooth show and hide experience
+  // -----------------------------------
+  &__fake-pos {
+    &[aria-hidden='false'] {
+      display: block;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+      }
+
+      @include browser-ie10p {
+        width: auto;
+        overflow: auto;
+      }
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+
+      @include browser-ie10p {
+        width: 0;
+        overflow: hidden;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(md) {
+      margin-left: -4rem;
+      margin-right: -4rem;
+    }
+    // -----------------------------------
+    // First row (Always visible, always active, not togglable)
+    // -----------------------------------
+    &-fst {
+      font-family: inherit;
+    }
+    // -----------------------------------
+    // More filters row (Visible on click, togglable)
+    // -----------------------------------
+    &-mre {
+      font-family: inherit;
+
+      .gtc-filter--venue__col-title {
+        font-size: var(--font-size-primary-text);
+      }
+    }
+    // -----------------------------------
+    // Special Filters row (Visible on click, togglable, only available on the map view)
+    // -----------------------------------
+    &-spc {
+      font-family: inherit;
+    }
+    // -----------------------------------
+    // Filter triggering row (Always visible, always active, not togglable)
+    // -----------------------------------
+    &-trg {
+      margin: 0;
+      padding: 0;
+
+      &.#{$gtc-namespace}filter__row {
+        justify-content: flex-end;
+      }
+
+      .#{$gtc-namespace}filter__srh-btn {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        .gtc-btn__label {
+          text-transform: none;
+        }
+        .gtc-btn__icon {
+          display: none;
+        }
+      }
+    }
+    &-search {
+      @include media-breakpoint-up(md) {
+        margin: -2rem 0 0;
+        padding: 2rem 0 0;
+        border-top: 0.1rem solid var(--color-primary-grey-light);
+      }
+      &.#{$gtc-namespace}filter__row {
+        @media (max-width: $breakpoint-lg - 1) {
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 0.1rem;
+            background-color: var(--color-primary-grey-light);
+          }
+        }
+      }
+    }
+  }
+
+  &__row-title-icon {
+    float: left;
+    margin-right: 1.5rem;
+    width: 1.3rem;
+    height: 2rem;
+  }
+
+  &__row-title {
+    @include clearfix;
+    cursor: pointer;
+    padding: 2rem 0;
+    font-size: initial;
+    line-height: initial;
+
+    @include media-breakpoint-up(md) {
+      margin: 0 0 2rem;
+    }
+
+    &[aria-hidden='false'] {
+      display: block;
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    &-txt {
+      vertical-align: middle;
+      font-weight: normal;
+      font-size: var(--font-size-medium-text);
+      margin: 0;
+      color: var(--color-primary-blue);
+      @include media-breakpoint-up(md) {
+        font-size: var(--font-size-primary-text);
+      }
+    }
+
+    &[aria-expanded='false'] {
+      .#{$gtc-namespace}icon {
+        transform: rotate(0);
+        transition: all var(--animation-time-default); // sass-lint:disable-line no-transition-all
+      }
+
+      .#{$gtc-namespace}filter--venue__row-title-txt-on {
+        display: none;
+      }
+
+      .#{$gtc-namespace}filter--venue__row-title-txt-off {
+        display: inline-block;
+      }
+    }
+
+    &[aria-expanded='true'] {
+      .#{$gtc-namespace}icon {
+        transform: rotate(180deg);
+        transition: all var(--animation-time-default); // sass-lint:disable-line no-transition-all
+      }
+
+      .#{$gtc-namespace}filter--venue__row-title-txt-on {
+        display: inline-block;
+      }
+
+      .#{$gtc-namespace}filter--venue__row-title-txt-off {
+        display: none;
+      }
+    }
+
+    &[data-target='specialFilters'] {
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+        align-items: center;
+        flex-grow: 1;
+      }
+
+      .#{$gtc-namespace}filter--venue__col-box:not(.#{$gtc-namespace}filter--venue__col-box--htl-switch) {
+        flex-grow: 1;
+        width: 100%;
+        order: 1;
+
+        @include media-breakpoint-up(md) {
+          width: auto;
+          order: 0;
+        }
+      }
+    }
+  }
+
+  &__row-title--disabled {
+    cursor: default;
+  }
+
+  &__col {
+    flex: 0 1 100%;
+    max-width: 100%;
+    // -----------------------------------
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      padding-right: 4rem;
+      padding-left: 4rem;
+      flex: 0 1 #{(100% / 3)};
+      max-width: #{(100% / 3)};
+      justify-content: flex-start;
+
+      &-4 {
+        flex: 0 1 #{(100% / 3)};
+        max-width: #{(100% / 3)};
+      }
+
+      &-8 {
+        flex: 0 1 #{((100% / 3) * 2)};
+        max-width: #{((100% / 3) * 2)};
+      }
+
+      &-sliders {
+        & > div {
+          margin-bottom: -1.3rem;
+        }
+      }
+    }
+    // -----------------------------------
+    // SM Header Headline col
+    // -----------------------------------
+    &--sm {
+      display: none;
+    }
+
+    &-box {
+      position: relative;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 4rem;
+      }
+      // -----------------------------------
+      // Hotel switch box (header and switch)
+      // -----------------------------------
+      &--htl-switch {
+        display: flex;
+        justify-content: space-between;
+        line-height: em(40);
+        align-items: center;
+
+        @include media-breakpoint-up(md) {
+          order: 1;
+          padding-left: 1.5em;
+          padding-right: 1.5em;
+        }
+
+        .#{$gtc-namespace}filter--venue__col-title {
+          margin-right: em(15);
+          // rlt-changes
+          // -----------------------------------
+          [dir='rtl'] & {
+            margin-right: 0;
+            margin-left: em(15);
+          }
+        }
+      }
+      // -----------------------------------
+      // Disabled overlay
+      // -----------------------------------
+      &-blck-overlay {
+        display: none;
+        background-color: $color-snow;
+        opacity: 0.7;
+        cursor: default;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 105%;
+        height: 105%;
+        z-index: 2;
+      }
+
+      &--disabled {
+        .#{$gtc-namespace}filter--venue__col-box-blck-overlay {
+          display: block;
+        }
+      }
+    }
+
+    &-title {
+      display: block;
+      color: var(--color-primary-black);
+      font-size: var(--font-size-primary-text);
+      line-height: 1.25;
+      margin: 2.5rem 0 1.5rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: var(--font-size-big-text-2);
+        margin: 4rem 0 1rem;
+
+        &-mt-0 {
+          margin: 0 0 1rem;
+        }
+      }
+
+      &-empty {
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+      }
+    }
+    // -----------------------------------
+    // Hotel switch button
+    // -----------------------------------
+    .#{$gtc-namespace}filter--venue__switch-btn {
+      width: em(90);
+      height: em(40);
+
+      &::after {
+        height: em(32);
+        width: em(32);
+        top: calc(50% - (#{em(32)} / 2));
+      }
+    }
+
+    &-lst {
+      list-style: none;
+      display: block;
+      padding: 0;
+      margin: 0.5rem 0;
+
+      @include media-breakpoint-up(md) {
+        &-split-columns {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          &-4 {
+            & > .#{$gtc-namespace}input-group-item {
+              flex: 0 1 33.33%;
+              max-width: 33.33%;
+              padding-right: 4.5rem;
+              &:nth-of-type(3n) {
+                margin-right: -4.5rem;
+              }
+            }
+          }
+
+          &-6 {
+            & > .#{$gtc-namespace}input-group-item {
+              flex: 0 1 50%;
+              max-width: 50%;
+              padding-right: 4.5rem;
+              &:nth-of-type(2n) {
+                padding-right: 0;
+              }
+            }
+          }
+
+          &-8and4 {
+            & > .#{$gtc-namespace}input-group-item {
+              padding-right: 4.5rem;
+              &:nth-of-type(odd) {
+                flex: 0 1 66.66%;
+                max-width: 66.66%;
+              }
+
+              &:nth-of-type(even) {
+                flex: 0 1 33.33%;
+                max-width: 33.33%;
+              }
+
+              &:nth-of-type(2n) {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+
+      // -----------------------------------
+      // Inner List, that is not supposed to look separated in mobile view.
+      // -----------------------------------
+      &--inner {
+        @include media-breakpoint-down(sm) {
+          //this should only apply for sub items
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-itm {
+      font-family: inherit;
+    }
+  }
+
+  .#{$gtc-namespace}filter__row {
+    &.#{$gtc-namespace}input-group-item,
+    .#{$gtc-namespace}input-group-item {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .#{$gtc-namespace}filter {
+    font-family: inherit;
+  }
+}
+
+// -----------------------------------
+// Venue Finder ==> Small Visible
+// -----------------------------------
+.#{$gtc-namespace}filter--venue--sm-vis {
+  &.#{$gtc-namespace}filter--venue {
+    transform: translateX(0);
+    transition: transform linear var(--animation-time-default);
+  }
+
+  .#{$gtc-namespace}filter--venue__row {
+    .#{$gtc-namespace}filter__srh-btn {
+      width: 100%;
+      margin-top: 2.4rem;
+      @include media-breakpoint-down(md) {
+        max-width: var(--button-width-sm);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+  }
+
+  .#{$gtc-namespace}filter--venue__col--sm {
+    display: block;
+    padding-left: 0;
+    // -----------------------------------
+    // SM Header Box
+    // -----------------------------------
+    &-hdr {
+      &-title {
+        font-size: var(--font-size-medium-text-3);
+        color: var(--color-primary-black);
+        margin: 0;
+      }
+
+      &-btn {
+        @include size(1.4rem);
+        fill: $btn--nyla--color;
+        position: absolute;
+        right: 0;
+        top: calc(50% - (1.7rem / 2));
+        width: em(35);
+        box-shadow: none;
+
+        &:hover {
+          fill: $btn--nyla--active--bg-color-p20;
+        }
+      }
+    }
+  }
+}

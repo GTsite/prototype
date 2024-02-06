@@ -1,0 +1,447 @@
+﻿@charset 'UTF-8';
+//
+// Block
+// -----------------------------------------------------------------------------
+
+// general styles for all block Variants
+// ----------------------------------------------------
+.#{$gtc-namespace}block {
+  // smartphone and up
+  // ----------------------------------
+  display: block;
+  @include make-col-span(12);
+  // -----------------------------------
+  // Link in which everything is wrapped
+  // -----------------------------------
+  &__node {
+    &:active,
+    &:hover,
+    &:visited,
+    &:focus {
+      color: $base--color;
+    }
+  }
+  // ---------------------------------------------------------------------------
+  // Styles for gtc-block__detail elements only if they are within a block
+  // ---------------------------------------------------------------------------
+  .#{$gtc-namespace}block__detail {
+    z-index: 1;
+    position: relative;
+
+    &[aria-hidden='false'] {
+      display: block;
+    }
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+    // tablet and down
+    // ----------------------------------
+    @include media-breakpoint-down(sm) {
+      background-color: $block__detail--bg-color;
+    }
+  }
+
+  .#{$gtc-namespace}block__detail-row {
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      @include make-row;
+    }
+  }
+
+  .#{$gtc-namespace}block__detail-closer {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.6rem;
+    width: 1.3rem;
+    height: 1.3rem;
+
+    .#{$gtc-namespace}icon {
+      fill: var(--color-primary-black);
+    }
+
+    @include hover-focus-active {
+      .#{$gtc-namespace}icon {
+        fill: $block__detail-closer--active--color;
+      }
+    }
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      top: 2.5rem;
+      right: 3.6rem;
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+  }
+
+  &--text-center {
+    text-align: center;
+  }
+  // ---------------------------------------------------------------------------
+  &__detail-closer {
+    display: none;
+  }
+
+  &__box {
+    position: relative;
+    display: block; // in case it isnt a block element per default
+    width: 100%;
+  }
+
+  &__image {
+    float: none;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background-color: $block__image--bg-color; // in case there is no image
+    .#{$gtc-namespace}image {
+      transform: scale(1) translate3d(0, 0, 0);
+      transform-origin: center;
+      transition: $transition-settings--open-node;
+      transition-property: transform;
+      backface-visibility: hidden;
+    }
+  }
+
+  &__image-clip {
+    @include stretchy-clip;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__block {
+    position: relative;
+    width: 100%;
+    padding-left: em($block__block--padding-x--xs);
+    padding-right: em($block__block--padding-x--xs);
+    transition: $transition-settings--open-node;
+    transition-property: opacity, bottom;
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      padding-left: em($block__block--padding-x--md);
+      padding-right: em($block__block--padding-x--md);
+    }
+  }
+
+  &__box-clip {
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      @include stretchy-clip;
+    }
+  }
+
+  &__layer {
+    &--dark {
+      background-color: $block__layer--dark--bg-color;
+    }
+
+    &--bright {
+      background-color: $block__layer--bright--bg-color;
+    }
+
+    &--subtle-dark {
+      background-color: $block__layer--subtle-dark--bg-color;
+    }
+
+    &--medium-dark {
+      background-color: $block__layer--medium-dark--bg-color;
+    }
+  }
+
+  &__title {
+    font-family: $block__title--font-family;
+    font-size: em($base--font-size);
+    line-height: 100%;
+    font-weight: normal;
+    color: $block__title--color;
+  }
+
+  &__shorttext {
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__shorttext-text {
+    font-family: $block__shorttext--font-family;
+    font-weight: normal;
+    color: $block__shorttext--color;
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      font-size: em($block__shorttext--font-size--md);
+      line-height: em($block__shorttext--line-height--md, $block__shorttext--font-size--md);
+    }
+  }
+
+  &__linklist-headline {
+    color: $block--linklist--headline-color;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: em(1) solid $block--linklist--headline-border-color;
+    padding-bottom: em(15);
+    font-size: em($block--linklist--font-size--xs);
+    line-height: em($block--linklist--line-height--xs);
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      font-size: em($block--linklist--font-size--md);
+      line-height: em($block--linklist--line-height--md);
+    }
+
+    &--footer {
+      margin: em(15) 0 em(10);
+
+      @include media-breakpoint-up(md) {
+        width: em(203);
+      }
+    }
+
+    &--box {
+      margin-bottom: em(10);
+    }
+  }
+
+  &--footer {
+    .#{$gtc-namespace}linklist--border {
+      @include media-breakpoint-up(md) {
+        width: em(200);
+      }
+    }
+  }
+  // ---------------------------------------------------------------------------
+  // Block Variants
+  // ---------------------------------------------------------------------------
+  // Display / Sizing Variants
+  // ---------------------------------------------------------------------------
+  &--fullwidth,
+  &--square,
+  &--hero,
+  &--mini {
+    margin-bottom: em($block--spacer-bottom--xs);
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      margin-bottom: em($block--spacer-bottom--md);
+    }
+
+    .#{$gtc-namespace}block__wrapper {
+      background-color: $block__wrapper--bg-color;
+    }
+
+    .#{$gtc-namespace}block__detail-wrapper {
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em($block--spacer-bottom--md);
+        background-color: $block__detail--bg-color;
+      }
+    }
+
+    .#{$gtc-namespace}block__node {
+      overflow: hidden;
+
+      .#{$gtc-namespace}block__box-clip {
+        overflow: hidden;
+
+        &::after {
+          z-index: 1;
+          position: absolute;
+          right: em(-30);
+          bottom: em(-67);
+          width: em(220);
+          height: em(110);
+          content: '';
+          opacity: 0;
+          background-color: $color-snow; // $color-debug2;
+          transform: rotate(-21deg);
+          transition: $transition-settings--open-node;
+          transition-property: opacity;
+        }
+      }
+
+      &[aria-expanded='true'] {
+        .#{$gtc-namespace}block__block {
+          opacity: 0;
+        }
+
+        .#{$gtc-namespace}block__box-clip::after {
+          opacity: 1;
+        }
+
+        .#{$gtc-namespace}block__image {
+          &::after {
+            @include gradient-vertical(rgba($color-snow, 0), rgba($color-snow, 1), 20%, 100%);
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+          }
+
+          .#{$gtc-namespace}image {
+            transform: scale(1.2) translate3d(0, 0, 0) rotate(0.02deg);
+          }
+        }
+      }
+    }
+
+    .#{$gtc-namespace}block__outline {
+      width: calc(100% - #{em($block__overlay--padding)});
+      height: calc(100% - #{em($block__overlay--padding)});
+      border: rem(1) solid $block--text__outline--color;
+      margin: em(9) 0 0 em(9);
+    }
+
+    .#{$gtc-namespace}block__image + .#{$gtc-namespace}block__outline {
+      position: absolute;
+      top: 0;
+    }
+  }
+  // Square
+  // -----------------------------------
+  &--square {
+    .#{$gtc-namespace}block {
+      &__box {
+        cursor: pointer;
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio(1, 1);
+        }
+      }
+
+      &__image {
+        @include aspect-ratio(7, 3.3635);
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio-change(1, 1);
+        }
+      }
+    }
+  }
+
+  &--hero {
+    .#{$gtc-namespace}block {
+      &__box {
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio(7, 3.3635);
+        }
+      }
+
+      &__image {
+        @include aspect-ratio(7, 3.3635);
+      }
+    }
+  }
+
+  &--fullwidth {
+    .#{$gtc-namespace}block {
+      &__box {
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio(16, 5);
+        }
+      }
+
+      &__image {
+        @include aspect-ratio(4, 3);
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio-change(16, 5);
+        }
+      }
+    }
+  }
+  // Mini
+  // -----------------------------------
+  &--mini {
+    margin-bottom: em($block--mini--spacer-bottom--xs);
+
+    .#{$gtc-namespace}block {
+      &__box {
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio(1, 1);
+        }
+      }
+
+      &__image {
+        @include aspect-ratio(1, 1);
+        // laptop / tablet view and up
+        // -----------------------------------
+        @include media-breakpoint-up(md) {
+          @include aspect-ratio-change(1, 1);
+        }
+      }
+
+      &__node {
+        overflow: hidden;
+
+        .#{$gtc-namespace}block__box-clip {
+          // laptop / tablet view and up
+          // -----------------------------------
+          @include media-breakpoint-up(md) {
+            &::after {
+              right: em(-20);
+              bottom: em(-43);
+              width: em(170);
+              height: em(75);
+            }
+          }
+        }
+      }
+    }
+  }
+  // Color Variants
+  // ---------------------------------------------------------------------------
+  &--light-grey {
+    .#{$gtc-namespace}block__box {
+      background: $block--light-grey--bg;
+    }
+  }
+
+  &--dark-grey {
+    .#{$gtc-namespace}block__box {
+      background: $block--dark-grey--bg;
+    }
+  }
+
+  &--purple {
+    .#{$gtc-namespace}block__box {
+      background: $block--purple--bg;
+    }
+  }
+
+  &--blue {
+    .#{$gtc-namespace}block__box {
+      background: $block--blue--bg;
+    }
+  }
+
+  &--grey {
+    .#{$gtc-namespace}block__box {
+      background: $block--grey--bg;
+    }
+  }
+}

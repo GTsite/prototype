@@ -1,0 +1,128 @@
+{
+  "HasMoreResults": true,
+  "MultiLangResults": true,
+  "ResultLanguages": {"en": "english", "fr": "french", "de": "german"},
+"SearchResults": [
+{
+"Title": "Geneva motor show",
+"Paragraph": "<p>Come and see the <b>newest</b> and most advanced vehicles manufacturers have to offer from 5-15th of March.</p>",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+"ItemLink": "/en/Geneva-motor-show",
+"ItemId": "d2ff9791-3570-43c9-9187-f3651d999a3d",
+"TemplateName": "Editorial Page",
+"ItemName": "Geneva motor show"
+},
+{
+"Title": "Geneva Arena",
+"Paragraph": "Vist an event at the largest theater in the French speaking part of Switzerland!",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-2.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/12/Geneva-Arena",
+"ItemId": "85f30ed0-19e9-4f1d-8e4d-73521fd3a4a6",
+"TemplateName": "ActivityCenter",
+"ItemName": "Geneva Arena",
+"Tag": {
+  "text": "Activity",
+  "sustainable choice": "Sustainable choice"
+}
+},
+{
+"Title": "Les Fourneaux du Manège",
+"Paragraph": "This former equestrian centre with a beautiful courtyard has all you need for a successful event.",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-3.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/12/Les-Fourneaux-du-Mange",
+"ItemId": "294a5f6e-5e4e-47f3-8a85-56be68332cd9",
+"TemplateName": "ActivityCenter",
+"ItemName": "Les Fourneaux du Manège",
+"Tag": {
+  "sustainable choice": "Sustainable choice"
+}
+},
+{
+"Title": "Polo Club de Veytay",
+"Paragraph": null,
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-4.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/22/Polo-Club-de-Veytay",
+"ItemId": "6f4d2254-9c03-4858-bfdc-a918849bc07b",
+"TemplateName": "ActivityCenter",
+"ItemName": "Polo Club de Veytay",
+"Tag": {
+  "sustainable choice": "Sustainable choice"
+}
+},
+{
+"Title": "Salle centrale de la Madeleine",
+"Paragraph": "A theatre in the Old Town ",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-5.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/05/Salle-Centrale-de-la-Madeleine",
+"ItemId": "3dbac6a8-b09b-436f-830d-564df6d7120e",
+"TemplateName": "ActivityCenter",
+"ItemName": "Salle centrale de la Madeleine"
+},
+{
+"Title": "Uptown Geneva",
+"Paragraph": "A unique setting for your turnkey event",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/06/Uptown-Geneva",
+"ItemId": "0e87194c-d4d5-45ac-8312-e4aa2a44a9c9",
+"TemplateName": "ActivityCenter",
+"ItemName": "Uptown Geneva"
+},
+{
+"Title": "Studio 49",
+"Paragraph": null,
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-7.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/20/Studio-49",
+"ItemId": "39aafce5-69a2-4846-8cd5-c648c579f59e",
+"TemplateName": "ActivityCenter",
+"ItemName": "Studio 49"
+},
+{
+"Title": "Salle de Spectacle Théodore Turrettini",
+"Paragraph": "Historic building listed in 1988.",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-8.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/07/BFM---Btiment-des-Forces-Motrices/Salle-de-Spectacle-Thodore-Turrettini",
+"ItemId": "eda34522-62d6-4bd7-a436-970d4a224130",
+"TemplateName": "ConferenceRoom",
+"ItemName": "Salle de Spectacle Théodore Turrettini"
+},
+{
+"Title": "Foyer",
+"Paragraph": "Historic building listed in 1988.",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-9.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/07/BFM---Btiment-des-Forces-Motrices/Foyer",
+"ItemId": "a5fe423c-8dc2-49ad-a308-0aa1ebe91c29",
+"TemplateName": "ConferenceRoom",
+"ItemName": "Foyer"
+},
+{
+"Title": "Geneva Arena",
+"Paragraph": "Vist an event at the largest theater in the French speaking part of Switzerland!",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/12/Geneva-Arena/Geneva-Arena",
+"ItemId": "062bdd5e-d78b-466e-b3d3-a62a79d7742c",
+"TemplateName": "ConferenceRoom",
+"ItemName": "Geneva Arena"
+},
+{
+"Title": "Geneva Arena",
+"Paragraph": "Vist an event at the largest theater in the French speaking part of Switzerland!",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/12/Geneva-Arena/Geneva-Arena",
+"ItemId": "062bdd5e-d78b-466e-b3d3-a62a79d7742c",
+"TemplateName": "ConferenceRoom",
+"ItemName": "Geneva Arena"
+},
+{
+"Title": "Geneva Arena",
+"Paragraph": "Vist an event at the largest theater in the French speaking part of Switzerland!",
+"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+"ItemLink": "/en/ActivityCenters/2020/06/30/14/12/Geneva-Arena/Geneva-Arena",
+"ItemId": "062bdd5e-d78b-466e-b3d3-a62a79d7742c",
+"TemplateName": "ConferenceRoom",
+"ItemName": "Geneva Arena"
+}
+],
+"TotalNumberOfResults": 37,
+"CurrentNumberOfResults": 12,
+"NextPageNumber": 1
+}

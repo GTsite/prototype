@@ -1,0 +1,30 @@
+// These values will not show up in content, but can be
+// queried by JavaScript to know which breakpoint is active.
+// Add or remove as many breakpoints as you like.
+
+// Extra small screen / phone
+body::before {
+  content: 'xs';
+  display: none; // Prevent from displaying.
+}
+
+// Small screen / tablet portrait
+@include media-breakpoint-up(sm) {
+  body::before {
+    content: 'sm';
+  }
+}
+
+// Medium screen / tablet landscape / desctop
+@include media-breakpoint-up(md) {
+  body::before {
+    content: 'md';
+  }
+}
+
+// Large screen / desktop
+@include media-breakpoint-up(lg) {
+  body::before {
+    content: 'lg';
+  }
+}

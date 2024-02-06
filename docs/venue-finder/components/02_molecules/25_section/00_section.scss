@@ -1,0 +1,147 @@
+// -----------------------------------
+// Section Styles
+// -----------------------------------
+.#{$gtc-namespace} {
+  &section {
+    &__col {
+      @include make-col;
+      @include make-col-span(12);
+    }
+
+    &__texts {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 4rem;
+    }
+
+    &__heading {
+      margin-top: em(-5);
+      margin-bottom: em(35);
+    }
+
+    &__shorttext {
+      margin-bottom: em(37, $shorttext--font-size--xs);
+    }
+
+    &__heading + &__shorttext {
+      margin-top: em(-23, $shorttext--font-size--xs);
+    }
+
+    &__blocks {
+      margin-bottom: em(-$block--spacer-bottom--xs);
+    }
+
+    &__show-more {
+      padding-top: em($block--spacer-bottom--xs);
+      text-align: center;
+
+      .#{$gtc-namespace}section__btn {
+        margin: 0 auto;
+      }
+    }
+
+    &__block {
+      width: 100%;
+    }
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      &__texts {
+        &:not(:only-child) {
+          @include make-col-span(8);
+        }
+        // rlt-changes
+        // -----------------------------------
+        [dir='rtl'] & {
+          padding-left: ($grid-gutter-width--md / 2);
+          padding-right: em($grid-gutter-half--md) + em($spacer-x--md);
+        }
+      }
+
+      &__booking {
+        @include make-col-span(4);
+      }
+
+      &__heading {
+        margin-top: em(-3);
+        margin-bottom: em(53);
+
+        &--w80 {
+          max-width: 80%;
+
+          @include media-breakpoint-down(sm) {
+            width: 100%;
+          }
+        }
+      }
+
+      &__shorttext {
+        margin-bottom: em(57, $shorttext--font-size--md);
+      }
+
+      &__heading + &__shorttext {
+        margin-top: em(-30, $shorttext--font-size--md);
+      }
+
+      &__shorttext + &__iconlist {
+        margin-top: em(-23, $iconlist--font-size--md);
+      }
+
+      &__blocks {
+        margin-bottom: em(-$block--spacer-bottom--md);
+      }
+
+      &__show-more {
+        padding-top: em($block--spacer-bottom--md);
+      }
+    }
+    // Section including H1 and Description
+    &--main {
+      padding-bottom: 0;
+
+      .#{$gtc-namespace}section {
+        &__heading {
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+
+        &__shorttext {
+          margin-bottom: 0;
+        }
+      }
+
+      .#{$gtc-namespace}section__heading + .#{$gtc-namespace}section__shorttext,
+      .#{$gtc-namespace}section__heading + .#{$gtc-namespace}section__heading-link + .#{$gtc-namespace}section__shorttext {
+        margin-top: 3.5rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        .#{$gtc-namespace}section__texts {
+          width: 100%;
+        }
+      }
+    }
+    // -----------------------------------
+    // Link Button between short list and venue finder pages on top of the page.
+    // -----------------------------------
+    &__heading-link {
+      // Disabled while shortlist works incorrect
+      display: none;
+      position: absolute;
+      right: 0;
+      top: -1.5rem;
+
+      @include media-breakpoint-up(md) {
+        top: 0;
+      }
+
+      @media print {
+        display: none;
+      }
+
+      .#{$gtc-namespace}btn {
+        display: inline-block;
+      }
+    }
+  }
+}

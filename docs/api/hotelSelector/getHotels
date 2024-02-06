@@ -1,0 +1,138 @@
+[  
+  {
+      "Lat": "46.213486",
+      "Lng": "6.14532",
+      "Name": "Hotel Royal",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{CD8C6475-0B7C-4B10-AE69-948A9E482295}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.202877",
+      "Lng": "6.150033",
+      "Name": "Hôtel de la Cigogne",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{A8DB498A-7295-4313-B9B0-A7CF726E4D80}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.207957",
+      "Lng": "6.148768",
+      "Name": "The Ritz-Carlton Hotel de la Paix, Geneva",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{CB626E08-E34D-4CD7-AF7D-C9B9F3EE25B6}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.214861",
+      "Lng": "6.151905",
+      "Name": "Hotel President Wilson",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{8A66DE3A-2B00-4537-A132-AEDE2FB359B8}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.210262",
+      "Lng": "6.144074",
+      "Name": "Hôtel Bernina ",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{E4A0DDD6-439A-4DA9-B293-3E67D0CA4061}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.215455",
+      "Lng": "6.148569",
+      "Name": "Hôtel N’vY Manotel",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{547A208D-67EA-4B18-8075-257A15370AC9}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.235168",
+      "Lng": "6.125231",
+      "Name": "Wonderlandscape GuestHouse",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{DE72BE3D-049F-43DF-AE18-E9F8CD457488}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.211204",
+      "Lng": "6.145785",
+      "Name": "HÔTEL D",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{90899553-601D-4961-9441-279A55A3AA36}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.209056",
+      "Lng": "6.150004",
+      "Name": "Hotel Beau-Rivage Geneva",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{561ED561-265D-4A24-8441-2DBFE400E98D}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.203099",
+      "Lng": "6.150152",
+      "Name": "Hôtel Longemalle",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{DCF45B21-EB13-4E84-A82C-9BFEA7E5B305}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.206578",
+      "Lng": "6.144884",
+      "Name": "The New Midi",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{3ACC0052-4A69-46B3-AD1D-256723B54696}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.196912",
+      "Lng": "6.143084",
+      "Name": "Hôtel Comédie",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{40CC3D05-F094-4B11-A4D4-72FBBF439C7A}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.215335",
+      "Lng": "6.147712",
+      "Name": "Hôtel Jade Manotel",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{C2E5B322-1C10-421D-9F23-D8E3820D647A}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.207817",
+      "Lng": "6.138376",
+      "Name": "Ibis Genève Centre-Gare",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{95BC6D17-C53C-4104-8657-EF711ABB7836}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.233782",
+      "Lng": "6.118217",
+      "Name": "Ibis Budget Geneva Palexpo",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{329C7022-B5B2-4CE2-A733-1D0C423762C4}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.210464",
+      "Lng": "6.146099",
+      "Name": "9HOTEL PAQUIS",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{18D1A079-5EFF-4003-879F-E9DBAE4DA02A}",
+      "Pin": "pin-hotel"
+  },
+  {
+      "Lat": "46.206997",
+      "Lng": "6.146922",
+      "Name": "Four Seasons Hôtel des Bergues Geneva",
+      "Image": "/images/map/birdie-food.jpg",
+      "Id": "{6C0F0559-67C3-4E15-8E23-BF330BC2223D}",
+      "Pin": "pin-hotel"
+  }
+]  

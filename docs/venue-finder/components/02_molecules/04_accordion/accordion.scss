@@ -1,0 +1,106 @@
+// -----------------------------------------------------------------------------
+// Accordion
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &accordion {
+    // smartphone and up
+    // ----------------------------------
+    position: relative;
+    z-index: 1;
+
+    &__head {
+      display: block;
+      font-weight: normal;
+    }
+
+    &__toggle {
+      position: relative;
+      width: calc(100% + 3.2rem);
+      text-align: left;
+      background-color: transparent;
+      color: var(--color-primary-blue);
+      box-shadow: none;
+      padding: 1.2rem 1.6rem;
+      border-top: 0.1rem solid var(--color-primary-grey-light);
+      border-radius: 0;
+      margin-left: -1.6rem;
+
+      @include hover-focus-active {
+        box-shadow: none;
+      }
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        width: 100%;
+        margin-left: 0;
+        padding: em($accordion__toggle--padding-y--md) em($accordion__toggle--padding-x--md);
+      }
+
+      .gtc-accordion__icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        display: inline-block;
+        vertical-align: bottom;
+      }
+
+      &[aria-expanded='true'] .gtc-accordion__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__title {
+      font-size: var(--font-size-primary-text);
+      line-height: 1.5;
+
+      // laptop & desktop and up
+      // ----------------------------------
+      @include media-breakpoint-up(md) {
+        font-size: em($accordion__title--font-size--md);
+        line-height: em($accordion__title--line-height--md, $accordion__title--font-size--md);
+      }
+    }
+
+    // Accordion pane
+    // -------------------------------------
+    &__pane {
+      margin: 0; // in case it is a <dd>
+
+      &[aria-hidden='false'] {
+        display: block;
+      }
+
+      &[aria-hidden='true'] {
+        display: none;
+      }
+    }
+  }
+
+  // ----------------------------------
+  // Accordion Variants
+  // ----------------------------------
+  &accordion--rooms {
+    .#{$gtc-namespace}accordion {
+      &__toggle {
+        display: inline-block;
+        width: auto;
+        text-transform: none;
+
+        &.gtc-btn-pmt--accordion {
+          padding-right: em(64);
+        }
+
+        // tablet and down
+        // ----------------------------------
+        @include media-breakpoint-down(sm) {
+          padding: em($accordion--rooms__toggle--padding-y--xs) em($accordion--rooms__toggle--padding-x--xs);
+        }
+      }
+
+      &__pmt {
+        right: em(26);
+      }
+    }
+  }
+}

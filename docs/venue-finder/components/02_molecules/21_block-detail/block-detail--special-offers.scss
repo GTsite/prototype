@@ -1,0 +1,101 @@
+//
+// Block Detail Special Offers Variant
+// ----------------------------------------------------
+
+.#{$gtc-namespace}block-detail {
+  &--special-offers {
+    &:first-child {
+      padding-top: 0;
+    }
+
+    .#{$gtc-namespace}checkmark-list-title {
+      // smartphone and up
+      // -----------------------------------
+      margin-bottom: em(15, $block-detail--special-offers-checkmark-list--title--font-size--xs);
+      display: block;
+      font-weight: normal;
+      color: $block-detail--special-offers-checkmark-list--color;
+      text-transform: uppercase;
+      font-family: $block-detail--special-offers-checkmark-list--title--font-family;
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-top: em(38, $block-detail--special-offers-checkmark-list--title--font-size--md);
+        margin-bottom: em(12, $block-detail--special-offers-checkmark-list--title--font-size--md);
+      }
+    }
+
+    .#{$gtc-namespace}checkmark-list {
+      // smartphone and up
+      // -----------------------------------
+      color: $block-detail--special-offers-checkmark-list--color;
+      margin-bottom: em(46, $base--font-size--xs);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-bottom: em(46, $base--font-size--md);
+      }
+    }
+
+    .#{$gtc-namespace}checkmark-list__item {
+      // smartphone and up
+      // -----------------------------------
+      margin-bottom: em(10, $base--font-size--xs);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        margin-bottom: em(10, $base--font-size--md);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .#{$gtc-namespace}section__texts {
+      width: 100%;
+    }
+
+    .#{$gtc-namespace}section__shorttext {
+      // smartphone and up
+      // -----------------------------------
+      margin-bottom: 0;
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        column-count: 2;
+      }
+    }
+
+    //.#{$gtc-namespace}block-booking {
+    //  height: 100%;
+    //}
+
+    .#{$gtc-namespace}block__box {
+      // smartphone and up
+      // -----------------------------------
+      padding: em(30);
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        padding: em(90) em(77);
+      }
+    }
+
+    .#{$gtc-namespace}block--grey {
+      .#{$gtc-namespace}title {
+        color: $color-snow;
+      }
+
+      .#{$gtc-namespace}bullet-list {
+        margin-top: em(20);
+        color: $color-snow;
+      }
+    }
+  }
+}

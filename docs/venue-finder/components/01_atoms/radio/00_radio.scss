@@ -1,0 +1,123 @@
+/*#region Reference Paths*/
+
+/*#region Variables*/
+/// <reference path="../../../../src/globals/scss/settings/_variables.scss" />
+/// <reference path="../../../../src/components/05_pages/one-campaign/_variables.scss" />
+/*#endregion*/
+
+/*#region Grid*/
+/// <reference path="../../../../src/globals/scss/grid/grid-breakpoints.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-components.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-media-breakpoints.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-mixins.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-overlay.scss" />
+/// <reference path="../../../../src/globals/scss/grid/grid-variables.scss" />
+/*#endregion*/
+
+/*#region Functions*/
+/// <reference path="../../../../src/globals/scss/helper/functions/01_em.scss" />
+/// <reference path="../../../../src/globals/scss/helper/functions/02_rem.scss" />
+/// <reference path="../../../../src/globals/scss/helper/functions/03_vw.scss" />
+/*#endregion*/
+
+/*#region Mixins*/
+/// <reference path="../../../../src/globals/scss/helper/mixins/_gradients.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/aspect-ratio.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/clearfix.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/css-browser-hacks.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/exports.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/hidden-accessible.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/hover.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/input-placeholder.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/reset-list.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/responsive-icon.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/spin.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/sr-only.scss />
+/// <reference path="../../../../src/globals/scss/helper/mixins/stretchy-clip.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/tab-focus.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/_nowrap.scss" />
+/// <reference path="../../../../src/globals/scss/helper/mixins/_object-fit.scss" />
+/*#endregion*/
+/*#endregion*/
+
+@import '../../../../_scss/utils/mixins.scss';
+
+// -----------------------------------
+// Radio Button Group
+// -----------------------------------
+.#{$gtc-namespace}radio-group {
+  display: inline-block;
+  font-family: $btn--font-family;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid var(--color-primary-grey-light);
+
+  & > .#{$gtc-namespace}radio {
+    float: left;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// -----------------------------------
+// Radio Button
+// -----------------------------------
+.#{$gtc-namespace}radio {
+  cursor: pointer;
+  position: relative;
+  margin-right: 3rem;
+
+  &__inp {
+    display: none;
+  }
+
+  &__vis {
+    position: absolute;
+    right: 0;
+    box-sizing: content-box;
+    @include size(2rem);
+    border-radius: 100%;
+    border: 0.2rem solid var(--color-primary-grey-light);
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0.4rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      @include size(1.2rem);
+      border-radius: 100%;
+      background: var(--color-primary-grey-light);
+    }
+  }
+
+  &__vis,
+  &__lbl {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__lbl {
+    cursor: pointer;
+    font-size: var(--font-size-big-text);
+    font-family: var(--font-family-default);
+    font-style: italic;
+    padding-right: 3rem;
+  }
+
+  &-checked {
+    cursor: default;
+
+    .#{$gtc-namespace}radio__vis {
+      border-color: var(--color-primary-blue);
+      &:before {
+        background: var(--color-primary-blue);
+      }
+    }
+
+    .#{$gtc-namespace}radio__lbl {
+      cursor: default;
+    }
+  }
+}

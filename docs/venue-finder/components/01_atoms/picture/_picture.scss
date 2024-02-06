@@ -1,0 +1,16 @@
+//
+// picture html element
+// -------------------------------
+
+.#{$gtc-namespace} {
+  &picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

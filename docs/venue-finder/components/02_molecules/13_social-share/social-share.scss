@@ -1,0 +1,60 @@
+// -----------------------------------------------------------------------------
+// SOCIAL SHARE LIST
+// -----------------------------------------------------------------------------
+
+.#{$gtc-namespace} {
+  &social-share {
+    @include clearfix;
+    @include reset-list;
+    margin-right: em(-7);
+    margin-left: em(-7);
+
+    // laptop / tablet view and up
+    // -----------------------------------
+    @include media-breakpoint-up(md) {
+      margin-right: em(-12);
+      margin-left: em(-12);
+    }
+
+    &-headline {
+      text-transform: uppercase;
+    }
+
+    &__item {
+      float: left;
+      padding-right: em(12);
+      padding-left: em(12);
+
+      // rlt-changes
+      // -----------------------------------
+      [dir='rtl'] & {
+        float: right;
+      }
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        padding-right: em(7);
+        padding-left: em(7);
+      }
+
+      &--center {
+        display: inline-block;
+        float: none;
+      }
+    }
+
+    &__btn-icon {
+      width: em(40);
+      height: em(40);
+      fill: $social-share__btn-icon--fill;
+
+      // laptop / tablet view and up
+      // -----------------------------------
+      @include media-breakpoint-up(md) {
+        width: em(24);
+        height: em(24);
+      }
+    }
+  }
+}

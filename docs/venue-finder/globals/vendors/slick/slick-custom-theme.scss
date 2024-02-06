@@ -1,0 +1,89 @@
+// Arrows
+
+// Dots
+.slick-dots {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  bottom: em(17);
+  list-style: none;
+  text-align: center;
+
+  // laptop & desktop and up
+  // ----------------------------------
+  @include media-breakpoint-up(md) {
+    bottom: em(27);
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    margin: 0 em(2);
+    padding: 0;
+    cursor: pointer;
+  }
+
+  li button {
+    display: block;
+    padding: em(5);
+    width: em(25);
+    height: em(25);
+    line-height: 0;
+    color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      padding-left: em(3);
+      padding-right: em(3);
+      width: em(20);
+      height: em(20);
+    }
+  }
+
+  li button:hover,
+  li button:focus {
+    outline: none;
+  }
+
+  li button:hover:before,
+  li button:focus:before {
+    opacity: 1;
+  }
+
+  li button:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: em(18);
+    height: em(18);
+    content: '';
+    text-align: center;
+    opacity: 0.7;
+    background-color: $color-coal;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(-50%, -50%);
+    transition: $transition-settings--hover;
+    transition-property: opacity;
+
+    // laptop & desktop and up
+    // ----------------------------------
+    @include media-breakpoint-up(md) {
+      width: em(14);
+      height: em(14);
+    }
+  }
+
+  li.slick-active button:before {
+    opacity: 0.7;
+    color: $color-coal;
+  }
+}

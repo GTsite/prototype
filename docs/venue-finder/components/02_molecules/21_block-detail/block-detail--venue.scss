@@ -1,0 +1,17 @@
+﻿@charset 'UTF-8';
+
+// -----------------------------------
+// Venue Detail block
+// -----------------------------------
+.#{$gtc-namespace}block-detail--venue {
+  .#{$gtc-namespace}block-detail {
+    //preps
+    color: inherit;
+    //Fix the content display for the venue finder list block sub display.
+    &__cnt {
+      @include media-breakpoint-down(sm) {
+        padding: 0 em(35) em(10);
+      }
+    }
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "NoResultsText": "No results",
+	"Months": [
+		{
+			"Id": 7,
+			"Label": "JUL",
+			"SeasonId": "{262EC405-2115-4C8F-A208-081AD65C3659}"
+		},
+		{
+			"Id": 8,
+			"Label": "AUG",
+			"SeasonId": "{262EC405-2115-4C8F-A208-081AD65C3659}"
+		},
+		{
+			"Id": 9,
+			"Label": "SEP",
+			"SeasonId": "{072A9F3A-D7BB-48E1-8317-52937D9729C7}"
+		},
+		{
+			"Id": 10,
+			"Label": "OCT",
+			"SeasonId": "{072A9F3A-D7BB-48E1-8317-52937D9729C7}"
+		},
+		{
+			"Id": 11,
+			"Label": "NOV",
+			"SeasonId": "{072A9F3A-D7BB-48E1-8317-52937D9729C7}"
+		},
+		{
+			"Id": 12,
+			"Label": "DEC",
+			"SeasonId": "{022EE709-107A-4F5A-AD3F-53148E3DB20C}"
+		},
+		{
+			"Id": 1,
+			"Label": "JAN",
+			"SeasonId": "{022EE709-107A-4F5A-AD3F-53148E3DB20C}"
+		},
+		{
+			"Id": 2,
+			"Label": "FEB",
+			"SeasonId": "{022EE709-107A-4F5A-AD3F-53148E3DB20C}"
+		},
+		{
+			"Id": 3,
+			"Label": "MAR",
+			"SeasonId": "{E462FDF1-7F41-409B-A475-9B5FFD975F06}"
+		},
+		{
+			"Id": 4,
+			"Label": "APR",
+			"SeasonId": "{E462FDF1-7F41-409B-A475-9B5FFD975F06}"
+		},
+		{
+			"Id": 5,
+			"Label": "MAY",
+			"SeasonId": "{E462FDF1-7F41-409B-A475-9B5FFD975F06}"
+		},
+		{
+			"Id": 6,
+			"Label": "JUN",
+			"SeasonId": "{262EC405-2115-4C8F-A208-081AD65C3659}",
+      "IsActive": true
+		}
+	],
+	"Seasons": [
+		{
+			"Data": {
+				"Name": "Summer",
+				"WhatToExpectHeadline": "What to expect",
+				"WhatToExpectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+				"NatureHeadline": "Nature",
+				"NatureTemperature": "25°C",
+				"NatureSunrise": "Sunrise: 6 am",
+				"NaturePeriodText": "Jun-Aug",
+				"NatureSunset": "Sunset: 9 pm",
+				"CtaHeadline": "Nature",
+				"CtaLabel": "Discover",
+				"CtaLink": "/en/",
+				"Id": "{262EC405-2115-4C8F-A208-081AD65C3659}"
+			},
+			"Cards": [
+				{
+					"Title": "Hotel Metropole Geneve ",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-4.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-4.jpg",
+					"ItemLink": "/en/Hotels/2020/07/22/08/34/Htel-Mtropole-Genve",
+					"ItemId": "{F76A24DE-B6A2-48C7-BF05-42F31A65DF88}",
+					"MonthId": "6",
+					"Dates": [],
+					"Tag": {
+						"sustainable choice": "Sustainable choice"
+					}
+				},
+				{
+					"Title": "Société de Lecture",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-5.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-5.jpg",
+					"ItemLink": "/en/ActivityCenters/2020/07/22/08/29/Socit-de-Lecture",
+					"ItemId": "{AFFBE34A-A359-4B4C-AE9B-A95EFC34A31C}",
+					"MonthId": "6",
+					"Dates": [],
+					"Tag": {
+						"sustainable choice": "Sustainable choice"
+					}
+				},
+				{
+					"Title": "Lake & Chill",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+					"ItemLink": "/en/Events/2020/07/22/07/16/CGN-2020--Lake--Chill",
+					"ItemId": "{ECB1AE96-78CE-4AF2-898E-A43361A78484}",
+					"MonthId": "7",
+					"Dates": [
+						{
+							"Month": "JUL",
+							"Year": 2020,
+							"Day": "13"
+						},
+						{
+							"Month": "SEP",
+							"Year": 2020,
+							"Day": "06"
+						}
+					],
+					"Tag": {
+						"sustainable choice": "Sustainable choice"
+					}
+				},
+				{
+					"Title": "Lake & Chill",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+					"ItemLink": "/en/Events/2020/07/22/07/16/CGN-2020--Lake--Chill",
+					"ItemId": "{ECB1AE96-78CE-4AF2-898E-A43361A78484}",
+					"MonthId": "7",
+					"Dates": [
+						{
+							"Month": "JUL",
+							"Year": 2020,
+							"Day": "13"
+						},
+						{
+							"Month": "SEP",
+							"Year": 2020,
+							"Day": "06"
+						}
+					]
+				},
+								{
+					"Title": "Lake & Chill",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-6.jpg",
+					"ItemLink": "/en/Events/2020/07/22/07/16/CGN-2020--Lake--Chill",
+					"ItemId": "{ECB1AE96-78CE-4AF2-898E-A43361A78484}",
+					"MonthId": "7",
+					"Dates": [
+						{
+							"Month": "JUL",
+							"Year": 2020,
+							"Day": "13"
+						},
+						{
+							"Month": "SEP",
+							"Year": 2020,
+							"Day": "06"
+						}
+					],
+					"Tag": {
+						"sustainable choice": "Sustainable choice"
+					}
+				},
+				{
+					"Title": null,
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+					"ItemLink": "/en/Plan-a-trip/Bars-and-restaurants",
+					"ItemId": "{3E717A06-1AB8-45BD-8365-B14B831C2B11}",
+					"MonthId": "7",
+					"Dates": [
+						{
+							"Month": "JUL",
+							"Year": 2020,
+							"Day": "29"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Data": {
+				"Name": "Autumn",
+				"WhatToExpectHeadline": "What to expect",
+				"WhatToExpectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+				"NatureHeadline": "Nature",
+				"NatureTemperature": "15°C\"",
+				"NatureSunrise": "Sunrise: 7 am",
+				"NaturePeriodText": "Sep-Oct",
+				"NatureSunset": "Sunset: 8 pm",
+				"CtaHeadline": "Nature",
+				"CtaLabel": "CTA to location/activity",
+				"CtaLink": "/en/",
+				"Id": "{072A9F3A-D7BB-48E1-8317-52937D9729C7}"
+			},
+			"Cards": [
+				{
+					"Title": null,
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-1.jpg",
+					"ItemLink": "/en/Plan-a-trip/Museums-and-Galleries",
+					"ItemId": "{4E237FDB-AAC9-474C-8F9E-D1A599044D77}",
+					"MonthId": "9",
+					"Dates": []
+				},
+				{
+					"Title": "Hôtel Sagitta",
+					"Category": "Musique/Concert",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-2.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-2.jpg",
+					"ItemLink": "/en/Hotels/2020/07/22/08/30/Htel-Sagitta",
+					"ItemId": "{1DDA6131-E306-4D50-8D2E-1C8B8DD10ED3}",
+					"MonthId": "9",
+					"Dates": []
+				},
+				{
+					"Title": "Shopping Experience Package",
+					"Category": "Musique/Concert",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-3.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-3.jpg",
+					"ItemLink": "/en/SpecialOffers/2020/07/22/06/54/Shopping-Experience-Package-TDS00020010337374060",
+					"ItemId": "{63B04703-B217-4017-99BC-99E86F836F41}",
+					"MonthId": "9",
+					"Dates": []
+				},
+				{
+					"Title": "Bellerive's festival",
+					"Image": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-4.jpg",
+					"ImageMobile": "https://gtsite.github.io/prototype/images/search-result-tiles/photo-4.jpg",
+					"ItemLink": "/en/Events/2020/07/22/07/14/Festival-de-Bellerive-2020",
+					"ItemId": "{CB07B0C1-12A4-4329-ADAF-88A99FF22FDE}",
+					"MonthId": "8",
+					"Dates": [
+						{
+							"Month": "AUG",
+							"Year": 2020,
+							"Day": "27"
+						},
+						{
+							"Month": "SEP",
+							"Year": 2020,
+							"Day": "03"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Data": {
+				"Name": "Winter",
+				"WhatToExpectHeadline": "What to expect",
+				"WhatToExpectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+				"NatureHeadline": "Nature",
+				"NatureTemperature": "10°C",
+				"NatureSunrise": "Sunrise: 8 am",
+				"NaturePeriodText": "Nov-Feb",
+				"NatureSunset": "Sunset: 7 pm",
+				"CtaHeadline": "Nature",
+				"CtaLabel": "CTA to location/activity",
+				"CtaLink": "/en/",
+				"Id": "{022EE709-107A-4F5A-AD3F-53148E3DB20C}"
+			},
+			"Cards": []
+		}
+	],
+	"Filters": [
+		{
+			"label": "for partners",
+			"id": "db62dcb7-d469-418b-baec-8087bc1b9761",
+			"isActive": false
+		},
+		{
+			"label": "something only Geneva does",
+			"id": "b15ec827-addf-42e7-b6e0-eb5395d1efcf",
+			"isActive": false
+		}
+	]
+}
